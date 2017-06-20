@@ -15,11 +15,6 @@ app.get("/admin", function(req, res){
     res.render("admin");
 });
 
-// Page does not exist
-app.get("/*", function(req, res){
-    // res.send("Index page!");
-    res.render("not-found");
-});
 
 //Test db
 app.get('/db', function (request, response) {
@@ -32,6 +27,13 @@ app.get('/db', function (request, response) {
        { response.render('pages/db', {results: result.rows} ); }
     });
   });
+});
+
+
+// Page does not exist
+app.get("/*", function(req, res){
+    // res.send("Index page!");
+    res.render("not-found");
 });
 
 
