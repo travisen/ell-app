@@ -19,6 +19,11 @@ app.get("/*", function(req, res){
     res.render("not-found");
 });
 
-app.listen(3000, "localhost" ,function(){
-    console.log("Server started on port 3000");
+app.listen(process.env.PORT || 3000 , function(){
+    if (process.env.PORT != null){
+        var port = process.env.PORT;
+    } else {
+        var port = 3000;
+    }
+    console.log("Server started on port: %d", port);
 });
