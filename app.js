@@ -53,7 +53,13 @@ app.get("/admin", function(req, res){
 app.get('/db', function (request, response) {
   console.log(process.env.DATABASE_URL);
 
-  pg.connect(localhost, function(err, client, done) {
+  if(process.env.DATABASE_URL != undefined){
+    host = process.env.DATABASE_URL;
+  } else {
+    host = "localhost"
+  }
+
+  pg.connect(host, function(err, client, done) {
     client.query('SELECT * FROM test_table', function(err, result) {
       done();
       if (err)
