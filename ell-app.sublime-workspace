@@ -1,0 +1,1189 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"max",
+				"maxA"
+			],
+			[
+				"b",
+				"bracket_type"
+			],
+			[
+				"opening",
+				"opening_brackets_stack"
+			],
+			[
+				"Sec",
+				"SecondLargestNumIdx"
+			],
+			[
+				"NUM",
+				"NUM_WORK_GROUPS"
+			],
+			[
+				"Nu",
+				"NUM_WORK_GROUPS"
+			],
+			[
+				"size",
+				"sizeof"
+			],
+			[
+				"pro",
+				"process"
+			],
+			[
+				"hand",
+				"handCount"
+			],
+			[
+				"smith",
+				"smithyPlay"
+			],
+			[
+				"coins",
+				"coinsInDeck"
+			],
+			[
+				"coin",
+				"coinsInDeck"
+			],
+			[
+				"vill",
+				"villagePlay"
+			],
+			[
+				"adventurer",
+				"adventurerPlay"
+			],
+			[
+				"car",
+				"cardtest1"
+			],
+			[
+				"smi",
+				"smithyPlay"
+			],
+			[
+				"s",
+				"start"
+			],
+			[
+				"unit",
+				"unittestresult"
+			],
+			[
+				"NU",
+				"NUMTRIES"
+			],
+			[
+				"sum",
+				"sumMegaHeights"
+			],
+			[
+				"NUMT",
+				"NUMTRIES"
+			],
+			[
+				"cu",
+				"currHeight"
+			],
+			[
+				"full",
+				"fullTileArea"
+			],
+			[
+				"outpos",
+				"outpostPlay"
+			],
+			[
+				"great",
+				"great_hallPlay"
+			],
+			[
+				"game",
+				"gameState"
+			],
+			[
+				"curr",
+				"currentPlayer"
+			],
+			[
+				"ctrl",
+				"ctrlLocations"
+			],
+			[
+				"ho",
+				"homepageController"
+			],
+			[
+				"connInfo",
+				"connInfoData"
+			],
+			[
+				"connInf",
+				"connInfoData"
+			],
+			[
+				"data",
+				"dataPort"
+			],
+			[
+				"da",
+				"dataSocket"
+			],
+			[
+				"so",
+				"sockfd"
+			],
+			[
+				"handle",
+				"handleRequest"
+			],
+			[
+				"cur",
+				"currDir"
+			],
+			[
+				"strc",
+				"strcat"
+			],
+			[
+				"cli",
+				"clientAddr"
+			],
+			[
+				"retur",
+				"returnThis"
+			],
+			[
+				"portN",
+				"portNumInt"
+			],
+			[
+				"list",
+				"listenSocketFD"
+			],
+			[
+				"for",
+				"foregroundOnly"
+			],
+			[
+				"W",
+				"WNOHANG"
+			],
+			[
+				"num",
+				"numProcs"
+			],
+			[
+				"backG",
+				"backgroundFlag"
+			],
+			[
+				"CATCH",
+				"catchSIGINT"
+			],
+			[
+				"BACK",
+				"backgroundFlag"
+			],
+			[
+				"backgrou",
+				"backgroundFlag"
+			],
+			[
+				"fla",
+				"backgroundFlag"
+			],
+			[
+				"sub",
+				"substringPtr"
+			],
+			[
+				"input",
+				"inputStorage"
+			],
+			[
+				"inpu",
+				"inputStorage"
+			],
+			[
+				"file",
+				"fileExitStatus"
+			],
+			[
+				"targ",
+				"targetFD"
+			],
+			[
+				"sou",
+				"sourceFD"
+			],
+			[
+				"FD",
+				"targetFD"
+			],
+			[
+				"prt",
+				"printf	printf …"
+			],
+			[
+				"print",
+				"printf	printf …"
+			],
+			[
+				"idx",
+				"idxRedirecIn"
+			],
+			[
+				"id",
+				"idxRedirecIn"
+			],
+			[
+				"idxR",
+				"idxRedirecOut"
+			],
+			[
+				"comme",
+				"commentFlag"
+			],
+			[
+				"tes",
+				"test2"
+			],
+			[
+				"siz",
+				"size"
+			],
+			[
+				"point",
+				"pointerToInput"
+			],
+			[
+				"ar",
+				"argsDs"
+			],
+			[
+				"built",
+				"builtstr"
+			],
+			[
+				"buil",
+				"builtStr"
+			],
+			[
+				"argds",
+				"argsDs"
+			],
+			[
+				"ptr",
+				"pointerToInput"
+			],
+			[
+				"argsD",
+				"argsDataStruct"
+			],
+			[
+				"bui",
+				"builtStr"
+			],
+			[
+				"exe",
+				"execlpStr"
+			],
+			[
+				"arg",
+				"argArray"
+			],
+			[
+				"parsed",
+				"parsedStrs"
+			],
+			[
+				"par",
+				"parsedStr"
+			],
+			[
+				"BUF",
+				"BUFFSIZE"
+			],
+			[
+				"spaceC",
+				"spaceCounter"
+			],
+			[
+				"cmd",
+				"cmdStrPtr"
+			],
+			[
+				"flag",
+				"threadFlag"
+			],
+			[
+				"str",
+				"strcat"
+			],
+			[
+				"conn",
+				"connPayload"
+			],
+			[
+				"end",
+				"endingIdx"
+			],
+			[
+				"room",
+				"roomIdx"
+			],
+			[
+				"start",
+				"startingIdx"
+			],
+			[
+				"fil",
+				"filePath"
+			],
+			[
+				"MAX",
+				"MAX_NAME_SIZE"
+			],
+			[
+				"mo",
+				"mostRecentDir"
+			],
+			[
+				"recen",
+				"recentestName"
+			],
+			[
+				"dirNam",
+				"dirNameCopy"
+			],
+			[
+				"co",
+				"connections"
+			],
+			[
+				"get",
+				"getRandNum"
+			],
+			[
+				"MAX_",
+				"MAX_ROOMS_USED"
+			],
+			[
+				"clien",
+				"clientHandle"
+			],
+			[
+				"rec",
+				"recvBuffer"
+			],
+			[
+				"ret",
+				"returnThis"
+			],
+			[
+				"msg",
+				"msgTxt"
+			],
+			[
+				"recv",
+				"recvBuffer"
+			],
+			[
+				"send",
+				"sendall"
+			],
+			[
+				"rando",
+				"randomize"
+			],
+			[
+				"s_ar",
+				"s_arrakis"
+			],
+			[
+				"crea",
+				"createDir"
+			],
+			[
+				"ai_add",
+				"ai_addrlen"
+			],
+			[
+				"ai_",
+				"ai_addr"
+			],
+			[
+				"gree",
+				"greedyTour"
+			],
+			[
+				"nei",
+				"neighbors"
+			],
+			[
+				"near",
+				"nearestNeighbor"
+			],
+			[
+				"edg",
+				"edgeList"
+			],
+			[
+				"two",
+				"twoOptTakeTwo"
+			],
+			[
+				"sty",
+				"styleUrls	property"
+			],
+			[
+				"template",
+				"templateUrl	property"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"padd",
+				"padding-top"
+			],
+			[
+				"background",
+				"background-color"
+			],
+			[
+				"hei",
+				"max-height"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"wid",
+				"max-width"
+			],
+			[
+				"next",
+				"nextWord"
+			],
+			[
+				"nex",
+				"nextWord"
+			],
+			[
+				"Hash",
+				"HashLink"
+			],
+			[
+				"prin",
+				"hashMapPrint"
+			],
+			[
+				"cont",
+				"hashMapContainsKey"
+			],
+			[
+				"init",
+				"hashMapInit"
+			],
+			[
+				"empty",
+				"emptyBuckets"
+			],
+			[
+				"hashmap",
+				"hashMapCapacity"
+			],
+			[
+				"con",
+				"hashMapContainsKey"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "views/landing.ejs",
+			"settings":
+			{
+				"buffer_size": 271,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/partials/header.ejs",
+			"settings":
+			{
+				"buffer_size": 477,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/stylesheets/main.css",
+			"settings":
+			{
+				"buffer_size": 230,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/what-do.ejs",
+			"settings":
+			{
+				"buffer_size": 439,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app.js",
+			"settings":
+			{
+				"buffer_size": 1692,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "tables",
+			"settings":
+			{
+				"buffer_size": 623,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 293,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"Package ",
+				"Preferences: Browse Packages"
+			],
+			[
+				"packag",
+				"Preferences: Browse Packages"
+			],
+			[
+				"packa",
+				"Preferences: Browse Packages"
+			],
+			[
+				"Install",
+				"Package Control: Install Package"
+			],
+			[
+				"Install Package",
+				"Package Control: Install Package"
+			],
+			[
+				"gitgutt",
+				"GitGutter: Compare Against Branch"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"package ct",
+				"Package Control: Install Package"
+			],
+			[
+				"package Control: Install Package",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/travis/Desktop/ell-app/ell-app.sublime-project",
+		"/home/travis/Desktop/ell-app/package.json",
+		"/home/travis/Desktop/ell-app/views/list-places.ejs",
+		"/home/travis/Desktop/ell-app/views/add-place.ejs",
+		"/home/travis/Desktop/ell-app/views/partials/footer.ejs",
+		"/home/travis/Desktop/ell-app/views/not-found.ejs",
+		"/home/travis/Desktop/ell-app/views/partials/styles.css",
+		"/home/travis/Desktop/ell-app/app.js",
+		"/home/travis/Desktop/ell-app/public/stylesheets/main.css",
+		"/home/travis/Desktop/ell-app/views/main.css",
+		"/home/travis/Desktop/ell-app/views/partials/main.css",
+		"/home/travis/Desktop/react-rdux-course/ReduxSimpleStarter/src/components/search_bar.js",
+		"/home/travis/Desktop/react-rdux-course/ReduxSimpleStarter/index.html",
+		"/home/travis/Desktop/react-rdux-course/ReduxSimpleStarter/src/index.js",
+		"/home/travis/Desktop/react-rdux-course/ReduxSimpleStarter/src/components/video_list_item.js",
+		"/home/travis/Desktop/react-rdux-course/ReduxSimpleStarter/src/components/video_list.js",
+		"/home/travis/Desktop/react-rdux-course/ReduxSimpleStarter/src/components/video_detail.js",
+		"/home/travis/Desktop/react-rdux-course/ReduxSimpleStarter/src/components/app.js",
+		"/home/travis/Desktop/coursera-algs/alg-toolbox/week3/data",
+		"/home/travis/Desktop/react-rdux-course/ReduxSimpleStarter/webpack.config.js",
+		"/home/travis/Desktop/react-rdux-course/ReduxSimpleStarter/package.json",
+		"/home/travis/Desktop/react-rdux-course/ReduxSimpleStarter/LICENSE.MD",
+		"/home/travis/Desktop/coursera-algs/data-structures/week1/tree-height.py",
+		"/home/travis/Desktop/coursera-algs/alg-toolbox/week3/change.py",
+		"/home/travis/Desktop/coursera-algs/alg-toolbox/week3/dot_product.py",
+		"/home/travis/Desktop/coursera-algs/alg-toolbox/week3/largest_number.py",
+		"/home/travis/Desktop/coursera-algs/alg-toolbox/week3/fractional_knapsack.py",
+		"/home/travis/Desktop/coursera-algs/alg-toolbox/week3/fractional_knapsack/fractional_knapsack.cpp",
+		"/home/travis/Desktop/coursera-algs/data-structures/week1/testdata",
+		"/home/travis/Desktop/coursera-algs/data-structures/week1/process_packages.py",
+		"/home/travis/Desktop/coursera-algs/data-structures/week1/check_brackets.py",
+		"/home/travis/Desktop/coursera-algs/data-structures/week1/check_brackets2.py",
+		"/home/travis/Desktop/coursera-algs/data-structures/week1/other-files/check_brackets_in_code/tests/16",
+		"/home/travis/Desktop/coursera-algs/data-structures/week1/other-files/check_brackets_in_code/tests/16.a",
+		"/home/travis/Desktop/coursera-algs/data-structures/week1/other-files/check_brackets_in_code/tests/15",
+		"/home/travis/Desktop/coursera-algs/data-structures/week1/other-files/check_brackets_in_code/tests/07.a",
+		"/home/travis/Desktop/coursera-algs/data-structures/week1/other-files/check_brackets_in_code/tests/04.a",
+		"/home/travis/Desktop/coursera-algs/data-structures/week1/other-files/check_brackets_in_code/tests/01",
+		"/home/travis/Desktop/coursera-algs/data-structures/week1/other-files/check_brackets_in_code/tests/01.a",
+		"/home/travis/Desktop/coursera-algs/data-structures/week1/other-files/check_brackets_in_code/tests/52",
+		"/home/travis/Desktop/coursera-algs/data-structures/week1/other-files/check_brackets_in_code/tests/54",
+		"/home/travis/Desktop/coursera-algs/data-structures/week1/other-files/check_brackets_in_code/tests/52.a",
+		"/home/travis/Desktop/coursera-algs/data-structures/week1/other-files/check_brackets_in_code/tests/41.a",
+		"/home/travis/Desktop/coursera-algs/data-structures/week1/other-files/check_brackets_in_code/check_brackets.cpp",
+		"/home/travis/Desktop/web-projects/to-do-boilerplate/node-postgres-sequelize/sequelizerc",
+		"/home/travis/Desktop/web-projects/to-do-boilerplate/node-postgres-sequelize/server/models/index.js",
+		"/home/travis/Desktop/web-projects/to-do-boilerplate/node-postgres-sequelize/package.json",
+		"/home/travis/Desktop/interview-prep/isStrUnique.py",
+		"/home/travis/Desktop/coursera-algs/alg-toolbox/week2/gcd.py",
+		"/home/travis/Desktop/coursera-algs/alg-toolbox/week2/fibonacci_last_digit.py",
+		"/home/travis/Desktop/coursera-algs/alg-toolbox/week2/fibonacci.py",
+		"/home/travis/Desktop/coursera-algs/alg-toolbox/week2/fibonacci_huge.py",
+		"/home/travis/Desktop/coursera-algs/alg-toolbox/week2/fibonacci_partial_sum.py",
+		"/home/travis/Desktop/coursera-algs/alg-toolbox/week2/fib-naive.py",
+		"/home/travis/Desktop/coursera-algs/alg-toolbox/fib-naive.py",
+		"/home/travis/Desktop/coursera-algs/alg-toolbox/max-pair-prod.py",
+		"/home/travis/Desktop/coursera-algs/alg-toolbox/data.txt",
+		"/home/travis/.config/sublime-text-2/Packages/Git/Git.sublime-settings",
+		"/home/travis/Desktop/osu/cs475/proj6/firstRed.cl",
+		"/home/travis/Desktop/osu/cs475/proj6/dataRed.txt",
+		"/home/travis/Desktop/osu/cs475/proj5/script.py",
+		"/home/travis/Desktop/osu/cs475/proj6/script-red.py",
+		"/home/travis/Desktop/osu/cs475/proj6/firstRed.cpp",
+		"/home/travis/Desktop/osu/cs475/proj6/script.py",
+		"/home/travis/Desktop/osu/cs475/proj3/script.py",
+		"/home/travis/Desktop/osu/cs475/proj6/muls_and_adds.txt",
+		"/home/travis/Desktop/osu/cs475/proj6/muls.txt",
+		"/home/travis/Desktop/osu/cs475/proj3/project_3_nykazat.cpp",
+		"/home/travis/Desktop/osu/cs475/proj6/first.cpp",
+		"/home/travis/Desktop/osu/cs475/proj6/data.txt",
+		"/home/travis/Desktop/osu/cs475/proj6/first.cl",
+		"/home/travis/Desktop/osu/cs475/proj5/arraymult.cpp",
+		"/home/travis/Desktop/osu/cs475/proj5/simd.p5.cpp",
+		"/home/travis/Desktop/web-projects/mean-book-proj/loc8r/app_server/routes/index.js",
+		"/home/travis/Desktop/web-projects/expressworks/forms.js",
+		"/home/travis/Desktop/web-projects/mean-book-proj/loc8r/app_server/controllers/locations.js",
+		"/home/travis/Desktop/web-projects/mean-book-proj/loc8r/app_server/routes/users.js",
+		"/home/travis/Desktop/web-projects/node-school/hello-node.js",
+		"/home/travis/Desktop/web-projects/node-school/baby-steps.js",
+		"/home/travis/Desktop/web-projects/node-school/modular/mymodule.js",
+		"/home/travis/Desktop/web-projects/node-school/modular/main.js",
+		"/home/travis/Desktop/web-projects/node-school/filtered-ls.js",
+		"/home/travis/Desktop/web-projects/node-school/async-io.js",
+		"/home/travis/Desktop/web-projects/node-school/sync-io.js",
+		"/home/travis/Desktop/web-projects/node-school/io.js",
+		"/home/travis/Desktop/osu/cs475/proj6/cl_platform.h",
+		"/home/travis/Desktop/osu/cs475/proj6/cl.h",
+		"/home/travis/Desktop/web-projects/todolist/public/package.json",
+		"/home/travis/Desktop/web-projects/todolist/public/server.js",
+		"/home/travis/Desktop/web-projects/todolist/public/index.html",
+		"/home/travis/Desktop/web-projects/todolist/public/core.js",
+		"/home/travis/Desktop/web-projects/mean-book-proj/loc8r/app.js",
+		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/Makefile",
+		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/randomtestadventurer.c",
+		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/aburasa/dominion/dominion.c",
+		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/temp.c",
+		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/dominion.c",
+		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/unittest1.c",
+		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/cardtest3.c",
+		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/dominion-ennism/cardtest4.c",
+		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/dominion-ennism/cardtest3.c",
+		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/dominion-ennism/dominion.c",
+		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/dominion-ennism/cardtest2.c",
+		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/dominion-ennism/cardtest1.c",
+		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/theirTests/cardtest2.c",
+		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/theirTests/cardtest3.c",
+		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/theirTests/randomtestadventurer.c",
+		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/BugsInTeammateCode.txt",
+		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/cardtest2.c",
+		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/cardtest1.c",
+		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/cardtest4.c",
+		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/unittest2.c",
+		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/unittest3.c",
+		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/unittest4.c",
+		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/theirTests/cardtest4.c",
+		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/theirTests/cardtest1.c",
+		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/theirTests/randomtestcard1.c",
+		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/randomtestcard1.c",
+		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/randomtestcard2.c",
+		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/randomtestcard2.out",
+		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/unittestresults.out",
+		"/home/travis/Desktop/osu/cs475/proj5/simd.p5.h",
+		"/home/travis/Desktop/osu/cs475/proj5/makefile",
+		"/home/travis/Desktop/osu/cs475/proj5/data2.txt",
+		"/home/travis/Desktop/osu/cs475/proj5/data1.txt",
+		"/home/travis/Desktop/osu/cs475/proj5/data.txt",
+		"/home/travis/Desktop/osu/cs475/proj5/test.cpp",
+		"/home/travis/Desktop/osu/cs475/week1/proj0.c"
+	],
+	"find":
+	{
+		"height": 59.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"	",
+			"True",
+			"print",
+			"wait(",
+			"clWait",
+			"ArrayMult",
+			"sum",
+			"local_size",
+			"work",
+			"NUM_WORK",
+			"status = clEnqueueNDRange",
+			"gIGAmU",
+			"PRINTF",
+			"NUM_ELEMENTS",
+			"GLOBAL_SIZE",
+			"NUM_ELEMENTS",
+			"NUM_WORK",
+			"NMB",
+			"GLOBAL",
+			"groups",
+			"globalWork",
+			"char *",
+			"char *literal",
+			"char *literal = ",
+			"mongo",
+			"mongoose",
+			"playAD",
+			"shuffle",
+			"playAdv",
+			"drawCard(",
+			"drawCard",
+			"adventurer",
+			"playAdventurer",
+			"playSmith",
+			"adventurer",
+			"cardEffect",
+			"village",
+			"adventurerPlay(",
+			"great_hall",
+			"smithy",
+			"PutSeed(",
+			"function 'smithyPlay",
+			"smithyPLay(",
+			"TESTING smi",
+			"MAX_DECK",
+			"MAX_DeCK",
+			"function 'vill",
+			"Function 'ad",
+			"dominion.c",
+			"gold",
+			"Random()",
+			"floor(Random()",
+			"Random()",
+			"cardEffect",
+			"updateCoins",
+			"p1",
+			"tresCnt",
+			"gameTreasureCount",
+			"playAd",
+			"adventurerEf",
+			"random",
+			"ARRAYSIZE",
+			"maxMega",
+			"sumMega",
+			"adventure",
+			"deckCoins",
+			"adventure",
+			"adventurerP",
+			"dominion.c",
+			"villagePlay",
+			"adventurerP",
+			"adventu",
+			"villagePlay",
+			"adventurerPlay",
+			"great_Hall",
+			"smithyPlay",
+			"shuffle",
+			"drawCard",
+			"whoseTurn",
+			"getCost",
+			"smithyPlay",
+			"numPlayers",
+			"fullDeckCount(",
+			"fullDeckCount",
+			"drawCard(",
+			"whoseTurn(",
+			"getCost(",
+			"smith",
+			"outPostPlayed",
+			"numPl",
+			"kcard",
+			"adventurer",
+			"drawCard(",
+			"handCount",
+			"great_hallPlay(",
+			"great_hallPlay)",
+			"handPost",
+			"handPos",
+			"handPost",
+			"great_hallPlay(",
+			"great_ha",
+			"great_h	",
+			"fullDeckC",
+			"cardEff",
+			"cardEffect",
+			"player1",
+			"smithyPlay",
+			"count",
+			"deskCoun",
+			"count",
+			"cardNames",
+			"NUMNODES",
+			"ARRAYSIZE",
+			"schedule",
+			"NUMT",
+			"threads",
+			"drawCard",
+			"drawCar",
+			"drawCard(",
+			"drawC",
+			"drawCard",
+			"supplyCount",
+			"isGameOver",
+			"fullDeck",
+			"resetPlayer",
+			"deck[",
+			"int card",
+			"numHandCards"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 6,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "views/landing.ejs",
+					"settings":
+					{
+						"buffer_size": 271,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								29,
+								29
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "views/partials/header.ejs",
+					"settings":
+					{
+						"buffer_size": 477,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								244,
+								244
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "public/stylesheets/main.css",
+					"settings":
+					{
+						"buffer_size": 230,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								105,
+								105
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "views/what-do.ejs",
+					"settings":
+					{
+						"buffer_size": 439,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								439,
+								439
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app.js",
+					"settings":
+					{
+						"buffer_size": 1692,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1467,
+								1467
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1575.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "tables",
+					"settings":
+					{
+						"buffer_size": 623,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								213,
+								213
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SQL/SQL.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "README.md",
+					"settings":
+					{
+						"buffer_size": 293,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								293,
+								293
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 41.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.doc":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 130.0
+	},
+	"replace":
+	{
+		"height": 76.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 153.0,
+	"status_bar_visible": true
+}

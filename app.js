@@ -51,23 +51,24 @@ app.get("/admin", function(req, res){
 
 //Test db
 app.get('/db', function (request, response) {
-  console.log(process.env.DATABASE_URL);
 
-  if(process.env.DATABASE_URL != undefined){
-    host = process.env.DATABASE_URL;
-  } else {
-    host = "localhost"
-  }
+  pg.defaults.ssl = true;
 
-  pg.connect(host, function(err, client, done) {
-    client.query('SELECT * FROM test_table', function(err, result) {
-      done();
-      if (err)
-       { console.error(err); response.send("Error " + err); }
-      else
-       { response.send({results: result.rows}); }
+  pg.connect(process.env.DATABASE_URL, function(err, client) {
+    if (err) throw err;
+    console.log('Connected to postgres! Getting data from users:');
+
+    client.query('SELECT * FROM users;', function(err, result) {
+      if(err) {
+        console.error(err);
+        response.send("Error" + err);
+      }
+      else {
+        response.send({results: result.rows});
+      }
     });
   });
+  
 });
 
 
