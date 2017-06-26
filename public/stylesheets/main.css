@@ -1,0 +1,14 @@
+.nav-pills > li > a {
+	padding-top: 1em;
+	padding-bottom: 1em;
+	margin-bottom: 1.5em;
+	font-size: 2em;
+}
+
+.nav-pills > li > a:hover {
+    background-color: #286eaa;
+}
+
+.nav-pills > li > a:visited {
+    background-color: #286eaa;
+}

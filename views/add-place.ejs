@@ -1,0 +1,20 @@
+<% include partials/header %>
+	
+	<h2>Add a fun place you went to for points!</h2>
+	<form action="/add-place" method="POST">
+	  <div class="form-group">
+	    <label>Name</label>
+	    <input type="text" name="name" class="form-control" placeholder="Name">
+	  </div>
+	  <div class="form-group">
+	    <label>Place</label>
+	    <input type="text" name="place" class="form-control" placeholder="Place">
+	  </div>
+	  <div class="form-group">
+	    <label>Date</label>
+	    <input type="date" name="date" class="form-control" placeholder="Place">
+	  </div>
+	  <button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+
+<% include partials/footer %>
