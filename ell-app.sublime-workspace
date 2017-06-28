@@ -555,15 +555,7 @@
 			"file": "app.js",
 			"settings":
 			{
-				"buffer_size": 1692,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "tables",
-			"settings":
-			{
-				"buffer_size": 623,
+				"buffer_size": 1669,
 				"line_ending": "Unix"
 			}
 		},
@@ -572,6 +564,14 @@
 			"settings":
 			{
 				"buffer_size": 293,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "tables",
+			"settings":
+			{
+				"buffer_size": 929,
 				"line_ending": "Unix"
 			}
 		}
@@ -636,6 +636,7 @@
 	},
 	"file_history":
 	[
+		"/home/travis/Desktop/ell-app/tables",
 		"/home/travis/Desktop/ell-app/ell-app.sublime-project",
 		"/home/travis/Desktop/ell-app/package.json",
 		"/home/travis/Desktop/ell-app/views/list-places.ejs",
@@ -762,8 +763,7 @@
 		"/home/travis/Desktop/osu/cs475/proj5/data2.txt",
 		"/home/travis/Desktop/osu/cs475/proj5/data1.txt",
 		"/home/travis/Desktop/osu/cs475/proj5/data.txt",
-		"/home/travis/Desktop/osu/cs475/proj5/test.cpp",
-		"/home/travis/Desktop/osu/cs475/week1/proj0.c"
+		"/home/travis/Desktop/osu/cs475/proj5/test.cpp"
 	],
 	"find":
 	{
@@ -771,7 +771,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 111.0,
 		"where_history":
 		[
 		]
@@ -926,7 +926,7 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -1040,15 +1040,15 @@
 					"file": "app.js",
 					"settings":
 					{
-						"buffer_size": 1692,
+						"buffer_size": 1669,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1467,
-								1467
+								937,
+								937
 							]
 						],
 						"settings":
@@ -1058,41 +1058,13 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1575.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "tables",
-					"settings":
-					{
-						"buffer_size": 623,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								213,
-								213
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SQL/SQL.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 5,
 					"file": "README.md",
 					"settings":
 					{
@@ -1103,13 +1075,41 @@
 						"selection":
 						[
 							[
-								293,
-								293
+								128,
+								128
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "tables",
+					"settings":
+					{
+						"buffer_size": 929,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								879,
+								879
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SQL/SQL.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1184,6 +1184,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 153.0,
+	"side_bar_width": 205.0,
 	"status_bar_visible": true
 }

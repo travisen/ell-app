@@ -1,0 +1,80 @@
+CREATE TABLE person (
+    id SERIAL PRIMARY KEY,
+    first_name VARCHAR(64) NOT NULL,
+    last_name VARCHAR(64) NOT NULL,
+    username VARCHAR(32) NOT NULL UNIQUE,
+    password VARCHAR(255) NULL,
+    email VARCHAR(255) NULL,
+    CONSTRAINT valid_email CHECK (email ~* '^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+[.][A-Za-z]+$')
+);
+
+CREATE TABLE admin (
+    id SERIAL PRIMARY KEY,
+    first_name VARCHAR(64) NOT NULL,
+    last_name VARCHAR(64) NOT NULL,
+    username VARCHAR(32) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    CONSTRAINT valid_email CHECK (email ~* '^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+[.][A-Za-z]+$')
+);
+
+CREATE TABLE place (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(64) NOT NULL UNIQUE,
+    place_type VARCHAR(32) NOT NULL,
+    street_address VARCHAR(64) NOT NULL,
+    city VARCHAR(64) NOT NULL DEFAULT 'Scranton',
+    state VARCHAR(16) NOT NULL DEFAULT 'Pennsylvania',
+    zipcode VARCHAR(16) NULL,
+    country VARCHAR(32) NOT NULL DEFAULT 'United States',
+    description VARCHAR(255) NULL,
+    phone VARCHAR(16) NULL,
+    cost VARCHAR(16) NOT NULL
+);
+
+#Need to be careful with inserts and duplicate day
+#I think making place_id and day the PK is a good fix
+
+CREATE TABLE place_hours (
+    place_id INTEGER NOT NULL REFERENCES place(id),
+    day INTEGER NOT NULL,
+    open_time TIME NOT NULL,
+    close_time TIME NOT NULL,
+    PRIMARY KEY(place_id, day)
+);
+
+CREATE UNIQUE INDEX stop_unique_check
+ ON place_hours (day) WHERE (id is null);
+
+
+CREATE TABLE event (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(64) NOT NULL UNIQUE,
+    description VARCHAR(255) NOT NULL,
+    street_address VARCHAR(255) NOT NULL,
+    city VARCHAR(255) NOT NULL DEFAULT 'Scranton',
+    state VARCHAR(255) NOT NULL DEFAULT 'Pennsylvania',
+    zipcode VARCHAR(16) NULL,
+    country VARCHAR(32) NOT NULL DEFAULT 'United States',
+    start_date DATE NOT NULL,
+    start_time TIME NOT NULL,
+    end_time TIME NOT NULL,
+    cost VARCHAR(16) NOT NULL
+);
+
+CREATE TABLE event_visit(
+    id SERIAL PRIMARY KEY,
+    person_id INT REFERENCES person(id),
+    event_id INT REFERENCES event(id),
+    visited_on DATE NOT NULL
+);
+
+#Disallow multiple visits in a day somehow?
+#might just do it in node but would nice to have
+#it here as well
+CREATE TABLE person_visit(
+    id SERIAL PRIMARY KEY,
+    person_id INT REFERENCES person(id),
+    place_id INT REFERENCES place(id),
+    visited_on DATE NOT NULL
+);

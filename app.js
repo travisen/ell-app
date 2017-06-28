@@ -7,18 +7,17 @@ app.set("view engine", "ejs");
 //Declare static directory for custom stylesheets
 app.use(express.static(__dirname + "/public"));
 
+
+// Routes
 app.get("/", function(req, res){
-    // res.send("Index page!");
     res.render("landing");
 });
 
 app.get("/find", function(req, res){
-    // res.send("Index page!");
     res.render("what-do");
 });
 
 app.get("/addplace", function(req, res){
-    // res.send("Index page!");
     res.render("add-place");
 });
 
@@ -43,10 +42,13 @@ app.get("/other", function(req, res){
 
 });
 
+//Admin pages which require authentication.
+
 app.get("/admin", function(req, res){
-    // res.send("Index page!");
     res.render("admin");
 });
+
+
 
 
 //Test db

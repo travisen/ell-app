@@ -1,0 +1,119 @@
+################# INSERT PEOPLE ################# 
+INSERT INTO person (first_name, last_name, username, email)
+  VALUES ('Tony', 'Tiger', 'tonyt1', 'tonyt1@email.com');
+
+INSERT INTO person (first_name, last_name, username, email)
+  VALUES ('Travis', 'Nykaza', 'nykazat1', 'travis.nykaza@gmail.com');
+
+INSERT INTO person (first_name, last_name, username, email)
+  VALUES ('Jon', 'Snow', 'snowj1', 'jon_snow@hotmail.com');
+
+INSERT INTO person (first_name, last_name, username, email)
+  VALUES ('Sansa', 'Stark', 'starks1', 'sstart239@unc.org');
+
+
+################# INSERT PLACES ################# 
+
+INSERT INTO place (
+    name, place_type, street_address, zipcode,
+    description, phone, cost)
+    VALUES ( 'Nina''s', 'eat', '602 New York St', '18679',
+     'A place to eat awseome wings though :)', '15709999999', '$'
+);
+
+INSERT INTO place (
+    name, place_type, street_address,
+    description, phone, cost)
+    VALUES ( 'Nay Aug Park', 'play', '500 Arthur Ave',
+    'A gorgeous park where you can hike, ball or have a cookout!',
+    '5703484137', 'free'
+);
+
+INSERT INTO place (
+    name, place_type, street_address, city, state, zipcode, country,
+    description, phone, cost) VALUES (
+    'Generic Place to Shop', 'shop', '800 Awesome Rd', 'New York', 'New York',
+    '10001', 'United States', 'a place in nyc to shop!!!!! #$&*(*(#',
+    '14449239999', '$$$'
+);
+
+################# INSERT ADMIN ################# 
+
+
+INSERT INTO admin (first_name, last_name, username, password, email)
+  VALUES ('Travis', 'Nykaza', 'nykazat1', 'insecuretest',
+   'travis.nykaza@gmail.com');
+
+################# INSERT BAD EMAIL TEST ################# 
+
+INSERT INTO person (first_name, last_name, username, email)
+  VALUES ('bad', 'bad', 'bat1','travi-__-2-2s.nyk#%#@@@@mail.com');
+
+-- INSERT INTO place (
+--     name, place_type, street_address, city, state, zipcode, country,
+--     description, phone, cost)
+
+################# ALTERING COLUMNS ################# 
+
+ALTER TABLE place_hours
+ALTER COLUMN close_time SET DATA TYPE time;
+
+ALTER TABLE place_hours
+ALTER COLUMN close_time SET DATA TYPE time;
+
+ALTER TABLE place_hours ADD CONSTRAINT
+constraint_name UNIQUE (day);
+
+
+DELETE FROM place_hours
+WHERE place_hours.id = 2;
+
+################# PLACE HOURS ################# 
+INSERT INTO place_hours (
+    place_id, day, open_time, close_time)
+    VALUES (1, 0, '12:00:00', '20:00:00'),
+    (1, 1, '12:00:00', '20:00:00'),
+    (1, 2, '15:00:00', '22:00:00'),
+    (1, 3, '16:00:00', '22:00:00'),
+    (1, 4, '17:00:00', '22:00:00'),
+    (1, 5, '18:00:00', '22:00:00'),
+    (1, 6, '19:00:00', '22:00:00');
+
+INSERT INTO place_hours (
+    place_id, day, open_time, close_time)
+    VALUES (2, 0, '10:00:00', '20:00:00'),
+    (2, 1, '10:00:00', '20:00:00'),
+    (2, 2, '10:00:00', '20:00:00'),
+    (2, 3, '10:00:00', '20:00:00'),
+    (2, 4, '10:00:00', '20:00:00'),
+    (2, 5, '10:00:00', '20:00:00'),
+    (2, 6, '10:00:00', '20:00:00');
+
+SELECT open_time, close_time
+FROM place_hours
+WHERE place_hours.place_id = 1;
+
+################# INSERT VISITS ################# 
+
+INSERT INTO person_visit(
+    person_id, place_id, visited_on)
+	VALUES(1, 1, '2017-6-17');
+
+INSERT INTO person_visit(
+    person_id, place_id, visited_on)
+	VALUES(1, 2, '2017-6-24');
+
+INSERT INTO person_visit(
+    person_id, place_id, visited_on)
+	VALUES(2, 2, '2017-6-24');
+
+INSERT INTO person_visit(
+    person_id, place_id, visited_on)
+	VALUES(2, 2, '2017-6-24');
+
+#Drop all tables in a schema named public
+DROP SCHEMA public CASCADE;
+CREATE SCHEMA public;
+#Restore default grants
+GRANT ALL ON SCHEMA public TO postgres;
+GRANT ALL ON SCHEMA public TO public;
