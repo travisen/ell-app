@@ -29,7 +29,8 @@ CREATE TABLE place (
     country VARCHAR(32) NOT NULL DEFAULT 'United States',
     description VARCHAR(255) NULL,
     phone VARCHAR(16) NULL,
-    cost VARCHAR(16) NOT NULL
+    cost VARCHAR(16) NOT NULL,
+    featured BOOLEAN NOT NULL DEFAULT FALSE
 );
 
 #Need to be careful with inserts and duplicate day
@@ -73,8 +74,14 @@ CREATE TABLE event_visit(
 #might just do it in node but would nice to have
 #it here as well
 CREATE TABLE person_visit(
-    id SERIAL PRIMARY KEY,
+    id SERIAL UNIQUE,
     person_id INT REFERENCES person(id),
     place_id INT REFERENCES place(id),
-    visited_on DATE NOT NULL
+    visited_on DATE NOT NULL,
+    PRIMARY KEY(person_id, visited_on)
 );
+
+
+# DROP ALL TABLES IN PUBLIC SCHEMA
+DROP SCHEMA public CASCADE;
+CREATE SCHEMA public;

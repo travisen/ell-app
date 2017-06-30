@@ -520,42 +520,26 @@
 	"buffers":
 	[
 		{
-			"file": "views/landing.ejs",
-			"settings":
-			{
-				"buffer_size": 271,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "views/partials/header.ejs",
-			"settings":
-			{
-				"buffer_size": 477,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "public/stylesheets/main.css",
-			"settings":
-			{
-				"buffer_size": 230,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "views/what-do.ejs",
-			"settings":
-			{
-				"buffer_size": 439,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "app.js",
 			"settings":
 			{
-				"buffer_size": 1669,
+				"buffer_size": 1599,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "misc/tables",
+			"settings":
+			{
+				"buffer_size": 2416,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "misc/sql-test-data",
+			"settings":
+			{
+				"buffer_size": 3609,
 				"line_ending": "Unix"
 			}
 		},
@@ -564,14 +548,6 @@
 			"settings":
 			{
 				"buffer_size": 293,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "tables",
-			"settings":
-			{
-				"buffer_size": 929,
 				"line_ending": "Unix"
 			}
 		}
@@ -636,6 +612,10 @@
 	},
 	"file_history":
 	[
+		"/home/travis/Desktop/ell-app/views/landing.ejs",
+		"/home/travis/Desktop/ell-app/views/partials/header.ejs",
+		"/home/travis/Desktop/ell-app/public/stylesheets/main.css",
+		"/home/travis/Desktop/ell-app/views/what-do.ejs",
 		"/home/travis/Desktop/ell-app/tables",
 		"/home/travis/Desktop/ell-app/ell-app.sublime-project",
 		"/home/travis/Desktop/ell-app/package.json",
@@ -645,7 +625,6 @@
 		"/home/travis/Desktop/ell-app/views/not-found.ejs",
 		"/home/travis/Desktop/ell-app/views/partials/styles.css",
 		"/home/travis/Desktop/ell-app/app.js",
-		"/home/travis/Desktop/ell-app/public/stylesheets/main.css",
 		"/home/travis/Desktop/ell-app/views/main.css",
 		"/home/travis/Desktop/ell-app/views/partials/main.css",
 		"/home/travis/Desktop/react-rdux-course/ReduxSimpleStarter/src/components/search_bar.js",
@@ -760,10 +739,7 @@
 		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/unittestresults.out",
 		"/home/travis/Desktop/osu/cs475/proj5/simd.p5.h",
 		"/home/travis/Desktop/osu/cs475/proj5/makefile",
-		"/home/travis/Desktop/osu/cs475/proj5/data2.txt",
-		"/home/travis/Desktop/osu/cs475/proj5/data1.txt",
-		"/home/travis/Desktop/osu/cs475/proj5/data.txt",
-		"/home/travis/Desktop/osu/cs475/proj5/test.cpp"
+		"/home/travis/Desktop/osu/cs475/proj5/data2.txt"
 	],
 	"find":
 	{
@@ -771,7 +747,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 111.0,
+		"height": 0.0,
 		"where_history":
 		[
 		]
@@ -781,6 +757,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"user",
 			"	",
 			"True",
 			"print",
@@ -907,8 +884,7 @@
 			"fullDeck",
 			"resetPlayer",
 			"deck[",
-			"int card",
-			"numHandCards"
+			"int card"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -926,129 +902,23 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "views/landing.ejs",
-					"settings":
-					{
-						"buffer_size": 271,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								29,
-								29
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "views/partials/header.ejs",
-					"settings":
-					{
-						"buffer_size": 477,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								244,
-								244
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "public/stylesheets/main.css",
-					"settings":
-					{
-						"buffer_size": 230,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								105,
-								105
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "views/what-do.ejs",
-					"settings":
-					{
-						"buffer_size": 439,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								439,
-								439
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
 					"file": "app.js",
 					"settings":
 					{
-						"buffer_size": 1669,
+						"buffer_size": 1599,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								937,
-								937
+								254,
+								254
 							]
 						],
 						"settings":
@@ -1058,13 +928,68 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 132.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 1,
+					"file": "misc/tables",
+					"settings":
+					{
+						"buffer_size": 2416,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2249,
+								2249
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SQL/SQL.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1056.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "misc/sql-test-data",
+					"settings":
+					{
+						"buffer_size": 3609,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3038,
+								3038
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/SQL/SQL.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1837.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
 					"file": "README.md",
 					"settings":
 					{
@@ -1082,34 +1007,6 @@
 						"settings":
 						{
 							"syntax": "Packages/Markdown/Markdown.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "tables",
-					"settings":
-					{
-						"buffer_size": 929,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								879,
-								879
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SQL/SQL.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1184,6 +1081,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 205.0,
+	"side_bar_width": 196.0,
 	"status_bar_visible": true
 }

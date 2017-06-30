@@ -107,6 +107,7 @@ INSERT INTO person_visit(
     person_id, place_id, visited_on)
 	VALUES(2, 2, '2017-6-24');
 
+#shouldn't add
 INSERT INTO person_visit(
     person_id, place_id, visited_on)
 	VALUES(2, 2, '2017-6-24');
@@ -117,3 +118,79 @@ CREATE SCHEMA public;
 #Restore default grants
 GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO public;
+
+#################### QUERIES #####################
+#Get first 10 enteries with type play
+SELECT name, street_address, cost
+FROM PLACE
+WHERE place_type = 'play'
+LIMIT 10;
+
+#Get first 10 enteries with type play starting at row 5
+SELECT name, street_address, cost
+FROM PLACE
+WHERE place_type = 'play'
+LIMIT 10 OFFSET 5;
+
+SELECT name, street_address, cost
+FROM PLACE
+WHERE place_type = 'eat'
+LIMIT 10;
+
+SELECT name, street_address, cost
+FROM PLACE
+WHERE place_type = 'shop'
+LIMIT 10;
+
+SELECT name, street_address, cost
+FROM PLACE
+WHERE place_type = 'other'
+LIMIT 10;
+
+#Get Details for a specific place description is 255chars max
+SELECT name, street_address, description, phone
+FROM PLACE
+WHERE place_type = 'play' AND name = 'Nay Aug Park';
+
+#Figure out how to parameterize input to prevent
+#sql injection
+INSERT INTO place (
+    name, place_type, street_address, city, state, zipcode, country,
+    description, phone, cost) VALUES (
+    '', '', '', '', '',
+    '', '', '',
+    '', 
+);
+# Order by most recent first
+
+SELECT *
+FROM person_visit
+ORDER BY "visited_on" DESC;
+
+# Get first and last name of visitor and where they visited, most recent
+SELECT person_visit.id, person.first_name, person.last_name, place.name , person_visit.visited_on
+FROM person_visit INNER JOIN
+person ON person_visit.person_id = person.id INNER JOIN
+place ON person_visit.place_id = place.id
+ORDER BY person_visit.visited_on DESC;
+
+#alphabetica asc first name
+SELECT person_visit.id, person.first_name, person.last_name, place.name ,person_visit.visited_on
+FROM person_visit INNER JOIN
+person ON person_visit.person_id = person.id INNER JOIN
+place ON person_visit.place_id = place.id
+ORDER BY person.first_name ASC;
+
+#alpha asc last name
+SELECT person_visit.id, person.first_name, person.last_name, place.name ,person_visit.visited_on
+FROM person_visit INNER JOIN
+person ON person_visit.person_id = person.id INNER JOIN
+place ON person_visit.place_id = place.id
+ORDER BY person.last_name ASC;
+
+#Remove visit with id.
+#id will be a hidden column
+DELETE FROM person_visit
+WHERE person_visit.id = 2;
+
+#for ajax on delete ask for table update

@@ -60,7 +60,7 @@ app.get('/db', function (request, response) {
     if (err) throw err;
     console.log('Connected to postgres! Getting data from users:');
 
-    client.query('SELECT * FROM users;', function(err, result) {
+    client.query('SELECT * FROM person;', function(err, result) {
       if(err) {
         console.error(err);
         response.send("Error" + err);
