@@ -12,3 +12,24 @@
 .nav-pills > li > a:visited {
     background-color: #286eaa;
 }
+
+.navbar-brand {
+	font-size: 1em;
+	padding-right: 2em;
+}
+
+.navbar {
+	min-height: 3em;
+/*	border-color: #00852D;*/
+}
+
+.navbar > .container-fluid {
+	min-height: 3em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	font-size: 1.5em;
+}
+
+.list-group {
+	padding-top: 1em; 
+}

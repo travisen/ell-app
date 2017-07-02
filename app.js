@@ -1,6 +1,8 @@
 var express       = require("express"),
     app           = express(),
-    pg            = require("pg");
+    pg            = require("pg"),
+    favicon       = require('serve-favicon'),
+    path          = require('path');
 
 //Setup DB pool
 const Pool        = require("pg-pool"),
@@ -23,6 +25,9 @@ app.set("view engine", "ejs");
 
 //Declare static directory for custom stylesheets
 app.use(express.static(__dirname + "/public"));
+//Link to favicon
+//Setup error handling here. Don't want this to prevent server startup.
+app.use(favicon(path.join(__dirname, 'public', 'favicon-globe.ico')))
 
 
 // Routes
@@ -34,16 +39,25 @@ app.get("/find", function(req, res){
     res.render("what-do");
 });
 
-app.get("/addplace", function(req, res){
-    res.render("add-place");
+app.get("/add-visit", function(req, res){
+    res.render("add-visit");
 });
 
-app.post("/addplace", function(req, res){
+app.post("/add-visit", function(req, res){
 
 });
 
 app.get("/play", function(req, res){
+  pool.query('SELECT * FROM place;', function(err, result) {
+    if(err){
+      console.error(err);
+      res.send("ERROR" + err);
+    } else {
+      res.send({results: result.rows});
+    }
 
+    });
+  // res.render("list-places");
 });
 
 
