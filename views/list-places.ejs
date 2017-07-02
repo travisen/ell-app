@@ -2,7 +2,7 @@
 
 <div class="container">
 	<div class="title">
-		<h1>Places you can play!</h1>
+		<h1>Places you can <%= header %>!</h1>
 	</div>
 	<div class="list-group">
 		<% for(var i = 0; i < places.length; i++) { %>
@@ -11,7 +11,7 @@
 			<%= places[i].name %>
 			<i class="fa fa-arrow-circle-o-right pull-right" aria-hidden="true"></i>
 		</h2>
- 		<p class="list-group-item-text">
+ 		<p id = "description"class="list-group-item-text">
  			<%= places[i].description %>
  		</p>
 		<p class="list-group-item-text">
@@ -20,39 +20,6 @@
 		</a> 
 		<% }%>
 	</div>
-<!-- 	<div class="title">
-		<h1>Places you can play!</h1>
-	</div>
-	<div class="list-group">
-	  <a href="/" class="list-group-item">
-	    <h2 class="list-group-item-heading">
-	    	Nay Aug Park
-			<i class="fa fa-arrow-circle-o-right pull-right" aria-hidden="true"></i>
-	    </h2>
-	    <p class="list-group-item-text">A really fancy park!</p>
-	    <p class="list-group-item-text">500 Arthur Ave, Scranton, PA 18510<span class="badge pull-right">1.5mi</span></p>
-	  </a>
-	</div>
-	<div class="list-group">
-	  <a href="/" class="list-group-item">
-	    <h2 class="list-group-item-heading">
-	    	Nay Aug Park
-	    	<i class="fa fa-arrow-circle-o-right pull-right" aria-hidden="true"></i>
-	    </h2>
-	    <p class="list-group-item-text">A really fancy park!</p>
-	    <p class="list-group-item-text">500 Arthur Ave, Scranton, PA 18510<span class="badge pull-right">1.5mi</span></p>
-	  </a>
-	</div>
-	<div class="list-group">
-	  <a href="/" class="list-group-item">
-	    <h2 class="list-group-item-heading">
-	    	Nay Aug Park
-	    	<i class="fa fa-arrow-circle-o-right pull-right" aria-hidden="true"></i>
-	    </h2>
-	    <p class="list-group-item-text">A really fancy park!</p>
-	    <p class="list-group-item-text">500 Arthur Ave, Scranton, PA 18510<span class="badge pull-right">1.5mi</span></p>
-	  </a>
-	</div> -->
 </div>
 
 <% include partials/footer %>

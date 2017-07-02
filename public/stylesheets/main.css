@@ -33,3 +33,7 @@
 .list-group {
 	padding-top: 1em; 
 }
+
+#description {
+	color: #333333;
+}

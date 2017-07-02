@@ -48,8 +48,11 @@ app.post("/add-visit", function(req, res){
 
 });
 
-app.get("/play", function(req, res){
-  pool.query('SELECT * FROM place;', function(err, result) {
+//Review getting data from parameters.
+//Ensure it is secure.
+app.get("/find/:type", function(req, res){
+  pool.query(
+    'SELECT name, description, street_address, city, state, zipcode, cost FROM place;', function(err, result) {
     if(err){
       console.error(err);
       res.send("ERROR" + err);
@@ -68,8 +71,11 @@ app.get("/play", function(req, res){
         places[i].state = unParsedData[i].state,
         places[i].zipcode = unParsedData[i].zipcode;
       }
-
-      res.render("list-places", { places: places });
+      let header = req.params.type;
+      res.render("list-places", {
+        header: header, 
+        places: places 
+      });
     }
 
     });
@@ -152,15 +158,15 @@ app.get("/*", function(req, res){
     res.render("not-found");
 });
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!')
-})
+// app.listen(3000, function () {
+//   console.log('Example app listening on port 3000!')
+// })
 
-// app.listen(process.env.PORT || 3000 , function(){
-//     if (process.env.PORT != null){
-//         var port = process.env.PORT;
-//     } else {
-//         var port = 3000;
-//     }
-//     console.log("Server started on port: %d", port);
-// });
+app.listen(process.env.PORT || 3000 , function(){
+    if (process.env.PORT != null){
+        var port = process.env.PORT;
+    } else {
+        var port = 3000;
+    }
+    console.log("Server started on port: %d", port);
+});
