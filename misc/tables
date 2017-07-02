@@ -25,7 +25,7 @@ CREATE TABLE place (
     street_address VARCHAR(64) NOT NULL,
     city VARCHAR(64) NOT NULL DEFAULT 'Scranton',
     state VARCHAR(16) NOT NULL DEFAULT 'Pennsylvania',
-    zipcode VARCHAR(16) NULL,
+    zipcode VARCHAR(16) NOT NULL,
     country VARCHAR(32) NOT NULL DEFAULT 'United States',
     description VARCHAR(255) NULL,
     phone VARCHAR(16) NULL,

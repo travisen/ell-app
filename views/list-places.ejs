@@ -5,6 +5,25 @@
 		<h1>Places you can play!</h1>
 	</div>
 	<div class="list-group">
+		<% for(var i = 0; i < places.length; i++) { %>
+		<a href="#" class="list-group-item">
+		<h2 class="list-group-item-heading">
+			<%= places[i].name %>
+			<i class="fa fa-arrow-circle-o-right pull-right" aria-hidden="true"></i>
+		</h2>
+ 		<p class="list-group-item-text">
+ 			<%= places[i].description %>
+ 		</p>
+		<p class="list-group-item-text">
+			<%= places[i].street_address %> <%= places[i].city %>, <%= places[i].state %> <%= places[i].zipcode %><span class="badge pull-right">1.5mi</span>
+		</p>
+		</a> 
+		<% }%>
+	</div>
+<!-- 	<div class="title">
+		<h1>Places you can play!</h1>
+	</div>
+	<div class="list-group">
 	  <a href="/" class="list-group-item">
 	    <h2 class="list-group-item-heading">
 	    	Nay Aug Park
@@ -33,7 +52,7 @@
 	    <p class="list-group-item-text">A really fancy park!</p>
 	    <p class="list-group-item-text">500 Arthur Ave, Scranton, PA 18510<span class="badge pull-right">1.5mi</span></p>
 	  </a>
-	</div>
+	</div> -->
 </div>
 
 <% include partials/footer %>
