@@ -194,3 +194,12 @@ DELETE FROM person_visit
 WHERE person_visit.id = 2;
 
 #for ajax on delete ask for table update
+
+
+
+#Get Total visits for a particular person and pair with name
+
+#Get Visits Per month
+
+#Get Visits per week
+
