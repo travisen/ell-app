@@ -2,6 +2,8 @@ var express = require("express");
 var router = express.Router();
 
 
+const pool = require("../psql/db_setup.js");
+
 // Routes
 router.get("/", function(req, res){
     res.render("landing");
