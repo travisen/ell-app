@@ -4,7 +4,7 @@ var express       = require("express"),
     favicon       = require('serve-favicon'),
     path          = require('path');
 
-var placeRoutes  = require("./routes/places") 
+var placeRoutes  = require("./routes/user_index"); 
 
 app.set("view engine", "ejs");
 

@@ -5,17 +5,17 @@
 		<h1>Places you can <%= header %>!</h1>
 	</div>
 	<div class="list-group">
-		<% for(var i = 0; i < places.length; i++) { %>
+		<% for(var i = 0; i < placeList.length; i++) { %>
 		<a href="#" class="list-group-item">
 		<h2 class="list-group-item-heading">
-			<%= places[i].name %>
+			<%= placeList[i].name %>
 			<i class="fa fa-arrow-circle-o-right pull-right" aria-hidden="true"></i>
 		</h2>
  		<p id = "description"class="list-group-item-text">
- 			<%= places[i].description %>
+ 			<%= placeList[i].description %>
  		</p>
 		<p class="list-group-item-text">
-			<%= places[i].street_address %> <%= places[i].city %>, <%= places[i].state %> <%= places[i].zipcode %><span class="badge pull-right">1.5mi</span>
+			<%= placeList[i].street_address %> <%= placeList[i].city %>, <%= placeList[i].state %> <%= placeList[i].zipcode %><span class="badge pull-right">1.5mi</span>
 		</p>
 		</a> 
 		<% }%>
