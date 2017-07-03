@@ -12,6 +12,10 @@ INSERT INTO person (first_name, last_name, username, email)
   VALUES ('Sansa', 'Stark', 'starks1', 'sstart239@unc.org');
 
 
+INSERT INTO person (first_name, last_name, username, email)
+  VALUES ('Eddard', 'Stark', 'starke1', 'edrulez@unc.org');
+
+
 ################# INSERT PLACES ################# 
 
 INSERT INTO place (
@@ -203,3 +207,51 @@ WHERE person_visit.id = 2;
 
 #Get Visits per week
 
+#Get 3 persons with top visits per week/month
+SELECT person.first_name, pe
+FROM person_visit
+ORDER BY "visited_on" DESC;
+
+SELECT person.id, COUNT(person_visit.person_id) AS Visits
+FROM person LEFT JOIN
+person_visit ON person.id = person_visit.person_id
+GROUP BY person.id;
+
+
+SELECT person.id, person.first_name, COUNT(person_visit.person_id) AS visits
+FROM person LEFT JOIN
+person_visit ON person.id = person_visit.person_id
+GROUP BY person.id
+ORDER BY visits DESC;
+
+#Get Top 3 people by number of visits in month 6
+#where visits is greater than 0.
+#kind of hackish see if better way later
+SELECT person.id, person.first_name, COUNT(person_visit.person_id) AS visits
+FROM person LEFT JOIN
+person_visit ON person.id = person_visit.person_id AND
+EXTRACT(MONTH FROM person_visit.visited_on) = 6
+GROUP BY person.id
+HAVING COUNT(person_visit.person_id) > 0
+ORDER BY visits DESC
+LIMIT 3;
+
+#Get total scoreboard
+SELECT person.id, person.first_name, COUNT(person_visit.person_id) AS visits
+FROM person LEFT JOIN
+person_visit ON person.id = person_visit.person_id AND
+EXTRACT(MONTH FROM person_visit.visited_on) = 6
+GROUP BY person.id
+HAVING COUNT(person_visit.person_id) > 0
+ORDER BY visits DESC;
+
+
+#Get total monthly visits
+
+CREATE TABLE person_visit(
+    id SERIAL UNIQUE,
+    person_id INT REFERENCES person(id),
+    place_id INT REFERENCES place(id),
+    visited_on DATE NOT NULL,
+    PRIMARY KEY(person_id, visited_on)
+);

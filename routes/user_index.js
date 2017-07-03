@@ -1,5 +1,7 @@
-var express = require("express");
-var places  = require("../controllers/places");
+var express       = require("express");
+    places        = require("../controllers/places");
+    leaderboard   = require("../controllers/leaderboard");
+
 var router = express.Router();
 
 // Routes
@@ -18,6 +20,8 @@ router.get("/add-visit", function(req, res){
 router.post("/add-visit", function(req, res){
 
 });
+
+router.get("/leaderboard", leaderboard.get);
 
 //Review getting data from parameters.
 //Ensure it is secure.
