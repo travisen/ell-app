@@ -1,4 +1,5 @@
 <% include partials/header %>
+<div class="container">
 	<ul class="nav nav-pills nav-stacked">
 
 	  <li><a href="/find"class="btn btn-lg btn-primary btn-block">Find things to do</a></li>
@@ -8,4 +9,29 @@
 	  <li><a href="/leaderboard" class="btn btn-lg btn-primary btn-block">Leaderboard</a></li>
 
 	</ul>
+	<div id="landing-tbl" class="panel panel-default">
+		<div class="title">
+			<h1>Top 3 Explorers in <%= header %></h1>
+		</div>
+		<table class="table">
+		  <thead>
+		    <tr>
+		      <th>Rank</th>
+		      <th>Name</th>
+		      <th>Visits</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		  	<% for(var i = 0; i < leaders.length; i++) { %>
+		    <tr>
+		      <th scope="row"><%= i+1 %></th>
+		      <td><%= leaders[i].first_name %></td>
+		      <td><%= leaders[i].visits %></td>
+		    </tr>
+		    <% }%>
+		  </tbody>
+		</table>
+	</div>
+
+</div>
 <% include partials/footer %>
