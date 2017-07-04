@@ -2,6 +2,8 @@
 
 const pool = require("../psql/db_setup.js");
 const q = require("../psql/queries"); //import queries
+const request = require('request');
+
 
 var places = {};
 
@@ -44,6 +46,7 @@ places.get = function(req, res){
   }
 }
 
+//Refactor this function
 places.getDetails = function(req, res) {
 
   function _render(err, result){
@@ -52,8 +55,28 @@ places.getDetails = function(req, res) {
       res.send("ERROR" + err);
     } 
     else {
+
+      let directionStr = "https://maps.google.com?saddr=Current+Location&daddr="
+
       let placeDetails = result.rows[0];
-      res.render("place-details", { placeDetails: placeDetails });
+      //Parse address for google maps query
+      let addressArr = placeDetails.street_address.split(" ");
+
+      addressArr.push(placeDetails.city, placeDetails.state,
+        placeDetails.zipcode);
+
+      let address =  addressArr.join(" ");
+
+      for(var word in addressArr) {
+        directionStr += "+";
+        directionStr += addressArr[word];
+      }
+
+      console.log(directionStr);
+
+      res.render("place-details", { placeDetails: placeDetails,
+        directionStr: directionStr,
+        address: address});
     }
   }
   var text = 'SELECT id, name, description, street_address, city, state, zipcode, cost FROM place WHERE id = ($1)'
