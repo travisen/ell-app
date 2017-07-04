@@ -1,14 +1,22 @@
 <% include partials/header %>
-	
 	<h2>Add a fun place you went to for points!</h2>
 	<form action="/add-place" method="POST">
 	  <div class="form-group">
-	    <label>Name</label>
-	    <input type="text" name="name" class="form-control" placeholder="Name">
+	  	<label>Place Name</label>
+	  	<input class="form-control" type="text" list="places">
+	  	<label for="places">
+	  	  <datalist id="places">
+	  	    <select>
+	  	    	<% for(var i = 0; i < placeList.length; i++) { %>
+	  	      		<option value="<%=placeList[i].name%>"><%=placeList[i].name%></option>
+	  	      	<% } %>
+	  	    </select>
+	  	  </datalist>
+	  	</label>
 	  </div>
 	  <div class="form-group">
-	    <label>Place</label>
-	    <input type="text" name="place" class="form-control" placeholder="Place">
+	    <label>Your Name</label>
+	    <input type="text" name="place" class="form-control" placeholder="First Name">
 	  </div>
 	  <div class="form-group">
 	    <label>Date</label>

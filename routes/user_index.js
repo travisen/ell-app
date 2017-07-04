@@ -1,7 +1,8 @@
 var express       = require("express"),
     places        = require("../controllers/places"),
     leaderboard   = require("../controllers/leaderboard"),
-    landing       = require("../controllers/landing");
+    landing       = require("../controllers/landing"),
+    visit         = require("../controllers/add-visit");
 
 var router = express.Router();
 
@@ -12,9 +13,7 @@ router.get("/find", function(req, res){
     res.render("what-do");
 });
 
-router.get("/add-visit", function(req, res){
-    res.render("add-visit");
-});
+router.get("/add-visit", visit.getForm);
 
 router.post("/add-visit", function(req, res){
 
