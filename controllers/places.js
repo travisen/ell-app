@@ -1,10 +1,9 @@
 'use strict';
 
 const pool = require("../psql/db_setup.js");
+const q = require("../psql/queries"); //import queries
 
 var places = {};
-
-
 
 places.get = function(req, res){
 
@@ -29,25 +28,35 @@ places.get = function(req, res){
 
   let searchType = req.params.type;
   if (searchType === "play"){
-    pool.query(
-      "SELECT name, description, street_address, city, state, zipcode, cost FROM place WHERE place_type = 'play';",
-       _render) 
+    pool.query(q.play, _render); 
   }
   else if (searchType === "eat") {
-    pool.query(
-      "SELECT name, description, street_address, city, state, zipcode, cost FROM place WHERE place_type = 'eat';",
-       _render) 
-  } else if (searchType === "shop") {
-    pool.query(
-      "SELECT name, description, street_address, city, state, zipcode, cost FROM place WHERE place_type = 'shop';",
-       _render) 
-  } else if (searchType === "other") {
-    pool.query(
-      "SELECT name, description, street_address, city, state, zipcode, cost FROM place WHERE place_type = 'other';",
-       _render) 
-  } else { // Page does not exist.
+    pool.query(q.eat, _render) 
+  }
+  else if (searchType === "shop") {
+    pool.query(q.shop, _render) 
+  }
+  else if (searchType === "other") {
+    pool.query(q.other, _render) 
+  }
+  else { // Page does not exist.
     res.redirect("/find");
   }
 }
+
+// places.getDetails = function(req, res) {
+//   function _render(err, result){
+//     if(err){
+//       console.error(err);
+//       res.send("ERROR" + err);
+//     } 
+//     else {
+//       let placeDetails = result.rows
+        
+//       res.render("list-places", { placeDetails: placeDetails });
+//     }
+//   }
+//   pool.query(q.getById, _render);
+// }
 
 module.exports = places;

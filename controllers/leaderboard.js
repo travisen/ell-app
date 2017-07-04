@@ -1,5 +1,6 @@
 'use strict';
 const pool = require("../psql/db_setup.js");
+const q = require("../psql/queries"); //import queries
 
 var leaderBoard = {};
 
@@ -36,8 +37,6 @@ leaderBoard.get = function(req, res) {
 	  }
 	}
 
-	pool.query(
-	  "SELECT person.id, person.first_name, COUNT(person_visit.person_id) AS visits FROM person LEFT JOIN person_visit ON person.id = person_visit.person_id AND EXTRACT(MONTH FROM person_visit.visited_on) = 6 GROUP BY person.id HAVING COUNT(person_visit.person_id) > 0 ORDER BY visits DESC;",
-	   _render)
+	pool.query(q.leaders, _render)
 }
 module.exports = leaderBoard;

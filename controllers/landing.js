@@ -1,5 +1,6 @@
 'use strict';
 const pool = require("../psql/db_setup.js");
+const q = require("../psql/queries"); //import queries
 
 var landing = {};
 
@@ -26,7 +27,6 @@ landing.get = function(req, res) {
 	    res.send("ERROR" + err);
 	  } else {
 	    let leaders = result.rows
-	    console.log(leaders);
 	    let header = month[d.getMonth()];
 
 	    res.render("landing", {
@@ -36,8 +36,6 @@ landing.get = function(req, res) {
 	  }
 	}
 
-	pool.query(
-	  "SELECT person.id, person.first_name, COUNT(person_visit.person_id) AS visits FROM person LEFT JOIN person_visit ON person.id = person_visit.person_id AND EXTRACT(MONTH FROM person_visit.visited_on) = 6 GROUP BY person.id HAVING COUNT(person_visit.person_id) > 0 ORDER BY visits DESC LIMIT 3;",
-	   _render)
+	pool.query(q.top3Leaders, _render)
 }
 module.exports = landing;

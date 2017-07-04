@@ -152,7 +152,7 @@ WHERE place_type = 'other'
 LIMIT 10;
 
 #Get Details for a specific place description is 255chars max
-SELECT name, street_address, description, phone
+SELECT name, description, street_address, city, state, zipcode, cost
 FROM PLACE
 WHERE place_type = 'play' AND name = 'Nay Aug Park';
 

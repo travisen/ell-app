@@ -19,6 +19,5 @@ const pool = new Pool(config);
 
 //Export query method
 module.exports.query = (text, values) => {
-  // console.log('query:', text, values)
   return pool.query(text, values);
 }

@@ -6,8 +6,8 @@
 	</div>
 	<div class="list-group">
 		<% for(var i = 0; i < placeList.length; i++) { %>
-		<a href="#" class="list-group-item">
-		<h2 class="list-group-item-heading">
+		<a href="<%= placeList[i].id%>" class="list-group-item"
+learn>		<h2 class="list-group-item-heading">
 			<%= placeList[i].name %>
 			<i class="fa fa-arrow-circle-o-right pull-right" aria-hidden="true"></i>
 		</h2>

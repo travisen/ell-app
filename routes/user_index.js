@@ -25,4 +25,6 @@ router.get("/leaderboard", leaderboard.get);
 //Ensure it is secure.
 router.get("/find/:type", places.get);
 
+// router.get("/find/:type/:id", places.getDetails);
+
 module.exports = router;
