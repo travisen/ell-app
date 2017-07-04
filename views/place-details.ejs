@@ -1,10 +1,47 @@
 <% include partials/header %>
 
 <div class="container">
-	<div class="title">
-		<h1><%= header %>!</h1>
+	<div class="panel panel-success">
+		<div class="panel-heading title">
+			<h1>
+				<%= placeDetails.name %>
+				<span class="pull-right"><h4>$$$</h4></span>
+			</h1>
+			<p>
+				<%= placeDetails.street_address %>,
+				<%= placeDetails.city %>,
+				<%= placeDetails.state %>
+				<%= placeDetails.zipcode %>
+				<span class="pull-right">1.5mi</span>
+			</p>
+		</div>
+		<div class="panel-body">
+			<div id="place-id">
+				<%= placeDetails.id %>
+			</div>
+			<p><%= placeDetails.description %></p>
+
+			<div id="map"></div>
+			    <script>
+			      var map;
+			      function initMap() {
+			        map = new google.maps.Map(document.getElementById('map'), {
+			          center: {lat: 41.4016, lng: -75.6440},
+			          zoom: 15
+			        });
+			      }
+			    </script>
+			    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3_6fL3XmDEWSEQvp7VG7604nIwXsBacc&callback=initMap"
+			    async defer>
+			    </script>
+		</div>
+	</div>
+	<div id="details-btns" class="container">
+		<a id="find-new" type="button" class="btn btn-danger btn-lg btn-block"><i class="fa fa-arrow-left" aria-hidden="true"></i> Find a new place!</a>
+		<a id="get-directions" type="button" class="btn btn-success btn-lg btn-block"><i class="fa fa-location-arrow" aria-hidden="true"></i> Get Directions</a>
 	</div>
 
 </div>
 
 <% include partials/footer %>
+

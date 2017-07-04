@@ -19,7 +19,7 @@ q.other = `SELECT id, name, description, street_address, city, state, zipcode, c
 
 q.getById = `SELECT id, name, description, street_address, city, state, zipcode, cost
  FROM place
-  WHERE id = $1;`;
+  WHERE id = ($1)`;
 
 q.leaders = `SELECT person.id, person.first_name, COUNT(person_visit.person_id) AS visits
 	   FROM person LEFT JOIN person_visit ON person.id = person_visit.person_id

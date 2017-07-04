@@ -44,19 +44,28 @@ places.get = function(req, res){
   }
 }
 
-// places.getDetails = function(req, res) {
-//   function _render(err, result){
-//     if(err){
-//       console.error(err);
-//       res.send("ERROR" + err);
-//     } 
-//     else {
-//       let placeDetails = result.rows
-        
-//       res.render("list-places", { placeDetails: placeDetails });
-//     }
-//   }
-//   pool.query(q.getById, _render);
-// }
+places.getDetails = function(req, res) {
+
+  function _render(err, result){
+    if(err){
+      console.error(err);
+      res.send("ERROR" + err);
+    } 
+    else {
+      let placeDetails = result.rows[0];
+      res.render("place-details", { placeDetails: placeDetails });
+    }
+  }
+  var text = 'SELECT id, name, description, street_address, city, state, zipcode, cost FROM place WHERE id = ($1)'
+  var num = Number(req.params.id);
+
+  //possible pg bug. works with config object but not otherwise...
+  const query = {
+    text: q.getById,
+    values: [num]
+  }
+
+  pool.query(query, _render);
+}
 
 module.exports = places;
