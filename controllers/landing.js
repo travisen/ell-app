@@ -6,6 +6,7 @@ var landing = {};
 
 var d = new Date();
 var month = new Array();
+month[0] = "Out of Range";
 month[1] = "January";
 month[2] = "February";
 month[3] = "March";
@@ -29,17 +30,14 @@ landing.get = function(req, res) {
 	  } else {
 	    let leaders = result.rows
 
-
 	    res.render("landing", {
 	      header: header, 
 	      leaders: leaders 
 	    });
 	  }
 	}
-	let monthNumber = d.getMonth() + 1
+	let monthNumber = d.getMonth() + 1;
 	let header = month[monthNumber];
-
-	console.log(monthNumber, header);
 
 	const query = {
 	  text: q.top3Leaders,

@@ -6,18 +6,19 @@ var leaderBoard = {};
 
 var d = new Date();
 var month = new Array();
-month[0] = "January";
-month[1] = "February";
-month[2] = "March";
-month[3] = "April";
-month[4] = "May";
-month[5] = "June";
-month[6] = "July";
-month[7] = "August";
-month[8] = "September";
-month[9] = "October";
-month[10] = "November";
-month[11] = "December";
+month[0] = "Out of Range";
+month[1] = "January";
+month[2] = "February";
+month[3] = "March";
+month[4] = "April";
+month[5] = "May";
+month[6] = "June";
+month[7] = "July";
+month[8] = "August";
+month[9] = "September";
+month[10] = "October";
+month[11] = "November";
+month[12] = "December";
 
 leaderBoard.get = function(req, res) {
 
@@ -27,8 +28,6 @@ leaderBoard.get = function(req, res) {
 	    res.send("ERROR" + err);
 	  } else {
 	    let leaders = result.rows
-	    console.log(leaders);
-	    let header = month[d.getMonth()];
 
 	    res.render("leaderboard", {
 	      header: header, 
@@ -36,7 +35,16 @@ leaderBoard.get = function(req, res) {
 	    });
 	  }
 	}
+	let monthNumber = d.getMonth() + 1;
+	let header = month[monthNumber];
 
-	pool.query(q.leaders, _render)
+	const query = {
+	  text: q.leaders,
+	  values: [monthNumber]
+	}
+
+	console.log(query.values);
+
+	pool.query(query, _render)
 }
 module.exports = leaderBoard;
