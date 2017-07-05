@@ -6,20 +6,21 @@ var landing = {};
 
 var d = new Date();
 var month = new Array();
-month[0] = "January";
-month[1] = "February";
-month[2] = "March";
-month[3] = "April";
-month[4] = "May";
-month[5] = "June";
-month[6] = "July";
-month[7] = "August";
-month[8] = "September";
-month[9] = "October";
-month[10] = "November";
-month[11] = "December";
+month[1] = "January";
+month[2] = "February";
+month[3] = "March";
+month[4] = "April";
+month[5] = "May";
+month[6] = "June";
+month[7] = "July";
+month[8] = "August";
+month[9] = "September";
+month[10] = "October";
+month[11] = "November";
+month[12] = "December";
 
 landing.get = function(req, res) {
+
 
 	function _render(err, result){
 	  if(err){
@@ -27,7 +28,7 @@ landing.get = function(req, res) {
 	    res.send("ERROR" + err);
 	  } else {
 	    let leaders = result.rows
-	    let header = month[d.getMonth()];
+
 
 	    res.render("landing", {
 	      header: header, 
@@ -35,7 +36,18 @@ landing.get = function(req, res) {
 	    });
 	  }
 	}
+	let monthNumber = d.getMonth() + 1
+	let header = month[monthNumber];
 
-	pool.query(q.top3Leaders, _render)
+	console.log(monthNumber, header);
+
+	const query = {
+	  text: q.top3Leaders,
+	  values: [monthNumber]
+	}
+
+	console.log(query.values);
+
+	pool.query(query, _render)
 }
 module.exports = landing;

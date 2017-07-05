@@ -28,12 +28,14 @@ visit.getForm = function(req, res){
   pool.query(q.getNames, _render);
 }
 
+// This function works but is not robust.
+// Need to figure out how to handle username
 visit.post = function(req, res) {
   console.log(req.body);
   res.send("Thanks, " + req.body.name);
   const query = {
-    text: q.insertVisit,
-    values: [1, 1, '2011-1-3']
+    text: q.insertVisit, //VALUES example: (travis, Nay Aug Park, 2011-2-3 )
+    values: [req.body.name, req.body.place, req.body.date]
   }
   pool.query(query);
 }

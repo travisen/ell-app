@@ -255,3 +255,14 @@ CREATE TABLE person_visit(
     visited_on DATE NOT NULL,
     PRIMARY KEY(person_id, visited_on)
 );
+
+### GET person id from name and place id by name
+SELECT id from person where first_name='Travis';
+SELECT id from place where name='Nay Aug Park';
+
+INSERT INTO person_visit(
+    person_id, place_id, visited_on)
+    VALUES(
+        (SELECT id from person where first_name=$1),
+        (SELECT id from place where name=$2),
+        $3);
