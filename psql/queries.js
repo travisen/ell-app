@@ -35,4 +35,7 @@ q.top3Leaders = `SELECT person.id, person.first_name, COUNT(person_visit.person_
 
 q.getNames = `SELECT id, name FROM place;`;
 
+q.insertVisit = `INSERT INTO person_visit(person_id, place_id, visited_on)
+VALUES($1, $2, $3);`
+
 module.exports = q;

@@ -2,7 +2,8 @@
 var express       = require("express"),
     app           = express(),
     favicon       = require('serve-favicon'),
-    path          = require('path');
+    path          = require('path'),
+    bodyParser    = require('body-parser');
 
 var placeRoutes  = require("./routes/user_index"); 
 
@@ -15,6 +16,12 @@ app.use(express.static(__dirname + "/public"));
 app.use(favicon(path.join(__dirname, 'public', 'favicon-globe.ico')))
 
 app.use(placeRoutes);
+
+// // parse application/x-www-form-urlencoded
+// app.use(bodyParser.urlencoded({ extended: false }));
+
+// // parse application/json
+// app.use(bodyParser.json());
 
 //Admin pages which require authentication.
 

@@ -4,6 +4,16 @@ var express       = require("express"),
     landing       = require("../controllers/landing"),
     visit         = require("../controllers/add-visit");
 
+
+var bodyParser = require('body-parser')
+
+// create application/json parser
+var jsonParser = bodyParser.json()
+
+// create application/x-www-form-urlencoded parser
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
+
+
 var router = express.Router();
 
 // Routes
@@ -15,9 +25,7 @@ router.get("/find", function(req, res){
 
 router.get("/add-visit", visit.getForm);
 
-router.post("/add-visit", function(req, res){
-
-});
+router.post("/add-visit", urlencodedParser, visit.post);
 
 router.get("/leaderboard", leaderboard.get);
 //Review getting data from parameters.
