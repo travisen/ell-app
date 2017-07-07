@@ -39,11 +39,17 @@ visit.getForm = function(req, res){
     } else {
       let currentDate = _getCurrentDate();
       let placeList = result.rows;
+      let isVis = "not-visible";
+      let errMsg = "";
 
       console.log(currentDate);
 
-      res.render("add-visit", {placeList: placeList,
-       currentDate:currentDate});
+      res.render("add-visit", {
+       placeList: placeList,
+       currentDate:currentDate,
+       isVis:isVis,
+       errMsg:errMsg
+     });
     }
   }
   console.log(q.getNames);
@@ -53,13 +59,38 @@ visit.getForm = function(req, res){
 // This function works but is not robust.
 // Need to figure out how to handle username
 visit.post = function(req, res) {
+
   console.log(req.body);
-  res.send("Thanks, " + req.body.name);
   const query = {
     text: q.insertVisit, //VALUES example: (travis, Nay Aug Park, 2011-2-3 )
     values: [req.body.name, req.body.place, req.body.date]
   }
-  pool.query(query);
+  pool.query(query)
+    .then(req => {
+      let isVis = "not-visible";
+    })
+    .catch(error =>  {
+
+      res.send("Whoops"); //remove this later
+
+      let isVis = "visible";
+      console.error(error.code)
+      let errMsg = "Something went wrong, sorry.";
+      if(error.code === "23505") {
+
+        errMsg = "Sorry, " + req.name + ". But You've alredy visited"
+        + req.place + " on " + req.date + ".";
+
+        console.log("Duplicate Error");
+        res.status(500);
+        res.render("add-visit", {
+          placeList: placeList,
+          currentDate:currentDate,
+          errMsg:errMsg,
+          isVis:isVis
+        })
+      }
+    })
 }
 
 module.exports = visit;

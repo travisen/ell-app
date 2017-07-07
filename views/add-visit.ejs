@@ -1,6 +1,11 @@
 <% include partials/header %>
 	<div id="content-padding" class="container">
 		<h2>Add a fun place you went to for points!</h2>
+		<div class="alert alert-danger <%=isVis%>" role="alert">
+		  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+		  <span class="sr-only">Error:</span>
+		  <%= errMsg %>
+		</div>
 		<form action="/add-visit" method="POST">
 
 		  <div class="form-group">
