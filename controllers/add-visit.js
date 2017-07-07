@@ -12,16 +12,38 @@ const q = require("../psql/queries"); //import queries
 
 var visit = {};
 
+function _getCurrentDate(){
+  var today = new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth()+1; //January is 0!
+  var yyyy = today.getFullYear();
+
+  if(dd<10) {
+      dd = '0'+dd
+  } 
+
+  if(mm<10) {
+      mm = '0'+mm
+  } 
+
+  today = yyyy + '-' + mm + '-' + dd;
+
+  return today;
+}
+
 visit.getForm = function(req, res){
   function _render(err, result){
     if(err) {
       console.error(err);
       res.send("ERROR" + err);
     } else {
+      let currentDate = _getCurrentDate();
+      let placeList = result.rows;
 
-      let placeList = result.rows
-      // console.log(placeList);
-      res.render("add-visit", {placeList: placeList});
+      console.log(currentDate);
+
+      res.render("add-visit", {placeList: placeList,
+       currentDate:currentDate});
     }
   }
   console.log(q.getNames);
