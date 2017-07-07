@@ -4,12 +4,92 @@
 		"selected_items":
 		[
 			[
-				"font",
-				"font-size"
+				"req",
+				"require"
+			],
+			[
+				"map",
+				"mapStr"
+			],
+			[
+				"add",
+				"addressArr"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"get",
+				"getById"
+			],
+			[
+				"place",
+				"placeDetails"
+			],
+			[
+				"re",
+				"require"
+			],
+			[
+				"padd",
+				"padding-bottom"
+			],
+			[
+				"leade",
+				"leaderboard"
+			],
+			[
+				"person",
+				"person_visit"
+			],
+			[
+				"visi",
+				"visited_on"
+			],
+			[
+				"pers",
+				"person_visit"
+			],
+			[
+				"firs",
+				"first_name"
+			],
+			[
+				"fir",
+				"first_name"
+			],
+			[
+				"se",
+				"searchType"
+			],
+			[
+				"Dr",
+				"directory"
+			],
+			[
+				"par",
+				"parsedData"
+			],
+			[
+				"border-col",
+				"border-color"
+			],
+			[
+				"paddin",
+				"padding-bottom"
+			],
+			[
+				"paddi",
+				"padding-top"
 			],
 			[
 				"back",
-				"background"
+				"background-color"
+			],
+			[
+				"font",
+				"font-size"
 			],
 			[
 				"max",
@@ -312,10 +392,6 @@
 				"parsedStrs"
 			],
 			[
-				"par",
-				"parsedStr"
-			],
-			[
 				"BUF",
 				"BUFFSIZE"
 			],
@@ -374,10 +450,6 @@
 			[
 				"co",
 				"connections"
-			],
-			[
-				"get",
-				"getRandNum"
 			],
 			[
 				"MAX_",
@@ -442,78 +514,6 @@
 			[
 				"edg",
 				"edgeList"
-			],
-			[
-				"two",
-				"twoOptTakeTwo"
-			],
-			[
-				"sty",
-				"styleUrls	property"
-			],
-			[
-				"template",
-				"templateUrl	property"
-			],
-			[
-				"mar",
-				"margin-top"
-			],
-			[
-				"padd",
-				"padding-top"
-			],
-			[
-				"background",
-				"background-color"
-			],
-			[
-				"hei",
-				"max-height"
-			],
-			[
-				"wi",
-				"width"
-			],
-			[
-				"wid",
-				"max-width"
-			],
-			[
-				"next",
-				"nextWord"
-			],
-			[
-				"nex",
-				"nextWord"
-			],
-			[
-				"Hash",
-				"HashLink"
-			],
-			[
-				"prin",
-				"hashMapPrint"
-			],
-			[
-				"cont",
-				"hashMapContainsKey"
-			],
-			[
-				"init",
-				"hashMapInit"
-			],
-			[
-				"empty",
-				"emptyBuckets"
-			],
-			[
-				"hashmap",
-				"hashMapCapacity"
-			],
-			[
-				"con",
-				"hashMapContainsKey"
 			]
 		]
 	},
@@ -523,15 +523,79 @@
 			"file": "app.js",
 			"settings":
 			{
-				"buffer_size": 1599,
+				"buffer_size": 1299,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "misc/tables",
+			"file": "routes/user_index.js",
 			"settings":
 			{
-				"buffer_size": 2416,
+				"buffer_size": 964,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "controllers/landing.js",
+			"settings":
+			{
+				"buffer_size": 965,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "controllers/leaderboard.js",
+			"settings":
+			{
+				"buffer_size": 976,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "controllers/add-visit.js",
+			"settings":
+			{
+				"buffer_size": 1105,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/add-visit.ejs",
+			"settings":
+			{
+				"buffer_size": 804,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/partials/header.ejs",
+			"settings":
+			{
+				"buffer_size": 2143,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/stylesheets/main.css",
+			"settings":
+			{
+				"buffer_size": 913,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/partials/footer.ejs",
+			"settings":
+			{
+				"buffer_size": 106,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "psql/queries.js",
+			"settings":
+			{
+				"buffer_size": 1573,
 				"line_ending": "Unix"
 			}
 		},
@@ -539,15 +603,7 @@
 			"file": "misc/sql-test-data",
 			"settings":
 			{
-				"buffer_size": 3609,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "README.md",
-			"settings":
-			{
-				"buffer_size": 293,
+				"buffer_size": 7746,
 				"line_ending": "Unix"
 			}
 		}
@@ -612,17 +668,33 @@
 	},
 	"file_history":
 	[
-		"/home/travis/Desktop/ell-app/views/landing.ejs",
+		"/home/travis/Desktop/ell-app/package.json",
 		"/home/travis/Desktop/ell-app/views/partials/header.ejs",
+		"/home/travis/Desktop/ell-app/controllers/landing.js",
+		"/home/travis/Desktop/ell-app/controllers/leaderboard.js",
+		"/home/travis/Desktop/ell-app/views/add-visit.ejs",
+		"/home/travis/Desktop/ell-app/controllers/add-visit.ejs",
+		"/home/travis/Desktop/ell-app/views/leaderboard.ejs",
+		"/home/travis/Desktop/ell-app/public/javascript/script.js",
+		"/home/travis/Desktop/ell-app/views/place-details.ejs",
+		"/home/travis/Desktop/ell-app/controllers/places.js",
+		"/home/travis/Desktop/ell-app/views/list-places.ejs",
 		"/home/travis/Desktop/ell-app/public/stylesheets/main.css",
+		"/home/travis/Desktop/ell-app/psql/db_setup.js",
+		"/home/travis/Desktop/ell-app/psql/queries.js",
+		"/home/travis/Desktop/ell-app/misc/sql-test-data",
+		"/home/travis/Desktop/ell-app/views/partials/footer.ejs",
+		"/home/travis/Desktop/ell-app/views/place-details.js",
+		"/home/travis/Desktop/ell-app/views/landing.ejs",
+		"/home/travis/Desktop/ell-app/misc/tables",
 		"/home/travis/Desktop/ell-app/views/what-do.ejs",
+		"/home/travis/Desktop/ell-app/README.md",
+		"/home/travis/Desktop/ell-app/public/javascript/what-do.js",
+		"/home/travis/Desktop/ell-app/views/not-found.ejs",
+		"/home/travis/Desktop/ell-app/package.json.1715487387",
 		"/home/travis/Desktop/ell-app/tables",
 		"/home/travis/Desktop/ell-app/ell-app.sublime-project",
-		"/home/travis/Desktop/ell-app/package.json",
-		"/home/travis/Desktop/ell-app/views/list-places.ejs",
 		"/home/travis/Desktop/ell-app/views/add-place.ejs",
-		"/home/travis/Desktop/ell-app/views/partials/footer.ejs",
-		"/home/travis/Desktop/ell-app/views/not-found.ejs",
 		"/home/travis/Desktop/ell-app/views/partials/styles.css",
 		"/home/travis/Desktop/ell-app/app.js",
 		"/home/travis/Desktop/ell-app/views/main.css",
@@ -723,23 +795,7 @@
 		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/theirTests/cardtest2.c",
 		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/theirTests/cardtest3.c",
 		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/theirTests/randomtestadventurer.c",
-		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/BugsInTeammateCode.txt",
-		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/cardtest2.c",
-		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/cardtest1.c",
-		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/cardtest4.c",
-		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/unittest2.c",
-		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/unittest3.c",
-		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/unittest4.c",
-		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/theirTests/cardtest4.c",
-		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/theirTests/cardtest1.c",
-		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/theirTests/randomtestcard1.c",
-		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/randomtestcard1.c",
-		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/randomtestcard2.c",
-		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/randomtestcard2.out",
-		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/unittestresults.out",
-		"/home/travis/Desktop/osu/cs475/proj5/simd.p5.h",
-		"/home/travis/Desktop/osu/cs475/proj5/makefile",
-		"/home/travis/Desktop/osu/cs475/proj5/data2.txt"
+		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/BugsInTeammateCode.txt"
 	],
 	"find":
 	{
@@ -757,6 +813,22 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"{\n",
+			"  \n",
+			"){",
+			"console.log",
+			"script",
+			"initMap",
+			"button",
+			"1",
+			"counts",
+			"WHERE",
+			"let",
+			"());",
+			"router",
+			"app.",
+			"_ ",
+			"local",
 			"user",
 			"	",
 			"True",
@@ -868,23 +940,7 @@
 			"count",
 			"deskCoun",
 			"count",
-			"cardNames",
-			"NUMNODES",
-			"ARRAYSIZE",
-			"schedule",
-			"NUMT",
-			"threads",
-			"drawCard",
-			"drawCar",
-			"drawCard(",
-			"drawC",
-			"drawCard",
-			"supplyCount",
-			"isGameOver",
-			"fullDeck",
-			"resetPlayer",
-			"deck[",
-			"int card"
+			"cardNames"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -910,15 +966,15 @@
 					"file": "app.js",
 					"settings":
 					{
-						"buffer_size": 1599,
+						"buffer_size": 1299,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								254,
-								254
+								583,
+								583
 							]
 						],
 						"settings":
@@ -928,25 +984,269 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 132.0,
+						"translation.y": 66.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "misc/tables",
+					"file": "routes/user_index.js",
 					"settings":
 					{
-						"buffer_size": 2416,
+						"buffer_size": 964,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2249,
-								2249
+								727,
+								727
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "controllers/landing.js",
+					"settings":
+					{
+						"buffer_size": 965,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								880,
+								880
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 330.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "controllers/leaderboard.js",
+					"settings":
+					{
+						"buffer_size": 976,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								274,
+								274
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 132.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "controllers/add-visit.js",
+					"settings":
+					{
+						"buffer_size": 1105,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								898,
+								898
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "views/add-visit.ejs",
+					"settings":
+					{
+						"buffer_size": 804,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								373,
+								373
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "views/partials/header.ejs",
+					"settings":
+					{
+						"buffer_size": 2143,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								755,
+								755
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 66.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "public/stylesheets/main.css",
+					"settings":
+					{
+						"buffer_size": 913,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								738,
+								738
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "views/partials/footer.ejs",
+					"settings":
+					{
+						"buffer_size": 106,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11,
+								11
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "psql/queries.js",
+					"settings":
+					{
+						"buffer_size": 1573,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								652,
+								652
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 198.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "misc/sql-test-data",
+					"settings":
+					{
+						"buffer_size": 7746,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7560,
+								7560
 							]
 						],
 						"settings":
@@ -956,60 +1256,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1056.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "misc/sql-test-data",
-					"settings":
-					{
-						"buffer_size": 3609,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3038,
-								3038
-							]
-						],
-						"settings":
-						{
-							"auto_name": "",
-							"syntax": "Packages/SQL/SQL.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1837.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "README.md",
-					"settings":
-					{
-						"buffer_size": 293,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								128,
-								128
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Markdown/Markdown.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 5357.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

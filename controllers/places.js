@@ -56,7 +56,7 @@ places.getDetails = function(req, res) {
     } 
     else {
 
-      let directionStr = "https://maps.google.com?saddr=Current+Location&daddr="
+      let directionStr = "http://maps.google.com?saddr=Current+Location&daddr="
 
       let placeDetails = result.rows[0];
       //Parse address for google maps query
