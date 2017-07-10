@@ -52,10 +52,11 @@
 }
 
 #details-btns a {
+	margin-top: 1.5em;
 	margin-bottom: 1.5em;
 }
 
-.map iframe-rwd  {
+/*.map iframe-rwd  {
 	position: relative;
 	padding-bottom: 65.25%;
 	padding-top: 30px;
@@ -68,6 +69,14 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
+}
+*/
+
+/* Always set the map height explicitly to define the size of the div
+* element that contains the map. */
+#map {
+	height: 100%;
+	height: 400px;
 }
 
 .visible {

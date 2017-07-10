@@ -21,23 +21,23 @@
 			<p>
 				<%= placeDetails.description %>
 			</p>
+			<div class="embed-responsive embed-responsive-4by3">
+				<iframe
+				  width="550"
+				  height="450"
+				  frameborder="0" style="border:0"
+				  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAz_fmycFHcpBeoaEhXjS-oFjyA8eO2G7M&q=<%=placeDetails.name%>,<%=placeDetails.city%>" allowfullscreen>
+				</iframe>
+			</div>
 
-			<div class="map text-center">
-			<iframe
-			  width="600"
-			  height="450"
-			  frameborder="0" style="border:0"
-			  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAz_fmycFHcpBeoaEhXjS-oFjyA8eO2G7M
-			    &q=<%=placeDetails.name%>+<%=placeDetails.city%>" allowfullscreen>
-			</iframe>
+			   <div id="details-btns">
+			   	<a href="/find"id="find-new" type="button" class="btn btn-danger btn-lg btn-block"><i class="fa fa-arrow-left" aria-hidden="true"></i> Find a new place!</a>
+			   	<a href="<%=directionStr%>" id="get-directions" type="button" class="btn btn-success btn-lg btn-block"><i class="fa fa-location-arrow" aria-hidden="true"></i> Get Directions</a>
+			   </div>
 		</div>
 
 		</div>
-	</div>
-	<div id="details-btns" class="container">
-		<a href="/find"id="find-new" type="button" class="btn btn-danger btn-lg btn-block"><i class="fa fa-arrow-left" aria-hidden="true"></i> Find a new place!</a>
-		<a href="<%=directionStr%>" id="get-directions" type="button" class="btn btn-success btn-lg btn-block"><i class="fa fa-location-arrow" aria-hidden="true"></i> Get Directions</a>
-	</div>
+
 
 
 <% include partials/footer %>
