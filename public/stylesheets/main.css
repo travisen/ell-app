@@ -56,6 +56,9 @@
 	margin-bottom: 1.5em;
 }
 
+.embed-responsive {
+	background:url(../loader.gif) center center no-repeat;
+}
 /*.map iframe-rwd  {
 	position: relative;
 	padding-bottom: 65.25%;
