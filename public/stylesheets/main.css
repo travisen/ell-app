@@ -23,7 +23,7 @@
 /*	border-color: #00852D;*/
 }
 
-.navbar > .container-fluid {
+.navbar > .container {
 	min-height: 3em;
 	padding-top: 1em;
 	padding-bottom: 1em;
