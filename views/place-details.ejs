@@ -22,17 +22,22 @@
 				<%= placeDetails.description %>
 			</p>
 			<div class="embed-responsive embed-responsive-4by3">
-				<iframe
+ 				<iframe
 				  width="550"
 				  height="450"
 				  frameborder="0" style="border:0"
 				  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAz_fmycFHcpBeoaEhXjS-oFjyA8eO2G7M&q=<%=placeDetails.name%>,<%=placeDetails.city%>" allowfullscreen>
-				</iframe>
+				</iframe> 
+<!-- 				<a href="<%=directionStr%>">
+					<img src="https://maps.googleapis.com/maps/api/staticmap?center=<%=placeDetails.name%>,<%=placeDetails.city%>,PA&zoom=13&size=600x450&maptype=roadmap&key=AIzaSyAz_fmycFHcpBeoaEhXjS-oFjyA8eO2G7M">
+				</a> -->
+
 			</div>
 
 			   <div id="details-btns">
 			   	<a href="/find"id="find-new" type="button" class="btn btn-danger btn-lg btn-block"><i class="fa fa-arrow-left" aria-hidden="true"></i> Find a new place!</a>
 			   	<a href="<%=directionStr%>" id="get-directions" type="button" class="btn btn-success btn-lg btn-block"><i class="fa fa-location-arrow" aria-hidden="true"></i> Get Directions</a>
+			   	<a href="/add-visit?place=<%=placeDetails.name%>"id="find-new" type="button" class="btn btn-info btn-lg btn-block"><i class="fa fa-check" aria-hidden="true"></i> I want to check in to this place</a>
 			   </div>
 		</div>
 

@@ -32,6 +32,17 @@ function _getCurrentDate(){
 }
 
 visit.getForm = function(req, res){
+  let place = "";
+  
+  if(req.query.place != null){
+    console.log(req.query.place);
+    place = req.query.place;
+  }
+  if(req.query.date != null){
+    console.log(req.query.date);
+    let date = req.query.date;
+  }  
+  
   function _render(err, result){
     if(err) {
       console.error(err);
@@ -46,6 +57,7 @@ visit.getForm = function(req, res){
 
       res.render("add-visit", {
        placeList: placeList,
+       place:place,
        currentDate:currentDate,
        isVis:isVis,
        errMsg:errMsg
