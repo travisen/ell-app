@@ -3,6 +3,7 @@
 	padding-bottom: 1em;
 	margin-bottom: 1.5em;
 	font-size: 2em;
+	max-width: 25em;
 }
 
 .nav-pills > li > a:hover {
@@ -19,19 +20,15 @@
 }
 
 .navbar {
-	min-height: 3em;
+	min-height: 2em;
 /*	border-color: #00852D;*/
 }
 
-.navbar > .container {
+.navbar > .container-fluid {
 	min-height: 3em;
 	padding-top: 1em;
 	padding-bottom: 1em;
 	font-size: 1.5em;
-}
-
-.nav {
-
 }
 
 .list-group {
@@ -47,6 +44,7 @@
 	padding-left: 5em;
 	padding-right: 5em;
 	padding-bottom: 2em;
+	max-width: 50em;
 }
 
 #place-id {
@@ -55,10 +53,6 @@
 
 #details-btns a {
 	margin-bottom: 1.5em;
-}
-
-#content-padding{
-	margin-top: 10em;
 }
 
 .map iframe-rwd  {
