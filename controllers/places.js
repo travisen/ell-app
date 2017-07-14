@@ -20,7 +20,6 @@ places.get = function(req, res){
       if (header === "other") {
         header = "do other things"
       }
-
       res.render("list-places", {
         header: header, 
         placeList: placeList 

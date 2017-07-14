@@ -92,7 +92,7 @@ visit.post = function(req, res) {
 
       let isVis = "visible";
       console.error(error.code)
-      let errMsg = "Something went wrong, sorry.";
+      let errMsg = "Something went wrong, sorry. Try refreshing the page.";
       //Duplicate Visit
       if(error.code === "23505") {
 

@@ -78,7 +78,7 @@ CREATE TABLE person_visit(
     person_id INT REFERENCES person(id),
     place_id INT REFERENCES place(id),
     visited_on DATE NOT NULL,
-    PRIMARY KEY(person_id, visited_on)
+    PRIMARY KEY(person_id, visited_on, place_id)
 );
 
 
