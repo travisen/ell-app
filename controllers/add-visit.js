@@ -93,12 +93,31 @@ visit.post = function(req, res) {
       let isVis = "visible";
       console.error(error.code)
       let errMsg = "Something went wrong, sorry.";
+      //Duplicate Visit
       if(error.code === "23505") {
 
         errMsg = "Sorry, " + name + ". But you've already visited "
         + place + " on " + date + ".";
 
         console.log("Duplicate Error");
+        res.status(400).send({msg: errMsg});
+      }
+      //Name does not exist
+      else if (error.code === "23502") {
+        errMsg = "Sorry, but, " + name + " is not a current user" +
+        " please check that your name is entered correctly.";
+
+        console.log("Name Error");
+        res.status(400).send({msg: errMsg});
+      } 
+      //Place does not exist
+      else if (error.code === "23505" ) {
+        errMsg = "Sorry, " + name + " but " + place +
+        " does not exist. Please make sure that place is entered correctly.";
+         res.status(400).send({msg: errMsg});
+      }
+      //All other errors
+      else {
         res.status(400).send({msg: errMsg});
       }
     })
