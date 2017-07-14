@@ -1,11 +1,10 @@
 <% include partials/header %>
 	<h2>Add a fun place you went to for points!</h2>
-	<div class="alert alert-danger <%=isVis%>" role="alert">
-	  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+	<div id="serverMessage" class="alert alert-danger" role="alert">
+	  <span><i class="fa fa-exclamation-circle" aria-hidden="true"></i></span>
 	  <span class="sr-only">Error:</span>
-	  <%= errMsg %>
 	</div>
-	<form action="/add-visit" method="POST">
+	<form id="visitForm" action="/add-visit" method="POST">
 
 	  <div class="form-group">
 	    <label>Your Name</label>
@@ -24,5 +23,6 @@
 
 
 	<!--<script> $(".chosen-select").chosen() </script>-->
+	<script type="text/javascript" src="/javascript/add-visit-client.js"></script>
 
 <% include partials/footer %>

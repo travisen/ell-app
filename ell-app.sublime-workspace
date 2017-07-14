@@ -4,12 +4,24 @@
 		"selected_items":
 		[
 			[
+				"back",
+				"background-color"
+			],
+			[
+				"padd",
+				"padding-left"
+			],
+			[
 				"margin",
 				"margin-bottom"
 			],
 			[
 				"marg",
-				"margin-top"
+				"margin-bottom"
+			],
+			[
+				"max",
+				"max-width"
 			],
 			[
 				"req",
@@ -38,10 +50,6 @@
 			[
 				"re",
 				"require"
-			],
-			[
-				"padd",
-				"padding-bottom"
 			],
 			[
 				"leade",
@@ -92,16 +100,8 @@
 				"padding-top"
 			],
 			[
-				"back",
-				"background-color"
-			],
-			[
 				"font",
 				"font-size"
-			],
-			[
-				"max",
-				"maxA"
 			],
 			[
 				"b",
@@ -528,6 +528,14 @@
 			}
 		},
 		{
+			"file": "views/partials/header.ejs",
+			"settings":
+			{
+				"buffer_size": 3027,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "routes/user_index.js",
 			"settings":
 			{
@@ -536,34 +544,10 @@
 			}
 		},
 		{
-			"file": "controllers/leaderboard.js",
+			"file": "views/place-details.ejs",
 			"settings":
 			{
-				"buffer_size": 976,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "views/what-do.ejs",
-			"settings":
-			{
-				"buffer_size": 766,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "views/leaderboard.ejs",
-			"settings":
-			{
-				"buffer_size": 553,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "views/add-visit.ejs",
-			"settings":
-			{
-				"buffer_size": 1101,
+				"buffer_size": 1770,
 				"line_ending": "Unix"
 			}
 		},
@@ -571,7 +555,23 @@
 			"file": "controllers/add-visit.js",
 			"settings":
 			{
-				"buffer_size": 2186,
+				"buffer_size": 2436,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/add-visit.ejs",
+			"settings":
+			{
+				"buffer_size": 1182,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/javascript/add-visit-client.js",
+			"settings":
+			{
+				"buffer_size": 671,
 				"line_ending": "Unix"
 			}
 		},
@@ -579,15 +579,7 @@
 			"file": "public/stylesheets/main.css",
 			"settings":
 			{
-				"buffer_size": 1049,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "views/place-details.ejs",
-			"settings":
-			{
-				"buffer_size": 1335,
+				"buffer_size": 1313,
 				"line_ending": "Unix"
 			}
 		}
@@ -598,6 +590,10 @@
 		"height": 392.0,
 		"selected_items":
 		[
+			[
+				"",
+				"Emmet: Encode\\Decode Image to data:URL"
+			],
 			[
 				"Package ",
 				"Preferences: Browse Packages"
@@ -635,7 +631,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 392.0
+		"width": 467.0
 	},
 	"console":
 	{
@@ -652,22 +648,26 @@
 	},
 	"file_history":
 	[
-		"/home/travis/Desktop/ell-app/views/landing.ejs",
 		"/home/travis/Desktop/ell-app/public/stylesheets/main.css",
+		"/home/travis/Desktop/ell-app/controllers/add-visit.js",
+		"/home/travis/Desktop/ell-app/views/test.html",
+		"/home/travis/Desktop/ell-app/views/landing.ejs",
+		"/home/travis/Desktop/ell-app/views/not-found.ejs",
+		"/home/travis/Desktop/ell-app/views/add-visit.ejs",
+		"/home/travis/Desktop/ell-app/views/leaderboard.ejs",
+		"/home/travis/Desktop/ell-app/views/list-places.ejs",
+		"/home/travis/Desktop/ell-app/views/what-do.ejs",
+		"/home/travis/Desktop/ell-app/routes/user_index.js",
+		"/home/travis/Desktop/ell-app/views/partials/footer.ejs",
+		"/home/travis/Desktop/ell-app/public/stylesheets/normalize.css",
+		"/home/travis/Desktop/ell-app/controllers/leaderboard.js",
 		"/home/travis/Desktop/ell-app/views/partials/header.ejs",
 		"/home/travis/Desktop/ell-app/views/place-details.ejs",
-		"/home/travis/Desktop/ell-app/views/list-places.ejs",
-		"/home/travis/Desktop/ell-app/views/leaderboard.ejs",
-		"/home/travis/Desktop/ell-app/views/add-visit.ejs",
 		"/home/travis/Desktop/ell-app/controllers/places.js",
-		"/home/travis/Desktop/ell-app/views/what-do.ejs",
 		"/home/travis/Desktop/ell-app/misc/sql-test-data",
-		"/home/travis/Desktop/ell-app/views/partials/footer.ejs",
 		"/home/travis/Desktop/ell-app/psql/queries.js",
 		"/home/travis/Desktop/ell-app/controllers/landing.js",
-		"/home/travis/Desktop/ell-app/controllers/add-visit.js",
 		"/home/travis/Desktop/ell-app/package.json",
-		"/home/travis/Desktop/ell-app/controllers/leaderboard.js",
 		"/home/travis/Desktop/ell-app/controllers/add-visit.ejs",
 		"/home/travis/Desktop/ell-app/public/javascript/script.js",
 		"/home/travis/Desktop/ell-app/psql/db_setup.js",
@@ -675,7 +675,6 @@
 		"/home/travis/Desktop/ell-app/misc/tables",
 		"/home/travis/Desktop/ell-app/README.md",
 		"/home/travis/Desktop/ell-app/public/javascript/what-do.js",
-		"/home/travis/Desktop/ell-app/views/not-found.ejs",
 		"/home/travis/Desktop/ell-app/package.json.1715487387",
 		"/home/travis/Desktop/ell-app/tables",
 		"/home/travis/Desktop/ell-app/ell-app.sublime-project",
@@ -776,10 +775,7 @@
 		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/dominion-ennism/cardtest3.c",
 		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/dominion-ennism/dominion.c",
 		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/dominion-ennism/cardtest2.c",
-		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/dominion-ennism/cardtest1.c",
-		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/theirTests/cardtest2.c",
-		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/theirTests/cardtest3.c",
-		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/theirTests/randomtestadventurer.c"
+		"/home/travis/Desktop/osu/cs362/CS362-004-SP17/projects/nykazat/huntermi/dominion-ennism/cardtest1.c"
 	],
 	"find":
 	{
@@ -790,6 +786,7 @@
 		"height": 0.0,
 		"where_history":
 		[
+			""
 		]
 	},
 	"find_state":
@@ -797,6 +794,15 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"map",
+			"margin-top",
+			".container",
+			"collaps",
+			"content-padding",
+			"padding",
+			"margin-top",
+			"padding-top",
+			"width",
 			"brand",
 			"{\n",
 			"  \n",
@@ -915,16 +921,7 @@
 			"handPos",
 			"handPost",
 			"great_hallPlay(",
-			"great_ha",
-			"great_h	",
-			"fullDeckC",
-			"cardEff",
-			"cardEffect",
-			"player1",
-			"smithyPlay",
-			"count",
-			"deskCoun",
-			"count"
+			"great_ha"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -942,6 +939,7 @@
 	"groups":
 	[
 		{
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -974,6 +972,34 @@
 				},
 				{
 					"buffer": 1,
+					"file": "views/partials/header.ejs",
+					"settings":
+					{
+						"buffer_size": 3027,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1798,
+								1798
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 107.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
 					"file": "routes/user_index.js",
 					"settings":
 					{
@@ -984,8 +1010,61 @@
 						"selection":
 						[
 							[
-								727,
-								727
+								683,
+								683
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "views/place-details.ejs",
+					"settings":
+					{
+						"buffer_size": 1770,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								564,
+								564
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 360.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "controllers/add-visit.js",
+					"settings":
+					{
+						"buffer_size": 2436,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1854,
+								1854
 							]
 						],
 						"settings":
@@ -995,88 +1074,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "controllers/leaderboard.js",
-					"settings":
-					{
-						"buffer_size": 976,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								274,
-								274
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 216.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "views/what-do.ejs",
-					"settings":
-					{
-						"buffer_size": 766,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								57,
-								57
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "views/leaderboard.ejs",
-					"settings":
-					{
-						"buffer_size": 553,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								184,
-								184
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1574.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1086,15 +1084,15 @@
 					"file": "views/add-visit.ejs",
 					"settings":
 					{
-						"buffer_size": 1101,
+						"buffer_size": 1182,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								168,
-								168
+								295,
+								295
 							]
 						],
 						"settings":
@@ -1110,28 +1108,28 @@
 				},
 				{
 					"buffer": 6,
-					"file": "controllers/add-visit.js",
+					"file": "public/javascript/add-visit-client.js",
 					"settings":
 					{
-						"buffer_size": 2186,
+						"buffer_size": 671,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1651,
-								1651
+								671,
+								671
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1440.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1141,15 +1139,15 @@
 					"file": "public/stylesheets/main.css",
 					"settings":
 					{
-						"buffer_size": 1049,
+						"buffer_size": 1313,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1013,
-								1013
+								122,
+								122
 							]
 						],
 						"settings":
@@ -1158,34 +1156,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1368.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "views/place-details.ejs",
-					"settings":
-					{
-						"buffer_size": 1335,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1440.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1257,6 +1228,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 196.0,
+	"side_bar_width": 188.0,
 	"status_bar_visible": true
 }

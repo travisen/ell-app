@@ -72,35 +72,34 @@ visit.getForm = function(req, res){
 // Need to figure out how to handle username
 visit.post = function(req, res) {
 
-  console.log(req.body);
+  console.log("body", req.body);
+
+  let name = req.body.name;
+  let place = req.body.place;
+  let date = req.body.date;
   const query = {
     text: q.insertVisit, //VALUES example: (travis, Nay Aug Park, 2011-2-3 )
-    values: [req.body.name, req.body.place, req.body.date]
+    values: [name, place, date]
   }
   pool.query(query)
     .then(req => {
-      let isVis = "not-visible";
+      let successMsg = name + ", thanks for adding your visit to " + place +
+      " on " + date + "!";
+      console.log(successMsg);
+      res.status(200).send({msg: successMsg});
     })
     .catch(error =>  {
-
-      res.send("Whoops"); //remove this later
 
       let isVis = "visible";
       console.error(error.code)
       let errMsg = "Something went wrong, sorry.";
       if(error.code === "23505") {
 
-        errMsg = "Sorry, " + req.name + ". But You've alredy visited"
-        + req.place + " on " + req.date + ".";
+        errMsg = "Sorry, " + name + ". But you've already visited "
+        + place + " on " + date + ".";
 
         console.log("Duplicate Error");
-        res.status(500);
-        res.render("add-visit", {
-          placeList: placeList,
-          currentDate:currentDate,
-          errMsg:errMsg,
-          isVis:isVis
-        })
+        res.status(400).send({msg: errMsg});
       }
     })
 }
