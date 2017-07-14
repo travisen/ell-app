@@ -57,6 +57,7 @@
 }
 
 .embed-responsive {
+	background-color: #ecf0f1;
 	background:url(../loader.gif) center center no-repeat;
 }
 /*.map iframe-rwd  {
