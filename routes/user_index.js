@@ -35,7 +35,7 @@ router.get("/signup", function(req, res){
     res.render("signup");
 });
 
-router.post("/signup", signup.post);
+router.post("/signup", urlencodedParser, signup.post);
 
 //Review getting data from parameters.
 //Ensure it is secure.
