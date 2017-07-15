@@ -1,20 +1,22 @@
 ################# INSERT PEOPLE ################# 
 INSERT INTO person (first_name, last_name, username, email)
-  VALUES ('Tony', 'Tiger', 'tonyt1', 'tonyt1@email.com');
+  VALUES ('tony', 'tiger', 'tonyt1', 'tonyt1@email.com');
 
 INSERT INTO person (first_name, last_name, username, email)
-  VALUES ('Travis', 'Nykaza', 'nykazat1', 'travis.nykaza@gmail.com');
+  VALUES ('travis', 'nykaza', 'nykazat1', 'travis.nykaza@gmail.com');
 
 INSERT INTO person (first_name, last_name, username, email)
-  VALUES ('Jon', 'Snow', 'snowj1', 'jon_snow@hotmail.com');
+  VALUES ('jon', 'snow', 'snowj1', 'jon_snow@hotmail.com');
 
 INSERT INTO person (first_name, last_name, username, email)
-  VALUES ('Sansa', 'Stark', 'starks1', 'sstart239@unc.org');
+  VALUES ('sansa', 'stark', 'starks1', 'sstart239@unc.org');
 
 
 INSERT INTO person (first_name, last_name, username, email)
-  VALUES ('Eddard', 'Stark', 'starke1', 'edrulez@unc.org');
+  VALUES ('eddard', 'stark', 'starke1', 'edrulez@unc.org');
 
+INSERT INTO person (first_name, last_name, username, email)
+  VALUES ('denise', 'evans', 'denisee', 'devans23123@yahoo.com');
 
 ################# INSERT PLACES ################# 
 
@@ -22,14 +24,14 @@ INSERT INTO place (
     name, place_type, street_address, zipcode,
     description, phone, cost)
     VALUES ( 'Nina''s', 'eat', '602 New York St', '18679',
-     'A place to eat awseome wings though :)', '15709999999', '$'
+     'A pizza and wings restraunt in Dunmore. Insert more generic text here to test bla bla 23123123.', '15709999999', '$'
 );
 
 INSERT INTO place (
     name, place_type, street_address,
     description, phone, cost)
-    VALUES ( 'Nay Aug Park', 'play', '500 Arthur Ave',
-    'A gorgeous park where you can hike, ball or have a cookout!',
+    VALUES ( 'Nay Aug Park', 'play', '500 Arthur Ave', '18510',
+    'A park in Scranton,PA where you can swim, eat, or have a cookout!',
     '5703484137', 'free'
 );
 

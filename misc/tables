@@ -4,7 +4,7 @@ CREATE TABLE person (
     last_name VARCHAR(64) NOT NULL,
     username VARCHAR(32) NOT NULL UNIQUE,
     password VARCHAR(255) NULL,
-    email VARCHAR(255) NULL,
+    email VARCHAR(255) NULL UNIQUE,
     CONSTRAINT valid_email CHECK (email ~* '^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+[.][A-Za-z]+$')
 );
 
@@ -37,7 +37,7 @@ CREATE TABLE place (
 #I think making place_id and day the PK is a good fix
 
 CREATE TABLE place_hours (
-    place_id INTEGER NOT NULL REFERENCES place(id),
+    place_id INTEGER NOT NULL REFERENCES place(id) ON DELETE CASCADE,
     day INTEGER NOT NULL,
     open_time TIME NOT NULL,
     close_time TIME NOT NULL,
@@ -65,8 +65,8 @@ CREATE TABLE event (
 
 CREATE TABLE event_visit(
     id SERIAL PRIMARY KEY,
-    person_id INT REFERENCES person(id),
-    event_id INT REFERENCES event(id),
+    person_id INT REFERENCES person(id) ON DELETE CASCADE,
+    event_id INT REFERENCES event(id) ON DELETE CASCADE,
     visited_on DATE NOT NULL
 );
 
@@ -75,8 +75,8 @@ CREATE TABLE event_visit(
 #it here as well
 CREATE TABLE person_visit(
     id SERIAL UNIQUE,
-    person_id INT REFERENCES person(id),
-    place_id INT REFERENCES place(id),
+    person_id INT REFERENCES person(id) ON DELETE CASCADE,
+    place_id INT REFERENCES place(id) ON DELETE CASCADE,
     visited_on DATE NOT NULL,
     PRIMARY KEY(person_id, visited_on, place_id)
 );
@@ -85,3 +85,10 @@ CREATE TABLE person_visit(
 # DROP ALL TABLES IN PUBLIC SCHEMA
 DROP SCHEMA public CASCADE;
 CREATE SCHEMA public;
+
+#Drop all tables in a schema named public
+DROP SCHEMA public CASCADE;
+CREATE SCHEMA public;
+#Restore default grants
+GRANT ALL ON SCHEMA public TO postgres;
+GRANT ALL ON SCHEMA public TO public;

@@ -94,3 +94,24 @@
 	display: none;
 	/*visibility: hidden;*/
 }
+
+/* Sign up Page */
+.main-login{
+ 	background-color: #fff;
+}
+
+.main-center{
+ 	margin-top: 30px;
+ 	margin: 0 auto;
+ 	max-width: 330px;
+    padding: 40px 40px;
+}
+
+.login-button{
+	margin-top: 5px;
+}
+
+.login-register{
+	font-size: 11px;
+	text-align: center;
+}
