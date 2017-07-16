@@ -36,6 +36,7 @@ landing.get = function(req, res) {
 	    });
 	  }
 	}
+	
 	let monthNumber = d.getMonth() + 1;
 	let header = month[monthNumber];
 
