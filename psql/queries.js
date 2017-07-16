@@ -42,4 +42,8 @@ q.insertVisit = `INSERT INTO person_visit(
         (SELECT id from place where name=$2),
         $3);`
 
+q.addUser = `INSERT INTO person (first_name, last_name, username)
+  VALUES ($1, $2, $3);`        
+
+q.findUsername = `SELECT username FROM person WHERE username = ($1);`
 module.exports = q;
