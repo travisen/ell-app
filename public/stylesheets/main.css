@@ -104,3 +104,7 @@
 	font-size: 11px;
 	text-align: center;
 }
+
+.list-group-item {
+	margin-bottom: .5em;
+}
