@@ -12,6 +12,10 @@ const q = require("../psql/queries"); //import queries
 
 var visit = {};
 
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 function _getCurrentDate(){
   var today = new Date();
   var dd = today.getDate();
@@ -74,22 +78,26 @@ visit.post = function(req, res) {
 
   console.log("body", req.body);
 
-  let name = req.body.name;
-  let place = req.body.place;
+  let name = req.body.name.toLowerCase();
+  let place = req.body.place.toLowerCase();
   let date = req.body.date;
   const query = {
     text: q.insertVisit, //VALUES example: (travis, Nay Aug Park, 2011-2-3 )
     values: [name, place, date]
   }
+
+  name = capitalizeFirstLetter(name);
+  //place = capitalizeFirstLetter(place);
+
   pool.query(query)
     .then(req => {
+
       let successMsg = name + ", thanks for adding your visit to " + place +
       " on " + date + "!";
       console.log(successMsg);
       res.status(200).send({msg: successMsg});
     })
     .catch(error =>  {
-
       let isVis = "visible";
       console.error(error.code)
       let errMsg = "Something went wrong, sorry. Try refreshing the page.";
