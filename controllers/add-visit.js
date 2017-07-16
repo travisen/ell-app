@@ -9,12 +9,9 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 const pool = require("../psql/db_setup.js");
 const q = require("../psql/queries"); //import queries
+const capitalizeFirstLetter = require("../utils/strings");
 
 var visit = {};
-
-function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-}
 
 function _getCurrentDate(){
   var today = new Date();
@@ -87,7 +84,6 @@ visit.post = function(req, res) {
   }
 
   name = capitalizeFirstLetter(name);
-  //place = capitalizeFirstLetter(place);
 
   pool.query(query)
     .then(req => {
