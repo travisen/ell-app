@@ -1,6 +1,7 @@
 'use strict';
 const pool = require("../psql/db_setup.js");
 const q = require("../psql/queries"); //import queries
+const capitalizeFirstLetter = require("../utils/strings");
 
 var landing = {};
 
@@ -21,7 +22,6 @@ month[11] = "November";
 month[12] = "December";
 
 landing.get = function(req, res) {
-
 
 	function _render(err, result){
 	  if(err){

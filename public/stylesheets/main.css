@@ -2,7 +2,7 @@
 	padding-top: 1em;
 	padding-bottom: 1em;
 	margin-bottom: 1.5em;
-	font-size: 2em;
+	font-size: 1.75em;
 	max-width: 25em;
 }
 
@@ -24,11 +24,15 @@
 /*	border-color: #00852D;*/
 }
 
-.navbar > .container-fluid {
-	min-height: 3em;
+.navbar > .container {
+	min-height: 2em;
 	padding-top: 1em;
 	padding-bottom: 1em;
-	font-size: 1.5em;
+	font-size: 1.20em;
+}
+
+.navbar-collapse {
+	align-content: center;
 }
 
 .list-group {
@@ -60,21 +64,6 @@
 	background-color: #ecf0f1;
 	background:url(../loader.gif) center center no-repeat;
 }
-/*.map iframe-rwd  {
-	position: relative;
-	padding-bottom: 65.25%;
-	padding-top: 30px;
-	height: 0;
-	overflow: hidden;
-}
-.map iframe-rwd iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-*/
 
 /* Always set the map height explicitly to define the size of the div
 * element that contains the map. */
