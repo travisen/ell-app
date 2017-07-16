@@ -108,3 +108,15 @@
 .list-group-item {
 	margin-bottom: .5em;
 }
+
+.list-group-item-heading {
+	text-transform: capitalize;
+}
+
+.people {
+	text-transform: capitalize;
+}
+
+.title {
+	text-transform: capitalize;
+}
