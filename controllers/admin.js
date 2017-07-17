@@ -27,7 +27,9 @@ admin.allPlaces = function(req, res) {
             console.error(err);
             res.send("ERROR" + err);
         } else {
+            
             let placeList = result.rows
+            console.log(placeList);
             res.send(placeList);            
         }
     }

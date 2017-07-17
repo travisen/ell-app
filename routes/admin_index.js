@@ -18,7 +18,7 @@ router.get("/admin-people", admin.people);
 
 router.get("/admin/places/:type", admin.allPlaces);
 
-router.get("/admin/users/:type", admin.allPeople);
+router.get("/admin/users/", admin.allPeople);
 
 
 module.exports = router;

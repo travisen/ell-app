@@ -113,3 +113,6 @@ body {
 tr {
   text-transform: capitalize;
 }
+#req-type {
+  display: none;
+}

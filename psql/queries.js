@@ -1,6 +1,6 @@
 const q = {};
 
-q.allPlaces = `SELECT id, name, description, street_address, city, state, zipcode, cost
+q.allPlaces = `SELECT id, name, street_address, city, state, zipcode, description, cost
  FROM place;`
 
 q.play = `SELECT id, name, description, street_address, city, state, zipcode, cost
