@@ -10,6 +10,15 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 var router = express.Router();
 
-module.exports = router;
+router.get("/admin", admin.landing);
 
-router.get("/", admin.landing);
+router.get("/admin-places", admin.places);
+
+router.get("/admin-people", admin.people);
+
+router.get("/admin/places/:type", admin.allPlaces);
+
+router.get("/admin/users/:type", admin.allPeople);
+
+
+module.exports = router;

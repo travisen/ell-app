@@ -1,5 +1,7 @@
 const q = {};
 
+q.allPlaces = `SELECT id, name, description, street_address, city, state, zipcode, cost
+ FROM place;`
 
 q.play = `SELECT id, name, description, street_address, city, state, zipcode, cost
  FROM place
@@ -46,4 +48,13 @@ q.addUser = `INSERT INTO person (first_name, last_name, username)
   VALUES ($1, $2, $3);`        
 
 q.findUsername = `SELECT username FROM person WHERE username = ($1);`
+
+q.usersLastNameAtoZ = `SELECT id, first_name, last_name, username FROM person ORDER BY last_name ASC;`
+
+q.usersLastNameZtoA = `SELECT id, first_name, last_name, username FROM person ORDER BY last_name DESC;`
+
+q.usersfirstNameAtoZ = `SELECT id, first_name, last_name, username FROM person ORDER BY first_name ASC;`
+
+q.usersfirstNameZtoA = `SELECT id, first_name, last_name, username FROM person ORDER BY first_name DESC;`
+
 module.exports = q;
