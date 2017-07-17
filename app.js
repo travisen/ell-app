@@ -6,6 +6,7 @@ var express       = require("express"),
     bodyParser    = require('body-parser');
 
 var placeRoutes  = require("./routes/user_index"); 
+var adminRoutes = require("./routes/admin_index");
 
 app.set("view engine", "ejs");
 
@@ -24,10 +25,6 @@ app.use(placeRoutes);
 // app.use(bodyParser.json());
 
 //Admin pages which require authentication.
-
-app.get("/admin", function(req, res){
-    res.render("admin");
-});
 
 // Page does not exist
 app.get("/*", function(req, res){

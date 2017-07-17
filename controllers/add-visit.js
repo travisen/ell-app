@@ -95,6 +95,7 @@ visit.post = function(req, res) {
     })
     .catch(error =>  {
       let isVis = "visible";
+      console.error(error);
       console.error(error.code)
       let errMsg = "Something went wrong, sorry. Try refreshing the page.";
       //Duplicate Visit
@@ -106,20 +107,14 @@ visit.post = function(req, res) {
         console.log("Duplicate Error");
         res.status(400).send({msg: errMsg});
       }
-      //Name does not exist
+      //Name or place does not exist
       else if (error.code === "23502") {
-        errMsg = "Sorry, but, " + name + " is not a current user" +
-        " please check that your name is entered correctly.";
+        errMsg = "Sorry, but, either " + name + " is not a current user" +
+        " or " + place +"could not be found in our database. Please check that Your Name and Place Name are entered correctly.";
 
         console.log("Name Error");
         res.status(400).send({msg: errMsg});
       } 
-      //Place does not exist
-      else if (error.code === "23505" ) {
-        errMsg = "Sorry, " + name + " but " + place +
-        " does not exist. Please make sure that place is entered correctly.";
-         res.status(400).send({msg: errMsg});
-      }
       //All other errors
       else {
         res.status(400).send({msg: errMsg});
