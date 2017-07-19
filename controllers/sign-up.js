@@ -21,22 +21,6 @@ signup.post = function(req, res) {
 
     let username = first + last[0] + 1;
 
-    // const query0 = {
-    //     text:q.findUsername,
-    //     values: [username]
-    // }
-
-    // /* Check if username already exists */
-    // pool.query(query0)
-    // .then(req => {
-    //     let errMsg = "";
-    //     console.log(req);
-    //     res.status(400).send({msg: errMsg});
-    // })
-    // .catch(error => {
-    //     console.log(error);
-    // });
-
     const query = {
         text: q.addUser, //VALUES example: (travis, Nay Aug Park, 2011-2-3 )
         values: [first, last, username]

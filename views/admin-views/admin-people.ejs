@@ -6,6 +6,29 @@
 
         <h1 class="page-header">Dashboard</h1>
         
+        <div id="serverMessage" class="alert alert-danger" role="alert">
+          <span><i class="fa fa-exclamation-circle" aria-hidden="true"></i></span>
+          <span class="sr-only">Error:</span>
+        </div>
+
+        <form class="form-inline" id="addPerson" action="/admin/users/add" method="POST">
+            <div class="form-group">
+                <label>First Name</label>
+                <input type="text" name="first_name" class="form-control" placeholder="Spongebob" required>
+            </div>
+        
+            <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" name="last_name" class="form-control" placeholder="Squarepants" required>
+            </div>
+
+            <div id="embedPass" class="form-group">
+                <label>Password</label>
+                <input type="password" name="password" class="form-control" value="scola12" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
 
         <h2 class="sub-header">Users</h2>
         <div class="table-responsive">

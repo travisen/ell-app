@@ -83,6 +83,9 @@ body {
   margin-top: 0;
 }
 
+#embedPass {
+  display: none;
+}
 
 /*
  * Placeholder dashboard ideas
@@ -119,4 +122,3 @@ tr {
 
 #serverMessage {
   display: none;
-}

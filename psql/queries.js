@@ -66,4 +66,10 @@ q.destroyPlace = `DELETE FROM place WHERE id = ($1);`
 
 q.destroyVisit = `DELETE FROM person_visit WHERE id = ($1);`
 
+q.getVisitsMostRecent = `SELECT person_visit.id, person.first_name, person.last_name, place.name , person_visit.visited_on
+FROM person_visit INNER JOIN
+person ON person_visit.person_id = person.id INNER JOIN
+place ON person_visit.place_id = place.id
+ORDER BY person_visit.visited_on DESC;`
+
 module.exports = q;

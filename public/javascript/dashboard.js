@@ -22,7 +22,7 @@ function generateButton(row, id, type) {
 function deleteUser(id){
   console.log(id);
   //admin-people/30/delete
-  let urlType = "/admin-people/";
+  let urlType = "/admin/people/";
   let urlAction = "/delete";
 
   let url = urlType + id + urlAction;
@@ -129,6 +129,52 @@ function generateTable(data) {
   tbl.appendChild(tblBody);
 
 }
+
+$("#addPerson").submit(function(event) {
+
+    /* stop form from submitting normally */
+    event.preventDefault();
+
+    /* get some values from elements on the page: */
+    let $form = $(this),
+        first_name = $form.find('input[name="first_name"]').val(),
+        last_name = $form.find('input[name="last_name"]').val(),
+        password = $form.find('input[name="password"]').val(),
+        url = $form.attr('action')
+
+    /* Send the data using post */
+    let posting = $.post(url, {
+      firstName : first_name,
+      lastName : last_name,
+      password : password
+    });
+
+    /* Put the results in a div */
+    posting.done(function(data){
+        var content = data.msg;
+        $("#serverMessage").removeClass("alert alert-danger");
+        $("#serverMessage").addClass("alert alert-success");
+        $("#serverMessage").empty().append(content);
+        $("#serverMessage").show();
+
+        removeTable();
+        ajaxGetRequest("/admin/users");
+    });
+
+    /*Error*/
+    posting.fail(function(data) {
+        console.log(data);
+        var content = data.responseJSON.msg;
+        console.log($("#serverMessage").attr("class"));
+        if ($("#serverMessage").attr("class") == "alert alert-success"){
+            $("#serverMessage").removeClass("alert alert-success");
+            $("#serverMessage").addClass("alert alert-danger");
+        }
+        $("#serverMessage").empty().append(content);
+        $("#serverMessage").show();
+    });
+    resetFields();
+});
 
 /* Attach a submit handler to the form */
 $("#placeAddForm").submit(function(event) {
