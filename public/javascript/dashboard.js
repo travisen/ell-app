@@ -130,6 +130,73 @@ function generateTable(data) {
 
 }
 
+/* Attach a submit handler to the form */
+$("#placeAddForm").submit(function(event) {
+
+    /* stop form from submitting normally */
+    event.preventDefault();
+
+    /* get some values from elements on the page: */
+    let $form = $(this),
+        name = $form.find('input[name="name"]').val(),
+        place_type = $form.find('select[name="place_type"]').val(),
+        street_address = $form.find('input[name="street"]').val(),
+        city = $form.find('input[name="city"]').val(),
+        zipcode = $form.find('input[name="zipcode"]').val(),
+        description = $form.find('textarea[name="description"]').val(),
+        phone = $form.find('input[name="phone"]').val(),
+        cost = $form.find('select[name="cost"]').val(),
+        url = $form.attr('action')
+
+    /* Send the data using post */
+    let posting = $.post(url, {
+      name : name,
+      place_type : place_type,
+      street_address : street_address,
+      city : city,
+      zipcode : zipcode,
+      description : description,
+      phone : phone,
+      cost : cost,
+      url : url
+    });
+
+    /* Put the results in a div */
+    posting.done(function(data){
+        var content = data.msg;
+        $("#serverMessage").removeClass("alert alert-danger");
+        $("#serverMessage").addClass("alert alert-success");
+        $("#serverMessage").empty().append(content);
+        $("#serverMessage").show();
+
+        removeTable();
+        ajaxGetRequest("/admin/places/all");
+    });
+
+    /*Error*/
+    posting.fail(function(data) {
+        console.log(data);
+        var content = data.responseJSON.msg;
+        console.log($("#serverMessage").attr("class"));
+        if ($("#serverMessage").attr("class") == "alert alert-success"){
+            $("#serverMessage").removeClass("alert alert-success");
+            $("#serverMessage").addClass("alert alert-danger");
+        }
+        $("#serverMessage").empty().append(content);
+        $("#serverMessage").show();
+    });
+    resetFields();
+});
+
+function resetFields(){
+  var elements = document.getElementsByTagName("input");
+  for (var ii=0; ii < elements.length; ii++) {
+    if (elements[ii].type == "text") {
+      elements[ii].value = "";
+    }
+  }
+}
+
 /* Submit AJAX request on page load*/
 $(document).ready(function() {
   ajaxGetRequest();

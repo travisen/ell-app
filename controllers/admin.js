@@ -1,5 +1,4 @@
 'use strict';
-var bodyParser = require('body-parser')
 
 const pool = require("../psql/db_setup.js");
 const q = require("../psql/queries"); //import queries
@@ -36,7 +35,6 @@ admin.destroyUser = function(req, res){
         console.log(error);
         res.status(400).send("Failed to delete entry");
     }) 
-
 };
 
 /* Json data post routes */
@@ -49,10 +47,11 @@ admin.allPlaces = function(req, res) {
         } else {
             
             let placeList = result.rows
-            console.log(placeList);
+            //console.log(placeList);
             res.send(placeList);            
         }
     }
+
     let searchType = req.params.type;
 
     if (searchType === "play"){
@@ -71,7 +70,7 @@ admin.allPlaces = function(req, res) {
         pool.query(q.allPlaces, sendData) 
     }
     else { 
-        res.redirect("/admin");
+        res.send("Whoops");
     }
 }
 
@@ -90,24 +89,36 @@ admin.allPeople = function(req, res) {
 
     pool.query(q.usersLastNameAtoZ, sendData);
     
-    // if (searchType === "play"){
-    //     pool.query(q.usersLastNameAtoZ, sendData); 
-    // }
-    // else if (searchType === "eat") {
-    //     pool.query(q.eat, sendData) 
-    // }
-    // else if (searchType === "shop") {
-    //     pool.query(q.shop, sendData) 
-    // }
-    // else if (searchType === "other") {
-    //     pool.query(q.other, sendData) 
-    // }
-    // else if(searchType === "all") {
-    //     pool.query(q.allPlaces, sendData) 
-    // }
-    // else { 
-    //     res.redirect("/admin");
-    // }
+}
+
+admin.addPlace = function(req, res) {
+    // console.log(req);
+    console.log(req.body);
+    let name = req.body.name.toLowerCase();
+    let place_type = req.body.place_type.toLowerCase();
+    let street_address = req.body.street_address;
+    let city = req.body.city;
+    let zipcode = parseInt(req.body.zipcode);
+    let description = req.body.description;
+    let phone = req.body.phone;
+    let cost = req.body.cost;
+    // (name, place_type, street_address,
+    // city, zipcode, description, phone, cost)
+    const query = {
+        text: q.addPlace, 
+        values: [name, place_type, street_address, city, zipcode,
+        description, phone, cost]
+    }
+
+    pool.query(query)
+    .then(req => {
+        let resStr = name + " added successfully!";
+        res.status(200).send({msg: resStr});
+    })
+    .catch(error =>  {
+        console.log(error);
+        res.status(400).send( {msg: "Something went terribly wrong, doh!"});
+    }) 
 }
 
 

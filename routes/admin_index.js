@@ -14,6 +14,8 @@ router.get("/admin", admin.landing);
 
 router.get("/admin-places", admin.places);
 
+router.post("/admin-places/add", urlencodedParser, admin.addPlace)
+
 router.get("/admin-people", admin.people);
 
 router.get("/admin/places/:type", admin.allPlaces);

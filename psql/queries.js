@@ -45,7 +45,10 @@ q.insertVisit = `INSERT INTO person_visit(
         $3);`
 
 q.addUser = `INSERT INTO person (first_name, last_name, username)
-  VALUES ($1, $2, $3);`        
+  VALUES ($1, $2, $3);`
+
+q.addPlace = `INSERT INTO place(name, place_type, street_address, city, zipcode, description, phone, cost)
+  VALUES ($1, $2, $3, $4, $5, $6, $7, $8);`     
 
 q.findUsername = `SELECT username FROM person WHERE username = ($1);`
 

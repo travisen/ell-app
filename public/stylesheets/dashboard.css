@@ -116,3 +116,7 @@ tr {
 #req-type {
   display: none;
 }
+
+#serverMessage {
+  display: none;
+}
