@@ -20,5 +20,6 @@ router.get("/admin/places/:type", admin.allPlaces);
 
 router.get("/admin/users/", admin.allPeople);
 
+router.post("/admin-people/:id/delete", admin.destroyUser);
 
 module.exports = router;

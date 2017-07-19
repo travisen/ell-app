@@ -2,10 +2,95 @@ $(document).ready(function() {
     console.log("Jquery Connected!");
 });
 
-data = [{"id":8,"first_name":"denise","last_name":"evans","username":"denisee"},{"id":31,"first_name":"wat","last_name":"lolwat","username":"watl1"},{"id":23,"first_name":"theodore","last_name":"mcdonald","username":"theodorem1"},{"id":32,"first_name":"jessica","last_name":"nykaza","username":"jessican1"},{"id":5,"first_name":"travis","last_name":"nykaza","username":"nykazat1"},{"id":14,"first_name":"teddy","last_name":"nykaza","username":"teddyn1"},{"id":7,"first_name":"eddard","last_name":"stark","username":"starke1"},{"id":6,"first_name":"sansa","last_name":"stark","username":"starks1"},{"id":28,"first_name":"test","last_name":"tester","username":"testt1"},{"id":30,"first_name":"tester","last_name":"tester","username":"testert1"},{"id":2,"first_name":"tony","last_name":"tiger","username":"tonyt1"},{"id":13,"first_name":"ted","last_name":"williams","username":"tedw1"},{"id":9,"first_name":"ed","last_name":"williams","username":"edw1"}];
-// console.log(data[0]);
+/*
+  Generate a button in the passed in row.
+*/
+function generateButton(row, id, type) {
+  let cell = document.createElement("td");
+  let button = document.createElement("BUTTON");
+  button.innerHTML ="Delete";
 
-function generate_table(data) {
+  button.setAttribute("class", "btn btn-danger btn-sm");
+
+  button.onclick = function() {deleteUser(id)}; //Assign function to button
+
+  //button.setAttribute("class", "btn btn-info btn-sm");
+  cell.appendChild(button);
+  row.appendChild(cell);
+}
+
+function deleteUser(id){
+  console.log(id);
+  //admin-people/30/delete
+  let urlType = "/admin-people/";
+  let urlAction = "/delete";
+
+  let url = urlType + id + urlAction;
+  console.log(url);
+  ajaxPostRequest(url);
+  removeTable();
+  ajaxGetRequest();
+}
+/* Submit AJAX post request on click */
+function ajaxPostRequest(urlStr) {
+
+  var url = urlStr;
+
+  let request = $.post(url);
+
+  request.error(function(jqXHR, textStatus, errorThrown) {
+      if (textStatus == 'timeout')
+          console.log('The server is not responding');
+
+      if (textStatus == 'error')
+          console.log(errorThrown);
+  });
+}
+/* 
+  Delete Table
+
+*/
+function removeTable() {
+  var table = document.getElementById("mainTable");
+  var tableBody = document.getElementById("bodyTable");
+  // var garbage = table.removeChild(tableBody);
+  $("#mainTable tr").remove(); 
+}
+
+
+/* 
+  Submit AJAX get request on click
+  Default behavior is to get all data
+*/
+function ajaxGetRequest(urlStr) {
+
+  var url = urlStr;
+  if(url == null) {
+    var url = "/admin/users";
+    url = $("#req-type").text();
+  }
+
+  let request = $.get(url);
+
+  request.success(function(result) {
+      generateTable(result); 
+  });
+
+  request.error(function(jqXHR, textStatus, errorThrown) {
+      if (textStatus == 'timeout')
+          console.log('The server is not responding');
+
+      if (textStatus == 'error')
+          console.log(errorThrown);
+  });
+}
+
+/*
+  @data - Tabular data
+  This function generates a table based on 
+  tabular data.
+*/
+function generateTable(data) {
   // get the reference for the body
   var body = document.getElementsByTagName("body")[0];
 
@@ -21,6 +106,7 @@ function generate_table(data) {
  
     for (var property in data[i]) {
       let currRow = data[i];
+
       // Create a <td> element and a text node, make the text
       // node the contents of the <td>, and put the <td> at
       // the end of the table row
@@ -32,7 +118,9 @@ function generate_table(data) {
       cell.appendChild(cellText);
       row.appendChild(cell);
     }
- 
+
+    let currid = data[i]["id"];//Get person id and pass to action buttons
+    generateButton(row, currid);
     // add the row to the end of the table body
     tblBody.appendChild(row);
   }
@@ -41,21 +129,8 @@ function generate_table(data) {
   tbl.appendChild(tblBody);
 
 }
-/* attach a submit handler to the form */
+
+/* Submit AJAX request on page load*/
 $(document).ready(function() {
-    let url = "/admin/users";
-
-    url = $("#req-type").text();
-
-    let request = $.get(url);
-    request.success(function(result) {
-        generate_table(result);
-    });
-    request.error(function(jqXHR, textStatus, errorThrown) {
-        if (textStatus == 'timeout')
-            console.log('The server is not responding');
-
-        if (textStatus == 'error')
-            console.log(errorThrown);
-    });
+  ajaxGetRequest();
 });

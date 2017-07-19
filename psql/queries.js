@@ -57,4 +57,10 @@ q.usersfirstNameAtoZ = `SELECT id, first_name, last_name, username FROM person O
 
 q.usersfirstNameZtoA = `SELECT id, first_name, last_name, username FROM person ORDER BY first_name DESC;`
 
+q.destroyUser = `DELETE FROM person WHERE id = ($1);`
+
+q.destroyPlace = `DELETE FROM place WHERE id = ($1);`
+
+q.destroyVisit = `DELETE FROM person_visit WHERE id = ($1);`
+
 module.exports = q;
