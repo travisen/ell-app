@@ -41,6 +41,28 @@ admin.destroyUser = function(req, res){
     }) 
 };
 
+admin.destroyPlace = function(req, res){
+    console.log(req.params);
+    let id = req.params.id;
+    console.log(id);
+    const query = {
+        text: q.destroyPlace, 
+        values: [id]
+    }
+
+    pool.query(query)
+    .then(req => {
+        res.status(200).send("Successfully deleted entry!");
+    })
+    .catch(error =>  {
+        console.log(error);
+        res.status(400).send("Failed to delete entry");
+    }) 
+};
+
+
+
+
 /* Json data post routes */
 admin.allPlaces = function(req, res) {
 

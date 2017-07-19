@@ -11,12 +11,42 @@ function generateButton(row, id, type) {
   button.innerHTML ="Delete";
 
   button.setAttribute("class", "btn btn-danger btn-sm");
-
-  button.onclick = function() {deleteUser(id)}; //Assign function to button
+  if(type === "people"){
+    button.onclick = function() {deleteUser(id)}; //Assign function to button
+  }
+  else if (type === "places"){
+    button.onclick = function() {deletePlace(id)};
+  }
 
   //button.setAttribute("class", "btn btn-info btn-sm");
   cell.appendChild(button);
   row.appendChild(cell);
+}
+
+function deleteVisit(id){
+  console.log(id);
+  //admin-people/30/delete
+  let urlType = "/admin/people/";
+  let urlAction = "/delete";
+
+  let url = urlType + id + urlAction;
+  console.log(url);
+  ajaxPostRequest(url);
+  removeTable();
+  ajaxGetRequest();
+}
+
+function deletePlace(id){
+  console.log(id);
+  //admin-people/30/delete
+  let urlType = "/admin/place/";
+  let urlAction = "/delete";
+
+  let url = urlType + id + urlAction;
+  console.log(url);
+  ajaxPostRequest(url);
+  removeTable();
+  ajaxGetRequest();
 }
 
 function deleteUser(id){
@@ -31,8 +61,11 @@ function deleteUser(id){
   removeTable();
   ajaxGetRequest();
 }
+
 /* Submit AJAX post request on click */
 function ajaxPostRequest(urlStr) {
+
+  event.preventDefault();
 
   var url = urlStr;
 
@@ -64,6 +97,8 @@ function removeTable() {
 */
 function ajaxGetRequest(urlStr) {
 
+  event.preventDefault();
+  
   var url = urlStr;
   if(url == null) {
     var url = "/admin/users";
@@ -121,7 +156,11 @@ function generateTable(data) {
     }
 
     let currid = data[i]["id"];//Get person id and pass to action buttons
-    generateButton(row, currid);
+    
+    let pageType = document.getElementById("req-type").textContent;
+    
+    generateButton(row, currid, pageType);
+
     // add the row to the end of the table body
     tblBody.appendChild(row);
   }
