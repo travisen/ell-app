@@ -17,6 +17,9 @@ function generateButton(row, id, type) {
   else if (type === "places"){
     button.onclick = function() {deletePlace(id)};
   }
+  else if (type === "visits"){
+    button.onclick = function() {deleteVisit(id)};
+  }
 
   //button.setAttribute("class", "btn btn-info btn-sm");
   cell.appendChild(button);
@@ -26,7 +29,7 @@ function generateButton(row, id, type) {
 function deleteVisit(id){
   console.log(id);
   //admin-people/30/delete
-  let urlType = "/admin/people/";
+  let urlType = "/admin/visits/";
   let urlAction = "/delete";
 
   let url = urlType + id + urlAction;
@@ -98,7 +101,7 @@ function removeTable() {
 function ajaxGetRequest(urlStr) {
 
   event.preventDefault();
-  
+
   var url = urlStr;
   if(url == null) {
     var url = "/admin/users";

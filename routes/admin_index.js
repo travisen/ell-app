@@ -31,6 +31,7 @@ router.post("/admin/people/:id/delete", admin.destroyUser);
 
 router.post("/admin/place/:id/delete", admin.destroyPlace);
 
+router.post("/admin/visits/:id/delete", admin.destroyVisit);
 
 //Api Route
 router.get("/admin/visits/:type", admin.getVisits)

@@ -60,7 +60,25 @@ admin.destroyPlace = function(req, res){
     }) 
 };
 
+admin.destroyVisit = function(req, res){
+    console.log("destroy visits");
+    console.log(req.params);
+    let id = req.params.id;
+    console.log(id);
+    const query = {
+        text: q.destroyVisit, 
+        values: [id]
+    }
 
+    pool.query(query)
+    .then(req => {
+        res.status(200).send("Successfully deleted entry!");
+    })
+    .catch(error =>  {
+        console.log(error);
+        res.status(400).send("Failed to delete entry");
+    }) 
+};
 
 
 /* Json data post routes */
