@@ -116,9 +116,15 @@ body {
 tr {
   text-transform: capitalize;
 }
+
 #req-type {
+  display: none;
+}
+
+#req-path {
   display: none;
 }
 
 #serverMessage {
   display: none;
+}

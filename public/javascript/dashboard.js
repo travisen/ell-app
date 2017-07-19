@@ -67,12 +67,13 @@ function ajaxGetRequest(urlStr) {
   var url = urlStr;
   if(url == null) {
     var url = "/admin/users";
-    url = $("#req-type").text();
+    url = $("#req-path").text();
   }
 
   let request = $.get(url);
-
   request.success(function(result) {
+      console.log(result);
+
       generateTable(result); 
   });
 
