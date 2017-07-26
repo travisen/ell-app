@@ -30,6 +30,29 @@ admin.incorrect= function(req, res){
     res.render("admin-views/incorrect.ejs");
 }
 
+admin.stats = function(req, res) {
+    res.render("admin-views/admin-stats.ejs");
+}
+
+admin.TotalVisitsAll = function(req, res) {
+    function sendData(err, result) {
+        if(err){
+            console.error(err);
+            res.send("ERROR" + err);
+        } else {            
+            let placeList = result.rows
+            //console.log(placeList);
+            res.send(placeList);            
+        }
+    }
+
+    pool.query(q.mostVisitedPlaces, sendData); 
+}
+
+// admin.TotalVisitsUser
+
+// admin.MostVisitedThisWeek
+
 admin.destroyUser = function(req, res){
     console.log(req.params);
     let id = req.params.id;

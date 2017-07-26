@@ -1,0 +1,48 @@
+<% include partials/header %>
+
+<div class="container-fluid">
+<div class="row">
+<div class="col-sm-3 col-md-2 sidebar">
+    <ul class="nav nav-sidebar">
+    <li><a href="#">Home</span></a></li>
+    <li class="active"><a href="/admin/stats">Stats</span></a></li>
+    <li><a href="/admin/people">Users</a></li>
+    <li><a href="/admin/places">Places</a></li>
+    <li><a href="/admin/visits">Visits</a></li>
+    <li><a href="#">Export and Backup</a></li>
+    </ul>
+</div>
+
+    <div id="req-path">/admin/stats/all</div>
+    <div id="req-type">stats</div>
+
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+        <h1 class="page-header">Dashboard</h1>
+
+        <div id="serverMessage" class="alert alert-danger" role="alert">
+          <span><i class="fa fa-exclamation-circle" aria-hidden="true"></i></span>
+          <span class="sr-only">Error:</span>
+        </div>
+
+        <h2 class="sub-header">Statisics</h2>
+        <div class="table-responsive">
+        <table id="mainTable" class="table table-striped">
+            <thead>
+            <tr>
+                
+            </tr>
+            </thead>
+            <tbody id="bodyTable">
+            <tr>
+
+            </tr>
+
+            </tbody>
+        </table>
+        </div>
+    </div>
+    </div>
+</div>
+
+<% include partials/footer %>

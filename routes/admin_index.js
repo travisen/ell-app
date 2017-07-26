@@ -1,5 +1,5 @@
 var express       = require("express"),
-    admin         = require("../controllers/admin")
+    admin         = require("../controllers/admin"),
     bodyParser    = require('body-parser'),
     session       = require('express-session'),
     passport      = require('passport'),
@@ -17,18 +17,6 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 var router = express.Router();
 
-//router.get("/admin", admin.landing);
-
-
-//Initialize passport
-
-//Setup session
-// router.use(session({
-//     secret: "I really like my cat!",
-//     resave: true,
-//     saveUninitialized: false,
-//     cookie: {maxAge: 60000, secure: false }
-// }));
 router.use(session({
     secret: "I really like my cat!",
     resave: true,
@@ -119,5 +107,8 @@ router.post("/admin/visits/:id/delete", checkAuth, admin.destroyVisit);
 router.get("/admin/visits/:type", checkAuth, admin.getVisits)
 
 router.get("/admin/visits", checkAuth, admin.visits);
+
+router.get("/admin/stats", admin.stats);
+
 
 module.exports = router;

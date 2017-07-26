@@ -72,6 +72,35 @@ person ON person_visit.person_id = person.id INNER JOIN
 place ON person_visit.place_id = place.id
 ORDER BY person_visit.visited_on DESC;`
 
+q.totalVisits =`SELECT COUNT (*) from person_visit;`
+
+q.visits7 = `SELECT COUNT (*) from person_visit WHERE visited_on > current_date - interval '7 days';`
+
+q.visits30 = `SELECT COUNT (*) from person_visit WHERE visited_on > current_date - interval '30 days';`
+
+q.visits365 = `SELECT COUNT (*) from person_visit WHERE visited_on > current_date - interval '365 days';`
+
+q.userVisitsMonth = `SELECT COUNT (*) from person_visit WHERE EXTRACT(MONTH FROM person_visit.visited_on)
+ = EXTRACT(MONTH FROM current_date) AND person_id = ($1);`
+
+q.userTotalVisits = `SELECT COUNT (*) from person_visit WHERE person_id = ($1);`
+
+q.placeVisitsMonth = `SELECT COUNT (*) from person_visit WHERE EXTRACT(MONTH FROM person_visit.visited_on)
+ = EXTRACT(MONTH FROM current_date) AND place_id = ($1);`
+
+q.placeTotalVisits = `SELECT COUNT (*) from person_visit WHERE place_id = ($1);`
+
+q.mostVisitedPlacesMonth = `SELECT place.id, place.name, COUNT(person_visit.place_id) AS visits
+	   FROM place LEFT JOIN person_visit ON place.id = person_visit.place_id
+	    AND EXTRACT(MONTH FROM person_visit.visited_on) = EXTRACT(MONTH FROM current_date)
+	     GROUP BY place.id
+	      ORDER BY visits DESC;`
+
+q.mostVisitedPlaces = `SELECT place.id, place.name, COUNT(person_visit.place_id) AS visits
+	   FROM place LEFT JOIN person_visit ON place.id = person_visit.place_id
+	     GROUP BY place.id
+	      ORDER BY visits DESC;`
+
 q.getAdmin = `SELECT username, password FROM auth
 WHERE username, password = ($1, $2);`
 
@@ -80,5 +109,6 @@ q.getAdmin2 = `SELECT * FROM auth WHERE username = ($1);`
 q.checkAdmin = `SELECT username FROM auth WHERE username
  FROM place
   WHERE id = ($1);`
+
 
 module.exports = q;

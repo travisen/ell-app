@@ -4,6 +4,10 @@ const pool = require("../psql/db_setup.js");
 const q = require("../psql/queries"); //import queries
 const capitalizeFirstLetter = require("../utils/strings");
 
+//Required for reading files.
+var fs = require('fs');
+
+
 var signup = {};
 
 signup.post = function(req, res) {
@@ -12,6 +16,7 @@ signup.post = function(req, res) {
     let last = req.body.lastName.toLowerCase();
     let password = req.body.password;
 
+    //This is insecure
     if (password != "scola12") {
 
         let errMsg = "Incorrect password. Place contact SCOLA";
