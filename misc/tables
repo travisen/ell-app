@@ -9,6 +9,12 @@ CREATE TABLE person (
     CONSTRAINT valid_email CHECK (email ~* '^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+[.][A-Za-z]+$')
 );
 
+CREATE TABLE auth (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(32) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
+
 CREATE TABLE person (
     id SERIAL PRIMARY KEY,
     first_name VARCHAR(64) NOT NULL,

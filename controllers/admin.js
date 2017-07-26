@@ -22,6 +22,14 @@ admin.visits = function(req, res) {
     res.render("admin-views/admin-visits");
 }
 
+admin.login = function(req, res) {
+    res.render("admin-views/admin-login");
+}
+
+admin.incorrect= function(req, res){
+    res.render("admin-views/incorrect.ejs");
+}
+
 admin.destroyUser = function(req, res){
     console.log(req.params);
     let id = req.params.id;

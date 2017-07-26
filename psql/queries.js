@@ -72,4 +72,13 @@ person ON person_visit.person_id = person.id INNER JOIN
 place ON person_visit.place_id = place.id
 ORDER BY person_visit.visited_on DESC;`
 
+q.getAdmin = `SELECT username, password FROM auth
+WHERE username, password = ($1, $2);`
+
+q.getAdmin2 = `SELECT * FROM auth WHERE username = ($1);`
+
+q.checkAdmin = `SELECT username FROM auth WHERE username
+ FROM place
+  WHERE id = ($1);`
+
 module.exports = q;
