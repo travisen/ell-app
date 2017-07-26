@@ -33,7 +33,8 @@ router.use(session({
     secret: "I really like my cat!",
     resave: true,
     saveUninitialized: false,
-    cookie: {maxAge: 60000, secure: false }
+    rolling: true,
+    cookie: {maxAge: 60000 * 2, secure: false }
 }));
 router.use(passport.initialize());
 router.use(passport.session());
@@ -44,10 +45,6 @@ passport.serializeUser(function(user, done) {
 });
 
 passport.deserializeUser(function(user, done) {
-    console.log('called deserializeUser');
-    console.log(user);
-    console.log('called deserializeUser - pg');
-
     done(null, user);
 });
 
@@ -83,35 +80,44 @@ router.post('/admin/login', urlencodedParser,
     })
 );
 
-router.get("/admin/incorrect", admin.incorrect);
+// Middleware to check if user is logged in.
+function checkAuth (req, res, next) {
+    if(req.isAuthenticated()){
+        next();
+    } 
+    else {
+        res.render("admin-views/not-logged");
+    }
+};
 
+router.get("/admin/incorrect", admin.incorrect);
 
 router.get("/admin/login", admin.login);
 
-router.get("/admin/places", passport.authenticate('local'), admin.places);
+router.get("/admin/places", checkAuth, admin.places);
 
-router.post("/admin/places/add", urlencodedParser, admin.addPlace)
+router.post("/admin/places/add", checkAuth, urlencodedParser, admin.addPlace)
 
-router.get("/admin/people", passport.authenticate('local'), admin.people);
+router.get("/admin/people", checkAuth, admin.people);
 
 //Api Route
-router.get("/admin/places/:type", admin.allPlaces);
+router.get("/admin/places/:type", checkAuth, admin.allPlaces);
 
 router.get("/admin/users/", admin.allPeople);
 
 //Api Route
-router.post("/admin/users/add", urlencodedParser, admin.addUser)
+router.post("/admin/users/add", checkAuth, urlencodedParser, admin.addUser)
 
 //Api Route
-router.post("/admin/people/:id/delete", admin.destroyUser);
+router.post("/admin/people/:id/delete", checkAuth, admin.destroyUser);
 
-router.post("/admin/place/:id/delete", admin.destroyPlace);
+router.post("/admin/place/:id/delete", checkAuth, admin.destroyPlace);
 
-router.post("/admin/visits/:id/delete", admin.destroyVisit);
+router.post("/admin/visits/:id/delete", checkAuth, admin.destroyVisit);
 
 //Api Route
-router.get("/admin/visits/:type", admin.getVisits)
+router.get("/admin/visits/:type", checkAuth, admin.getVisits)
 
-router.get("/admin/visits", admin.visits);
+router.get("/admin/visits", checkAuth, admin.visits);
 
 module.exports = router;
