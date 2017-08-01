@@ -87,7 +87,9 @@ router.get("/admin/login", admin.login);
 
 router.get("/admin/places", checkAuth, admin.places);
 
-router.post("/admin/places/add", checkAuth, urlencodedParser, admin.addPlace)
+router.post("/admin/places/add", checkAuth, urlencodedParser, admin.addPlace);
+
+router.get("/admin/places/edit/:id", urlencodedParser, admin.editPlace);
 
 router.get("/admin/people", checkAuth, admin.people);
 
@@ -97,7 +99,7 @@ router.get("/admin/places/:type", checkAuth, admin.allPlaces);
 router.get("/admin/users/", admin.allPeople);
 
 //Api Route
-router.post("/admin/users/add", checkAuth, urlencodedParser, admin.addUser)
+router.post("/admin/users/add", checkAuth, urlencodedParser, admin.addUser);
 
 //Api Route
 router.post("/admin/people/:id/delete", checkAuth, admin.destroyUser);

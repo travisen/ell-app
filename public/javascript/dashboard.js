@@ -5,7 +5,7 @@ $(document).ready(function () {
 /*
   Generate a button in the passed in row.
 */
-function generateButton(row, id, type) {
+function generateDeleteButton(row, id, type) {
   let cell = document.createElement("td");
   let button = document.createElement("BUTTON");
 
@@ -22,9 +22,24 @@ function generateButton(row, id, type) {
     button.onclick = function () { deleteVisit(id) };
   }
 
-  //button.setAttribute("class", "btn btn-info btn-sm");
   cell.appendChild(button);
   row.appendChild(cell);
+}
+
+function generateEditButton(row, id){
+  let cell = document.createElement("td");
+  let button = document.createElement("BUTTON");
+
+  button.innerHTML = "Edit";
+
+  button.setAttribute("class", "btn btn-info btn-sm");
+
+  cell.appendChild(button);
+  row.appendChild(cell);
+}
+
+function editPlace(){
+
 }
 
 function deleteVisit(id) {
@@ -168,7 +183,10 @@ function generateTable(data) {
 
     let pageType = document.getElementById("req-type").textContent;
 
-    generateButton(row, currid, pageType);
+    generateDeleteButton(row, currid, pageType);
+    if(pageType === "places"){
+      generateEditButton(row, currid);
+    }
 
     // add the row to the end of the table body
     tblBody.appendChild(row);

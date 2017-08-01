@@ -13,23 +13,19 @@
     </ul>
 </div>
 
-    <div id="req-path">/admin/places/all</div>
-    <div id="req-type">places</div>
-
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-
-        <h1 class="page-header">Dashboard</h1>
-
+        <h1 class="page-header">Edit <%=placeDetails.name %></h1>
+        
         <div id="serverMessage" class="alert alert-danger" role="alert">
           <span><i class="fa fa-exclamation-circle" aria-hidden="true"></i></span>
           <span class="sr-only">Error:</span>
         </div>
 
-        <form class="" id="placeAddForm" action="/admin/places/add" method="POST">
+        <form class="" id="placeAddForm" action="/admin/places/edit" method="POST">
             <div class="row">
                 <div class="form-group col-xs-5">
-                    <label>Name</label>
-                    <input type="text" name="name" class="form-control" placeholder="Place Name" required>
+                    <label>Name</label>                    
+                    <input type="text" name="name" class="form-control" value=<%=placeDetails.name %> required>
                 </div>
                 <div class="form-group col-xs-5">
                   <label for="sel1">Type of Place</label>
@@ -44,7 +40,7 @@
             <div class="row">
                 <div class="form-group col-xs-4">
                     <label>Street Address</label>
-                    <input type="text" name="street" class="form-control" placeholder="222 Main Ave" required>
+                    <input type="text" name="street" class="form-control" value=<%=placeDetails.street_address %> required>
                 </div>
                 <div class="form-group col-xs-2">
                     <label>City</label>
@@ -56,13 +52,13 @@
                 </div>
                 <div class="form-group col-xs-2">
                     <label>Zipcode</label>
-                    <input type="text" name="zipcode" class="form-control" placeholder="zipcode" required>
+                    <input type="text" name="zipcode" class="form-control" value=<%=placeDetails.zipcode %> required>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-xs-2">
                     <label>Phone</label>
-                    <input type="tel" name="phone" class="form-control" placeholder="5701111111" required>
+                    <input type="tel" name="phone" class="form-control" value=<%=placeDetails.phone %> required>
                 </div>
                 <div class="form-group col-xs-2">
                   <label for="sel1">Cost</label>
@@ -76,38 +72,15 @@
             </div>
             <div class="form-group">
                 <label>Description</label>
-                <textarea type="text" name="description" class="form-control" placeholder="Describe the place here."></textarea>
+                <textarea type="text" name="description" class="form-control" value=<%=placeDetails.description %>></textarea>
             </div>
 
 
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-
-        <h2 class="sub-header">Places</h2>
-        <div class="table-responsive">
-        <table id="mainTable" class="table table-striped">
-            <thead>
-            <tr>
-                <th class="id">#</th>
-                <th>Name</th>
-                <th>Street Address</th>
-                <th>City</th>
-                <th>State</th>
-                <th>Zipcode</th>
-                <th>Description</th>
-                <th>Cost</th>
-            </tr>
-            </thead>
-            <tbody id="bodyTable">
-            <tr>
-
-            </tr>
-
-            </tbody>
-        </table>
-        </div>
     </div>
     </div>
 </div>
 
-<% include partials/footer %>
+</body>
+</html>

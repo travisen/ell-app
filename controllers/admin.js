@@ -111,6 +111,29 @@ admin.destroyVisit = function(req, res){
     }) 
 };
 
+admin.editPlace = function(req, res){
+
+    let id = req.params.id;
+
+    function _render(err, result){
+        if(err){
+            console.error(err);
+            res.send("ERROR" + err);
+        } 
+        else {
+            let placeDetails = result.rows[0];
+            console.log(placeDetails);
+
+            res.render("admin-views/edit-place", { placeDetails: placeDetails });
+        }
+    }
+    const query = {
+        text: q.getById,
+        values: [id]
+    }
+
+    pool.query(query, _render);
+}
 
 /* Json data post routes */
 admin.allPlaces = function(req, res) {
@@ -122,7 +145,6 @@ admin.allPlaces = function(req, res) {
         } else {
             
             let placeList = result.rows
-            //console.log(placeList);
             res.send(placeList);            
         }
     }
@@ -167,8 +189,7 @@ admin.allPeople = function(req, res) {
 }
 
 admin.addPlace = function(req, res) {
-    // console.log(req);
-    console.log(req.body);
+
     let name = req.body.name.toLowerCase();
     let place_type = req.body.place_type.toLowerCase();
     let street_address = req.body.street_address;
@@ -258,33 +279,11 @@ admin.getVisits = function(req, res) {
         } else {
             
             let placeList = result.rows
-            //console.log(placeList);
             res.send(placeList);            
         }
     }
 
     pool.query(q.getVisitsMostRecent, sendData);
-
-    // let searchType = req.params.type;
-
-    // if (searchType === "play"){
-    //     pool.query(q.play, sendData); 
-    // }
-    // else if (searchType === "eat") {
-    //     pool.query(q.eat, sendData) 
-    // }
-    // else if (searchType === "shop") {
-    //     pool.query(q.shop, sendData) 
-    // }
-    // else if (searchType === "other") {
-    //     pool.query(q.other, sendData) 
-    // }
-    // else if(searchType === "all") {
-    //     pool.query(q.allPlaces, sendData) 
-    // }
-    // else { 
-    //     res.send("Whoops");
-    // }
 }
 
 
