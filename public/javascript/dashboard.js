@@ -120,7 +120,7 @@ function getOther(){
 }
 
 /* 
-  Delete Table
+  Delete Table Body
 
 */
 function removeTable() {

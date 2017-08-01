@@ -1,21 +1,21 @@
 const q = {};
 
-q.allPlaces = `SELECT id, name, street_address, city, state, zipcode, description, cost
+q.allPlaces = `SELECT id, name, street_address, city, state, zipcode, description, cost, phone
  FROM place;`
 
-q.play = `SELECT id, name, description, street_address, city, state, zipcode, cost
+q.play = `SELECT id, name, description, street_address, city, state, zipcode, cost, phone
  FROM place
   WHERE place_type = 'play';`;
 
-q.eat = `SELECT id, name, description, street_address, city, state, zipcode, cost
+q.eat = `SELECT id, name, description, street_address, city, state, zipcode, cost, phone
  FROM place
   WHERE place_type = 'eat';`;
 
-q.shop = `SELECT id, name, description, street_address, city, state, zipcode, cost
+q.shop = `SELECT id, name, description, street_address, city, state, zipcode, cost, phone
  FROM place
   WHERE place_type = 'shop';`;
 
-q.other = `SELECT id, name, description, street_address, city, state, zipcode, cost
+q.other = `SELECT id, name, description, street_address, city, state, zipcode, cost, phone
  FROM place
   WHERE place_type = 'other';`;
 
