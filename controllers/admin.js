@@ -191,8 +191,13 @@ admin.addPlace = function(req, res) {
         res.status(200).send({msg: resStr});
     })
     .catch(error =>  {
-        console.log(error);
-        res.status(400).send( {msg: "Something went terribly wrong, doh!"});
+        if(error.code == 23505){
+            res.status(400).send( {msg: "Sorry, but an entry for " + name + " already exists."});
+        } 
+        else{
+            console.log(error);
+            res.status(400).send( {msg: "Something went terribly wrong!"});
+        }
     }) 
 }
 

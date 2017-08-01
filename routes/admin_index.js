@@ -22,7 +22,7 @@ router.use(session({
     resave: true,
     saveUninitialized: false,
     rolling: true,
-    cookie: {maxAge: 60000 * 2, secure: false }
+    cookie: {maxAge: 60000 * 30, secure: false }
 }));
 
 router.use(passport.initialize());
