@@ -103,6 +103,22 @@ function ajaxPostRequest(urlStr) {
   });
 }
 
+function getAll(){
+  ajaxGetRequest("/admin/places/all");
+}
+function getPlay(){
+  ajaxGetRequest("/admin/places/play");
+}
+function getShop(){
+  ajaxGetRequest("/admin/places/shop");
+}
+function getEat(){
+  ajaxGetRequest("/admin/places/eat");
+}
+function getOther(){
+  ajaxGetRequest("/admin/places/other");
+}
+
 /* 
   Delete Table
 
@@ -132,7 +148,7 @@ function ajaxGetRequest(urlStr) {
   let request = $.get(url);
   request.success(function (result) {
     console.log(result);
-
+    removeTable(); // Possibly remove
     generateTable(result);
   });
 

@@ -78,12 +78,17 @@
                 <label>Description</label>
                 <textarea type="text" name="description" class="form-control" placeholder="Describe the place here."></textarea>
             </div>
-
-
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
 
         <h2 class="sub-header">Places</h2>
+            <ul class="list-inline">
+                <li><button type="submit" class="btn btn-primary" onClick="getAll()">Show All</button></li>
+                <li><button type="submit" class="btn btn-primary" onClick="getPlay()">Show Play</button></li>
+                <li><button type="submit" class="btn btn-primary" onClick="getShop()">Show Shop</button></li>
+                <li><button type="submit" class="btn btn-primary" onClick="getEat()">Show Eat</button></li>
+                <li><button type="submit" class="btn btn-primary" onClick="getOther()">Show Other</button></li>
+            </ul>
         <div class="table-responsive">
         <table id="mainTable" class="table table-striped">
             <thead>
