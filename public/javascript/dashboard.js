@@ -126,8 +126,7 @@ function getOther(){
 function removeTable() {
   var table = document.getElementById("mainTable");
   var tableBody = document.getElementById("bodyTable");
-  // var garbage = table.removeChild(tableBody);
-  $("#mainTable tr").remove();
+  $("#bodyTable tr").remove();
 }
 
 

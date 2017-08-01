@@ -110,5 +110,7 @@ q.checkAdmin = `SELECT username FROM auth WHERE username
  FROM place
   WHERE id = ($1);`
 
+q.updatePhone = `UPDATE place SET phone = ($1) WHERE id = ($2);`
+
 
 module.exports = q;
