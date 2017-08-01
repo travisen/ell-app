@@ -29,7 +29,7 @@ landing.get = function(req, res) {
 	    res.send("ERROR" + err);
 	  } else {
 	    let leaders = result.rows
-
+			console.log(leaders);
 	    res.render("landing", {
 	      header: header, 
 	      leaders: leaders 

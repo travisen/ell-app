@@ -24,6 +24,7 @@ router.use(session({
     rolling: true,
     cookie: {maxAge: 60000 * 2, secure: false }
 }));
+
 router.use(passport.initialize());
 router.use(passport.session());
 
@@ -48,12 +49,14 @@ passport.use(new localStrategy(
         }
 
         pool.query(query, (err, data) => {
-            //console.log(data.rows[0]);
-            let user = data.rows[0];
-            if(password == user.password){
-                console.log("Passwords match");
-                done(null, user);
-            } 
+            if(data.rows[0] != null){
+                console.log(data.rows[0]);
+                let user = data.rows[0];
+                if(password == user.password){
+                    console.log("Passwords match");
+                    done(null, user);
+                } 
+            }
             else {
                 done(null, false, { message: "Incorrect username and/or password." });
             }
