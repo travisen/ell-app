@@ -1,25 +1,25 @@
 const q = {};
 
-q.allPlaces = `SELECT id, name, street_address, city, state, zipcode, description, cost, phone
+q.allPlaces = `SELECT id, name, street_address, city, state, zipcode, description, cost, phone, place_type
  FROM place;`
 
-q.play = `SELECT id, name, description, street_address, city, state, zipcode, cost, phone
+q.play = `SELECT id, name, description, street_address, city, state, zipcode, cost, phone, place_type
  FROM place
   WHERE place_type = 'play';`;
 
-q.eat = `SELECT id, name, description, street_address, city, state, zipcode, cost, phone
+q.eat = `SELECT id, name, description, street_address, city, state, zipcode, cost, phone, place_type
  FROM place
   WHERE place_type = 'eat';`;
 
-q.shop = `SELECT id, name, description, street_address, city, state, zipcode, cost, phone
+q.shop = `SELECT id, name, description, street_address, city, state, zipcode, cost, phone, place_type
  FROM place
   WHERE place_type = 'shop';`;
 
-q.other = `SELECT id, name, description, street_address, city, state, zipcode, cost, phone
+q.other = `SELECT id, name, description, street_address, city, state, zipcode, cost, phone, place_type
  FROM place
   WHERE place_type = 'other';`;
 
-q.getById = `SELECT id, name, description, street_address, city, state, zipcode, cost
+q.getById = `SELECT id, name, description, street_address, city, state, zipcode, cost, place_type
  FROM place
   WHERE id = ($1)`;
 
@@ -111,6 +111,9 @@ q.checkAdmin = `SELECT username FROM auth WHERE username
   WHERE id = ($1);`
 
 q.updatePhone = `UPDATE place SET phone = ($1) WHERE id = ($2);`
+
+q.updateName = `UPDATE place SET name = ($1) WHERE id = ($2);`
+
 
 
 module.exports = q;

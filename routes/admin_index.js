@@ -89,7 +89,10 @@ router.get("/admin/places", checkAuth, admin.places);
 
 router.post("/admin/places/add", checkAuth, urlencodedParser, admin.addPlace);
 
-router.get("/admin/places/edit/:id", urlencodedParser, admin.editPlace);
+//checkAuth here eventually
+router.get("/admin/places/edit/:id", urlencodedParser, admin.getEditPlace);
+
+router.post("/admin/places/edit/:id/:edittype", urlencodedParser, admin.editPlace)
 
 router.get("/admin/people", checkAuth, admin.people);
 

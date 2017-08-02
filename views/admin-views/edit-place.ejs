@@ -15,6 +15,7 @@
 
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
         <h1 class="page-header">Edit <%=placeDetails.name %></h1>
+        <div class="id"> <%= placeDetails.id %> </div>
         
         <div id="serverMessage" class="alert alert-danger" role="alert">
           <span><i class="fa fa-exclamation-circle" aria-hidden="true"></i></span>
@@ -27,7 +28,7 @@
             </div>
             <div class="panel-body">
             
-             <form class="" id="placeEdit" action="/admin/places/edit" method="POST">
+             <form class="" id="placeEdit" action="/admin/places/edit/<%=placeDetails.id%>/name" method="POST">
              <div class="row">
                 <div class="form-group col-xs-5">
                     <label>Change Name</label>

@@ -114,6 +114,40 @@ admin.destroyVisit = function(req, res){
 admin.editPlace = function(req, res){
 
     let id = req.params.id;
+    let type = req.params.edittype;
+    
+    console.log("body", req.body);
+
+    if(type === "name"){
+        let name = req.body.name.toLowerCase();
+
+        const query = {
+            text: q.updateName,
+            values: [name, id]
+        }
+        pool.query(query, _render);
+    }
+    else{
+        res.status(400).send("Invalid field");
+    }
+
+    function _render(err, result){
+        if(err){
+            console.error(err);
+            res.status(400).send("Could not edit entry!");
+        } 
+        else {
+            let placeDetails = result.rows[0];
+            console.log(placeDetails);
+
+            res.status(200).send("Successfully edited entry!");
+        }
+    }
+}
+
+admin.getEditPlace = function(req, res){
+
+    let id = req.params.id;
 
     function _render(err, result){
         if(err){
