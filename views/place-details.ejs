@@ -11,7 +11,11 @@
 				<%= placeDetails.city %>,
 				<%= placeDetails.state %>
 				<%= placeDetails.zipcode %>
-				<span class="pull-right"></span>
+				<span class="pull-right">
+					<a href="tel:<%=placeDetails.phoneAddr%>">
+						<%=placeDetails.phone%>
+					</a>
+				</span>
 			</p>
 		</div>
 		<div class="panel-body">

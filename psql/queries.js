@@ -19,7 +19,7 @@ q.other = `SELECT id, name, description, street_address, city, state, zipcode, c
  FROM place
   WHERE place_type = 'other';`;
 
-q.getById = `SELECT id, name, description, street_address, city, state, zipcode, cost, place_type
+q.getById = `SELECT id, name, description, street_address, city, state, zipcode, cost, phone, place_type
  FROM place
   WHERE id = ($1)`;
 

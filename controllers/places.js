@@ -73,6 +73,13 @@ places.getDetails = function(req, res) {
 
       console.log(directionStr);
 
+      placeDetails.phoneAddr = placeDetails.phone;
+
+      placeDetails.phone = "(" + placeDetails.phone.substring(0 , 3) + ")"
+        + " " + placeDetails.phone.substring(3 , 6)
+        + "-" + placeDetails.phone.substring(6 , 10);
+       
+
       res.render("place-details", { placeDetails: placeDetails,
         directionStr: directionStr,
         address: address});
