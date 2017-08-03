@@ -42,8 +42,14 @@ visit.getForm = function(req, res){
   if(req.query.date != null){
     console.log(req.query.date);
     let date = req.query.date;
-  }  
-  
+  } 
+  //If name is sent through url 
+  if(place.length > 1){
+    var date = _getCurrentDate();
+    res.render("add-visit-non-datalist", {place: place, currentDate: date});
+    return;
+  }
+
   function _render(err, result){
     if(err) {
       console.error(err);
@@ -55,7 +61,7 @@ visit.getForm = function(req, res){
       let errMsg = "";
 
       console.log(currentDate);
-
+      console.log(placeList);
       res.render("add-visit", {
        placeList: placeList,
        place:place,

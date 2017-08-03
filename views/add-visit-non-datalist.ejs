@@ -12,13 +12,7 @@
 		</div>
 	  <div class="form-group">
 	  	<label>Place Name</label>
-			
-			<input class="form-control" list="places" name="listedPlaces"/>
-			<datalist id="places">
-	  	<% for(var i = 0; i < placeList.length; i++) { %>
-				<option value="<%=placeList[i].name%>">
-			<% } %>
-			</datalist>
+	  	<input id="places" name="place" class="form-control" type="text" list="places" value="<%=place%>"required>
 	  </div>
 	  <div class="form-group">
 	    <label>Date</label>
