@@ -329,3 +329,25 @@ function resetFields() {
 $(document).ready(function () {
   ajaxGetRequest();
 });
+
+/*Export to Excel*/
+$(document).ready(function() {
+  $("#btnExport").click(function(e) {
+    console.log("HELLO");
+    e.preventDefault();
+    //getting data from our table
+    var data_type = 'data:application/vnd.ms-excel';
+    var table_div = document.getElementById('table-wrapper');
+
+    var table_html = table_div.outerHTML.replace(/ /g, '%20');
+    console.log(table_html);
+
+    table_html = table_html.replace(/Edit/g, '');
+    table_html = table_html.replace(/Delete/g, '');
+
+    var a = document.createElement('a');
+    a.href = data_type + ', ' + table_html;
+    a.download = 'exported_table_' + Math.floor((Math.random() * 9999999) + 1000000) + '.xls';
+    a.click();
+  });
+});

@@ -4,8 +4,6 @@
 <div class="row">
 <div class="col-sm-3 col-md-2 sidebar">
     <ul class="nav nav-sidebar">
-    <li><a href="#">Home</span></a></li>
-    <li><a href="/admin/stats">Stats</span></a></li>
     <li><a href="/admin/people">Users</a></li>
     <li class="active"><a href="/admin/places">Places</a></li>
     <li><a href="/admin/visits">Visits</a></li>
@@ -80,6 +78,8 @@
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+        <h2 class="sub-header">Export to Excel</h2>
+         <button id="btnExport" type="submit" class="btn btn-primary">Export as xls file</button>
 
         <h2 class="sub-header">Places</h2>
             <ul class="list-inline">
@@ -89,7 +89,7 @@
                 <li><button type="submit" class="btn btn-primary" onClick="getEat()">Show Eat</button></li>
                 <li><button type="submit" class="btn btn-primary" onClick="getOther()">Show Other</button></li>
             </ul>
-        <div class="table-responsive">
+        <div id="table-wrapper" class="table-responsive">
         <table id="mainTable" class="table table-striped">
             <thead>
             <tr>
