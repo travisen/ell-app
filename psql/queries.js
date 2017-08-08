@@ -72,6 +72,13 @@ person ON person_visit.person_id = person.id INNER JOIN
 place ON person_visit.place_id = place.id
 ORDER BY person_visit.visited_on DESC;`
 
+q.getPlaceVisits =`SELECT person_visit.id, person.first_name, person.last_name, place.name , person_visit.visited_on
+FROM person_visit INNER JOIN
+person ON person_visit.person_id = person.id INNER JOIN
+place ON person_visit.place_id = place.id
+WHERE place.id = ($1)
+ORDER BY person_visit.visited_on DESC;`
+
 q.totalVisits =`SELECT COUNT (*) from person_visit;`
 
 q.visits7 = `SELECT COUNT (*) from person_visit WHERE visited_on > current_date - interval '7 days';`

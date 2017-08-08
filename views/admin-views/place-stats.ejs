@@ -1,0 +1,47 @@
+<% include partials/header %>
+
+<div class="container-fluid">
+<div class="row">
+<div class="col-sm-3 col-md-2 sidebar">
+    <ul class="nav nav-sidebar">
+    <li><a href="/admin/people">Users</a></li>
+    <li><a href="/admin/places">Places</a></li>
+    <li><a href="/admin/visits">Visits</a></li>
+    <li><a href="#">Export and Backup</a></li>
+    </ul>
+</div>
+
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+    <h1 class="page-header"><%=name%></h1>
+
+
+<h4 class="sub-header">Export to Excel</h4>
+	<button id="btnExport" type="submit" class="btn btn-primary">Export as xls file</button>
+
+<h2 class="sub-header">Visits</h2>
+<div id="table-wrapper" class="table-responsive">
+	<table id="mainTable" class="table table-striped">
+	    <thead>
+	    <tr>
+	        <th class="id">#</th>
+	        <th>First Name</th>
+	        <th>Last Name</th>
+	        <th>Visited On</th>
+	    </tr>
+	    </thead>
+	    <tbody id="bodyTable">
+        <% for(var i = 0; i < placeStats.length; i++) { %>
+            <tr>
+                <td><%=placeStats[i].first_name %></td>
+                <td><%=placeStats[i].last_name %></td>
+                <td><%=placeStats[i].visited_on %></td>
+            </tr>
+        <% } %>
+	    </tbody>
+	</table>
+</div>
+</div>
+
+</body>
+</html>

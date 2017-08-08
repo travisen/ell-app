@@ -1,5 +1,6 @@
 var express       = require("express"),
     admin         = require("../controllers/admin"),
+    stats         = require("../controllers/stats")
     bodyParser    = require('body-parser'),
     session       = require('express-session'),
     passport      = require('passport'),
@@ -86,6 +87,8 @@ router.get("/admin/incorrect", admin.incorrect);
 router.get("/admin/login", admin.login);
 
 router.get("/admin/places", checkAuth, admin.places);
+
+router.get("/admin/places/:id/stats", urlencodedParser, stats.placeSpecific );
 
 router.post("/admin/places/add", checkAuth, urlencodedParser, admin.addPlace);
 

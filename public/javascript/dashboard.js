@@ -190,7 +190,24 @@ function generateTable(data) {
       if (property === "id") {
         cell.className = "id";
       }
-      cell.appendChild(cellText);
+      if (property === "name") {
+        let placeLink = "/admin/places/";
+        placeLink += currRow.id;
+        placeLink += "/stats";
+
+        var link = document.createElement("a");
+        link.setAttribute("href", placeLink);
+        var linkText = document.createTextNode(currRow["name"]);
+        link.appendChild(linkText);
+        //cell.appendChild(link);
+
+        cell.classList.add("btnLink");
+      }
+      if(property != "name") {
+        cell.appendChild(cellText);
+      } else {
+        cell.appendChild(link);
+      }
       row.appendChild(cell);
     }
 
