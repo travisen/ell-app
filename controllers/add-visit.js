@@ -79,22 +79,32 @@ visit.getForm = function(req, res){
 // Need to figure out how to handle username
 visit.post = function(req, res) {
 
-  console.log("body", req.body);
-
+  console.log("body: ", req.body);
+  /*
   let name = req.body.name.toLowerCase();
   let place = req.body.place.toLowerCase();
   let date = req.body.date;
   const query = {
     text: q.insertVisit, //VALUES example: (travis, Nay Aug Park, 2011-2-3 )
     values: [name, place, date]
+  }*/
+
+  let first = req.body.firstName.toLowerCase();
+  let last = req.body.lastName.toLowerCase();
+  let place = req.body.place.toLowerCase();
+  let date = req.body.date;
+  //let first_name = req.body.first_name.toLowerCase();
+  const query = {
+    text: q.insertVisit,
+    values: [first, last, place, date]
   }
 
-  name = capitalizeFirstLetter(name);
+  first = capitalizeFirstLetter(first);
 
   pool.query(query)
     .then(req => {
 
-      let successMsg = name + ", thanks for adding your visit to " + place +
+      let successMsg = first + ", thanks for adding your visit to " + place +
       " on " + date + "!";
       console.log(successMsg);
       res.status(200).send({msg: successMsg});
@@ -107,7 +117,7 @@ visit.post = function(req, res) {
       //Duplicate Visit
       if(error.code === "23505") {
 
-        errMsg = "Sorry, " + name + ". But you've already visited "
+        errMsg = "Sorry, " + first + ". But you've already visited "
         + place + " on " + date + ".";
 
         console.log("Duplicate Error");
@@ -115,7 +125,7 @@ visit.post = function(req, res) {
       }
       //Name or place does not exist
       else if (error.code === "23502") {
-        errMsg = "Sorry, but, either " + name + " is not a current user" +
+        errMsg = "Sorry, but, either " + first + " " + last + " is not a current user" +
         " or " + place +"could not be found in our database. Please check that Your Name and Place Name are entered correctly.";
 
         console.log("Name Error");

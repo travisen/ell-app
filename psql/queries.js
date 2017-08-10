@@ -40,6 +40,13 @@ q.getNames = `SELECT id, name FROM place;`;
 q.insertVisit = `INSERT INTO person_visit(
     person_id, place_id, visited_on)
     VALUES(
+		(SELECT id from person where first_name=$1 AND last_name =$2),
+        (SELECT id from place where name=$3),
+		$4);`
+
+q.addVisit = `INSERT INTO person_visit(
+    person_id, place_id, visited_on)
+    VALUES(
         (SELECT id from person where first_name=$1),
         (SELECT id from place where name=$2),
         $3);`

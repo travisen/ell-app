@@ -9,7 +9,7 @@ var express       = require("express"),
 var bodyParser = require('body-parser')
 
 // create application/json parser
-var jsonParser = bodyParser.json()
+var jsonParser = bodyParser.json();
 
 // create application/x-www-form-urlencoded parser
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
@@ -25,7 +25,7 @@ router.get("/find", function(req, res){
     res.render("what-do");
 });
 
-router.get("/add-visit", visit.getForm);
+router.get("/add-visit", urlencodedParser, visit.getForm);
 
 router.post("/add-visit", urlencodedParser, visit.post);
 

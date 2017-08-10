@@ -10,14 +10,16 @@ $("#visitForm").submit(function(event) {
 
     /* get some values from elements on the page: */
     let $form = $(this),
-        name = $form.find('input[name="name"]').val(),
+        firstName = $form.find('input[name="firstName"]').val(),
+        lastName = $form.find('input[name="lastName"]').val(),
         place = $form.find('input[name="place"]').val(),
         date = $form.find('input[name="date"]').val()
         url = $form.attr('action')
 
     /* Send the data using post */
     let posting = $.post(url, {
-        name: name,
+        firstName: firstName,
+        lastName: lastName,
         place: place,
         date: date
     });
