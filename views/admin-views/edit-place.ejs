@@ -32,7 +32,7 @@
              <div class="row">
                 <div class="form-group col-xs-5">
                     <label>Change Name</label>
-                    <input type="text" name="name" class="form-control" placeholder="Place Name" required>
+                    <input type="text" name="data" class="form-control" placeholder="Place Name" required>
                 </div>
              </div>
             <button type="submit" class="btn btn-primary">Submit Edit</button>
@@ -46,11 +46,11 @@
             </div>
             <div class="panel-body">
             
-             <form class="" id="placeEdit" action="/admin/places/edit" method="POST">
+             <form class="" id="placeEdit" action="/admin/places/edit/<%=placeDetails.id%>/place_type" method="POST">
              <div class="row">
                 <div class="form-group col-xs-5">
                     <label>Change Type</label>
-                    <select name="place_type" required class="form-control" id="sel1">
+                    <select name="data" required class="form-control" id="sel1">
                         <option>Play</option>
                         <option>Eat</option>
                         <option>Shop</option>
@@ -69,11 +69,11 @@
             </div>
             <div class="panel-body">
             
-             <form class="" id="placeEdit" action="/admin/places/edit" method="POST">
+             <form class="" id="placeEdit" action="/admin/places/edit/<%=placeDetails.id%>/cost" method="POST">
              <div class="row">
                 <div class="form-group col-xs-5">
                     <label>Change Type</label>
-                    <select name="place_type" required class="form-control" id="sel1">
+                    <select name="data" required class="form-control" id="sel1">
                         <option>free</option>
                         <option>$</option>
                         <option>$$</option>
@@ -92,11 +92,11 @@
             </div>
             <div class="panel-body">
             
-             <form class="" id="placeEdit" action="/admin/places/edit" method="POST">
+             <form class="" id="placeEdit" action="/admin/places/edit/<%=placeDetails.id%>/street_address" method="POST">
              <div class="row">
                 <div class="form-group col-xs-5">
                     <label>Change Street Address</label>
-                    <input type="text" name="name" class="form-control" placeholder="Street Address" required>
+                    <input type="text" name="data" class="form-control" placeholder="Street Address" required>
                 </div>
              </div>
                 <button type="submit" class="btn btn-primary">Submit Edit</button>
@@ -110,11 +110,11 @@
             </div>
             <div class="panel-body">
             
-             <form class="" id="placeEdit" action="/admin/places/edit" method="POST">
+             <form class="" id="placeEdit" action="/admin/places/edit/<%=placeDetails.id%>/city" method="POST">
              <div class="row">
                 <div class="form-group col-xs-5">
                     <label>Change City</label>
-                    <input type="text" name="name" class="form-control" placeholder="City" required>
+                    <input type="text" name="data" class="form-control" placeholder="City" required>
                 </div>
              </div>
             <button type="submit" class="btn btn-primary">Submit Edit</button>
@@ -128,11 +128,11 @@
             </div>
             <div class="panel-body">
             
-             <form class="" id="placeEdit" action="/admin/places/edit" method="POST">
+             <form class="" id="placeEdit" action="/admin/places/edit/<%=placeDetails.id%>/state" method="POST">
              <div class="row">
                 <div class="form-group col-xs-5">
                     <label>Change State</label>
-                    <input type="text" name="name" class="form-control" placeholder="State" required>
+                    <input type="text" name="data" class="form-control" placeholder="State" required>
                 </div>
              </div>
             <button type="submit" class="btn btn-primary">Submit Edit</button>
@@ -146,11 +146,11 @@
             </div>
             <div class="panel-body">
             
-             <form class="" id="placeEdit" action="/admin/places/edit" method="POST">
+             <form class="" id="placeEdit" action="/admin/places/edit/<%=placeDetails.id%>/zipcode" method="POST">
              <div class="row">
                 <div class="form-group col-xs-5">
                     <label>Change Zipcode</label>
-                    <input type="text" name="name" class="form-control" placeholder="zipcode" required>
+                    <input type="text" name="data" class="form-control" placeholder="zipcode" required>
                 </div>
              </div>
             <button type="submit" class="btn btn-primary">Submit Edit</button>
@@ -164,11 +164,11 @@
             </div>
             <div class="panel-body">
             
-             <form class="" id="placeEdit" action="/admin/places/edit" method="POST">
+             <form class="" id="placeEdit" action="/admin/places/edit/<%=placeDetails.id%>/phone" method="POST">
              <div class="row">
                 <div class="form-group col-xs-5">
                     <label>Change Phone</label>
-                    <input type="text" name="name" class="form-control" placeholder="phone" required>
+                    <input type="text" name="data" class="form-control" placeholder="phone" required>
                 </div>
              </div>
             <button type="submit" class="btn btn-primary">Submit Edit</button>
@@ -182,11 +182,11 @@
             </div>
             <div class="panel-body">
             
-             <form class="" id="placeEdit" action="/admin/places/edit" method="POST">
+             <form class="" id="placeEdit" action="/admin/places/edit/<%=placeDetails.id%>/description" method="POST">
              <div class="row">
                 <div class="form-group col-xs-5">
-                    <label>Change Description</label>
-                    <textarea type="text" name="description" class="form-control" placeholder="Describe the place here."></textarea>
+                    <label>Change Description (Max 250 characters)</label>
+                    <textarea maxLength="250" type="text" name="data" class="form-control" placeholder="Describe the place here."></textarea>
                 </div>
              </div>
             <button type="submit" class="btn btn-primary">Submit Edit</button>

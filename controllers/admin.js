@@ -111,6 +111,14 @@ admin.destroyVisit = function(req, res){
     }) 
 };
 
+function makeQuery(queryType, id, data){     
+    const query = {
+        text: queryType,
+        values: [data, id]
+    }
+    return query;
+}
+
 admin.editPlace = function(req, res){
 
     let id = req.params.id;
@@ -119,15 +127,48 @@ admin.editPlace = function(req, res){
     console.log("id", id);
     console.log("id", type);
 
-    if(type === "name"){
-        let name = req.body.name.toLowerCase();
+    if(req.body.data == null) {
+        console.log("data body is null");
+        return;
+    }
+    let data = req.body.data.toLowerCase();
 
-        const query = {
-            text: q.updateName,
-            values: [name, id]
-        }
+    if(type === "name"){
+        let query = makeQuery(q.updateName, id, data);
         pool.query(query, _render);
     }
+    else if(type === "place_type"){
+        let query = makeQuery(q.updatePlaceType, id, data);
+        pool.query(query, _render);
+    } 
+    else if(type === "cost"){
+        let query = makeQuery(q.updateCost, id, data);
+        pool.query(query, _render);
+    }
+    else if(type === "street_address"){
+        let query = makeQuery(q.updateStreet, id, data);
+        pool.query(query, _render);
+    }
+    else if(type === "city"){
+        let query = makeQuery(q.updateCity, id, data);
+        pool.query(query, _render);
+    }
+    else if(type === "state"){
+        let query = makeQuery(q.updateState, id, data);
+        pool.query(query, _render);
+    }
+    else if(type === "zipcode"){
+        let query = makeQuery(q.updateZip, id, data);
+        pool.query(query, _render);
+    }
+    else if(type === "phone"){
+        let query = makeQuery(q.updatePhone, id, data);
+        pool.query(query, _render);
+    }
+    else if(type === "description"){
+        let query = makeQuery(q.updateDescription, id, data);
+        pool.query(query, _render);
+    }          
     else{
         res.status(400).send("Invalid field");
     }

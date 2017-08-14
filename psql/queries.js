@@ -128,6 +128,22 @@ q.updatePhone = `UPDATE place SET phone = ($1) WHERE id = ($2);`
 
 q.updateName = `UPDATE place SET name = ($1) WHERE id = ($2);`
 
+q.updatePlaceType = `UPDATE place SET place_type = ($1) WHERE id = ($2);`
 
+q.updateStreet = `UPDATE place SET street_address = ($1) WHERE id = ($2);`
+
+q.updateCity = `UPDATE place SET city = ($1) WHERE id = ($2);`
+
+q.updateState = `UPDATE place SET state = ($1) WHERE id = ($2);`
+
+q.updateZip = `UPDATE place SET zipcode = ($1) WHERE id = ($2);`
+
+q.updatePhone = `UPDATE place SET phone = ($1) WHERE id = ($2);`
+
+q.updateCost = `UPDATE place SET cost = ($1) WHERE id = ($2);`
+
+q.updateDescription = `UPDATE place SET description = ($1) WHERE id = ($2);`
+
+q.updateFeatured = `UPDATE place SET featured = ($1) WHERE id = ($2);`
 
 module.exports = q;
