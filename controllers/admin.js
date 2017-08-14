@@ -116,7 +116,8 @@ admin.editPlace = function(req, res){
     let id = req.params.id;
     let type = req.params.edittype;
     
-    console.log("body", req.body);
+    console.log("id", id);
+    console.log("id", type);
 
     if(type === "name"){
         let name = req.body.name.toLowerCase();
@@ -134,13 +135,10 @@ admin.editPlace = function(req, res){
     function _render(err, result){
         if(err){
             console.error(err);
-            res.status(400).send("Could not edit entry!");
+            res.render("admin-views/failure");
         } 
         else {
-            let placeDetails = result.rows[0];
-            console.log(placeDetails);
-
-            res.status(200).send("Successfully edited entry!");
+            res.render("admin-views/success");
         }
     }
 }

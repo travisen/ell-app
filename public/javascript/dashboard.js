@@ -27,12 +27,15 @@ function generateDeleteButton(row, id, type) {
 }
 
 function generateEditButton(row, id){
+  let url = "/admin/places/edit/" + id;
+
   let cell = document.createElement("td");
-  let button = document.createElement("BUTTON");
+  let button = document.createElement("a");
 
   button.innerHTML = "Edit";
 
   button.setAttribute("class", "btn btn-info btn-sm");
+  button.setAttribute("href", url);
 
   cell.appendChild(button);
   row.appendChild(cell);
@@ -190,23 +193,25 @@ function generateTable(data) {
       if (property === "id") {
         cell.className = "id";
       }
+      //Fix links later
       if (property === "name") {
-        let placeLink = "/admin/places/";
-        placeLink += currRow.id;
-        placeLink += "/stats";
+        // let placeLink = "/admin/places/";
+        // placeLink += currRow.id;
+        // placeLink += "/stats";
 
-        var link = document.createElement("a");
-        link.setAttribute("href", placeLink);
-        var linkText = document.createTextNode(currRow["name"]);
-        link.appendChild(linkText);
-        //cell.appendChild(link);
+        // var link = document.createElement("a");
+        // link.setAttribute("href", placeLink);
+        // var linkText = document.createTextNode(currRow["name"]);
+        // link.appendChild(linkText);
+        // //cell.appendChild(link);
 
-        cell.classList.add("btnLink");
+        // cell.classList.add("btnLink");
+        cell.appendChild(cellText);
       }
       if(property != "name") {
         cell.appendChild(cellText);
       } else {
-        cell.appendChild(link);
+        //cell.appendChild(link);
       }
       row.appendChild(cell);
     }
