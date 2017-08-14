@@ -1,0 +1,59 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--save',
+1 verbose cli   'robots.txt' ]
+2 info using npm@4.1.2
+3 info using node@v7.6.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData robots.txt
+8 silly fetchOtherPackageData robots.txt
+9 silly cache add args [ 'robots.txt', null ]
+10 verbose cache add spec robots.txt
+11 silly cache add parsed spec Result {
+11 silly cache add   raw: 'robots.txt',
+11 silly cache add   scope: null,
+11 silly cache add   escapedName: 'robots.txt',
+11 silly cache add   name: null,
+11 silly cache add   rawSpec: 'robots.txt',
+11 silly cache add   spec: '/home/travis/Desktop/ell-app/robots.txt',
+11 silly cache add   type: 'local' }
+12 silly addLocalTarball shasum (computed) d8d4e537fbe8b5596b7ccb406a5b59efdf4b7d1d
+13 verbose addTmpTarball /home/travis/Desktop/ell-app/robots.txt not in flight; adding
+14 verbose correctMkdir /home/travis/.npm correctMkdir not in flight; initializing
+15 verbose addTmpTarball validating metadata from /home/travis/Desktop/ell-app/robots.txt
+16 verbose tar unpack /home/travis/Desktop/ell-app/robots.txt
+17 verbose tar unpacking to /tmp/npm-18761-67a666c7/unpack-4c57f644
+18 silly gentlyRm /tmp/npm-18761-67a666c7/unpack-4c57f644 is being purged
+19 verbose gentlyRm don't care about contents; nuking /tmp/npm-18761-67a666c7/unpack-4c57f644
+20 silly gunzTarPerm modes [ '755', '644' ]
+21 error not a package /home/travis/Desktop/ell-app/robots.txt
+22 error addLocal Could not install /home/travis/Desktop/ell-app/robots.txt
+23 silly fetchPackageMetaData Error: ENOENT: no such file or directory, open '/tmp/npm-18761-67a666c7/unpack-4c57f644/package.json'
+23 silly fetchPackageMetaData  error for robots.txt { Error: ENOENT: no such file or directory, open '/tmp/npm-18761-67a666c7/unpack-4c57f644/package.json'
+23 silly fetchPackageMetaData   errno: -2,
+23 silly fetchPackageMetaData   code: 'ENOENT',
+23 silly fetchPackageMetaData   syscall: 'open',
+23 silly fetchPackageMetaData   path: '/tmp/npm-18761-67a666c7/unpack-4c57f644/package.json' }
+24 silly rollbackFailedOptional Starting
+25 silly rollbackFailedOptional Finishing
+26 silly runTopLevelLifecycles Finishing
+27 silly install printInstalled
+28 verbose stack Error: ENOENT: no such file or directory, open '/tmp/npm-18761-67a666c7/unpack-4c57f644/package.json'
+29 verbose cwd /home/travis/Desktop/ell-app
+30 error Linux 4.4.0-87-generic
+31 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "--save" "robots.txt"
+32 error node v7.6.0
+33 error npm  v4.1.2
+34 error path /tmp/npm-18761-67a666c7/unpack-4c57f644/package.json
+35 error code ENOENT
+36 error errno -2
+37 error syscall open
+38 error enoent ENOENT: no such file or directory, open '/tmp/npm-18761-67a666c7/unpack-4c57f644/package.json'
+39 error enoent ENOENT: no such file or directory, open '/tmp/npm-18761-67a666c7/unpack-4c57f644/package.json'
+39 error enoent This is most likely not a problem with npm itself
+39 error enoent and is related to npm not being able to find a file.
+40 verbose exit [ -2, true ]

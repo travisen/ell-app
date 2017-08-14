@@ -49,4 +49,5 @@ landing.get = function(req, res) {
 
 	pool.query(query, _render)
 }
+
 module.exports = landing;
