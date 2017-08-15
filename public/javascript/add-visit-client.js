@@ -12,7 +12,7 @@ $("#visitForm").submit(function(event) {
     let $form = $(this),
         firstName = $form.find('input[name="firstName"]').val(),
         lastName = $form.find('input[name="lastName"]').val(),
-        place = $form.find('input[name="place"]').val(),
+        place = $form.find('select[name="place"]').val(),
         date = $form.find('input[name="date"]').val()
         url = $form.attr('action')
 

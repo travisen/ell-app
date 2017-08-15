@@ -13,6 +13,11 @@ const capitalizeFirstLetter = require("../utils/strings");
 
 var visit = {};
 
+function toTitleCase(str)
+{
+    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+}
+
 function _getCurrentDate(){
   var today = new Date();
   var dd = today.getDate();
@@ -71,6 +76,7 @@ visit.getForm = function(req, res){
      });
     }
   }
+
   console.log(q.getNames);
   pool.query(q.getNames, _render);
 }
@@ -80,14 +86,6 @@ visit.getForm = function(req, res){
 visit.post = function(req, res) {
 
   console.log("body: ", req.body);
-  /*
-  let name = req.body.name.toLowerCase();
-  let place = req.body.place.toLowerCase();
-  let date = req.body.date;
-  const query = {
-    text: q.insertVisit, //VALUES example: (travis, Nay Aug Park, 2011-2-3 )
-    values: [name, place, date]
-  }*/
 
   let first = req.body.firstName.toLowerCase();
   let last = req.body.lastName.toLowerCase();
@@ -103,7 +101,7 @@ visit.post = function(req, res) {
 
   pool.query(query)
     .then(req => {
-
+      place = toTitleCase(place);
       let successMsg = first + ", thanks for adding your visit to " + place +
       " on " + date + "!";
       console.log(successMsg);
@@ -116,7 +114,7 @@ visit.post = function(req, res) {
       let errMsg = "Something went wrong, sorry. Try refreshing the page.";
       //Duplicate Visit
       if(error.code === "23505") {
-
+        place = toTitleCase(place);
         errMsg = "Sorry, " + first + ". But you've already visited "
         + place + " on " + date + ".";
 
@@ -125,8 +123,7 @@ visit.post = function(req, res) {
       }
       //Name or place does not exist
       else if (error.code === "23502") {
-        errMsg = "Sorry, but, either " + first + " " + last + " is not a current user" +
-        " or " + place +"could not be found in our database. Please check that Your Name and Place Name are entered correctly.";
+        errMsg = "Sorry, but " + first + " " + last + " is not a current user.";
 
         console.log("Name Error");
         res.status(400).send({msg: errMsg});

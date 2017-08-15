@@ -18,8 +18,13 @@
 
 		<div class="form-group">
 	  	<label>Place Name</label>
-	  	<input id="places" name="place" class="form-control" type="text" list="places" value="<%=place%>"required>
-	  </div>
+			<select id="places" name="place" class="form-control capitalize" type="text" list="places" required>
+				<option disabled selected value> Select a place! </option>
+				<% placeList.forEach(function(place) { %>
+					<option class="capitalize"><%= place.name %></option>
+				<% }); %>
+			</select>		
+	 </div>
 
 	  <div class="form-group">
 	    <label>Date</label>
