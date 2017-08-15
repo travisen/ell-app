@@ -17,8 +17,10 @@
 		</div>
 
 	  <div class="form-group">
-	  	<label>Place Name</label>
-	  	<input id="places" name="place" class="form-control" type="text" list="places" value="<%=place%>"required>
+			<select id="places" name="place" class="form-control capitalize" type="text" list="places" required>
+					<option class="capitalize"><%= place %></option>
+			</select>		
+	
 	  </div>
 
 	  <div class="form-group">
