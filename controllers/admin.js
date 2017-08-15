@@ -27,6 +27,7 @@ admin.login = function(req, res) {
 }
 
 admin.incorrect= function(req, res){
+    console.log("HELLO");
     res.render("admin-views/incorrect");
 }
 

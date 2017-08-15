@@ -56,16 +56,20 @@ passport.use(new localStrategy(
                 if(password == user.password){
                     console.log("Passwords match");
                     done(null, user);
-                } 
+                }
+                else{
+                    done(null, false, '/admin/incorrect');
+                }
             }
             else {
-                done(null, false, { message: "Incorrect username and/or password." });
+                console.log("Incorrect");
+                done(null, false, '/admin/incorrect');
             }
         });
     }
 ));
 
-router.post('/admin/login', 
+router.post('/admin/login', urlencodedParser,
     passport.authenticate('local', {
         successRedirect: '/admin/places',
         failureRedirect: '/admin/incorrect'
@@ -93,9 +97,9 @@ router.get("/admin/places/:id/stats", urlencodedParser, stats.placeSpecific );
 router.post("/admin/places/add", checkAuth, urlencodedParser, admin.addPlace);
 
 //checkAuth here eventually
-router.get("/admin/places/edit/:id", urlencodedParser, admin.getEditPlace);
+router.get("/admin/places/edit/:id", checkAuth ,urlencodedParser, admin.getEditPlace);
 
-router.post("/admin/places/edit/:id/:edittype", urlencodedParser, admin.editPlace)
+router.post("/admin/places/edit/:id/:edittype",checkAuth,  urlencodedParser, admin.editPlace)
 
 router.get("/admin/people", checkAuth, admin.people);
 
