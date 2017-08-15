@@ -98,7 +98,7 @@ visit.post = function(req, res) {
   }
 
   first = capitalizeFirstLetter(first);
-
+  last = capitalizeFirstLetter(last);
   pool.query(query)
     .then(req => {
       place = toTitleCase(place);
