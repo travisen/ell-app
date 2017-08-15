@@ -27,11 +27,11 @@ admin.login = function(req, res) {
 }
 
 admin.incorrect= function(req, res){
-    res.render("admin-views/incorrect.ejs");
+    res.render("admin-views/incorrect");
 }
 
 admin.stats = function(req, res) {
-    res.render("admin-views/admin-stats.ejs");
+    res.render("admin-views/admin-stats");
 }
 
 admin.TotalVisitsAll = function(req, res) {
@@ -131,7 +131,11 @@ admin.editPlace = function(req, res){
         console.log("data body is null");
         return;
     }
-    let data = req.body.data.toLowerCase();
+
+    if(type != "description")
+        var data = req.body.data.toLowerCase();
+    else
+        var data = req.body.data
 
     if(type === "name"){
         let query = makeQuery(q.updateName, id, data);

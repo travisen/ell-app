@@ -65,7 +65,7 @@ passport.use(new localStrategy(
     }
 ));
 
-router.post('/admin/login', urlencodedParser,
+router.post('/admin/login', 
     passport.authenticate('local', {
         successRedirect: '/admin/places',
         failureRedirect: '/admin/incorrect'
