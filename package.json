@@ -28,5 +28,10 @@
     "pg": "^6.2.4",
     "request": "^2.81.0",
     "serve-favicon": "^2.4.3"
+  },
+  "devDependencies": {
+    "eslint": "^4.5.0",
+    "eslint-config-airbnb-base": "^11.3.2",
+    "eslint-plugin-import": "^2.7.0"
   }
 }

@@ -1,5 +1,5 @@
-'use strict';
-var bodyParser = require('body-parser')
+
+const bodyParser = require('body-parser');
 
 // create application/json parser
 var jsonParser = bodyParser.json()
