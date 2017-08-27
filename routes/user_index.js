@@ -1,52 +1,37 @@
-var express       = require("express"),
-    places        = require("../controllers/places"),
-    leaderboard   = require("../controllers/leaderboard"),
-    landing       = require("../controllers/landing"),
-    visit         = require("../controllers/add-visit"),
-    signup        = require("../controllers/sign-up");
+const express = require('express');
+const places = require('../controllers/places');
+const leaderboard = require('../controllers/leaderboard');
+const landing = require('../controllers/landing');
+const visit = require('../controllers/add-visit');
+const signup = require('../controllers/sign-up');
 
+const bodyParser = require('body-parser');
 
-var bodyParser = require('body-parser')
+// Create application/x-www-form-urlencoded parser
+const urlencodedParser = bodyParser.urlencoded({ extended: false });
+const router = express.Router();
 
-// create application/json parser
-var jsonParser = bodyParser.json();
-
-// create application/x-www-form-urlencoded parser
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
-
-var router = express.Router();
-
-// Routes
-
-//Disable well behaved robots from indexing
-router.get('/robots.txt', function (req, res) {
-    res.type('text/plain');
-    res.send("User-agent: *\nDisallow: /");
+// Disable well behaved robots from indexing
+router.get('/robots.txt', (req, res) => {
+  res.type('text/plain');
+  res.send('User-agent: *\nDisallow: /');
 });
 
-//Landing Page
-router.get("/", landing.get);
+router.get('/', landing.get);
 
-router.get("/find", function(req, res){
-    res.render("what-do");
+router.get('/find', (req, res) => {
+  res.render('what-do');
+});
+router.get('/add-visit', urlencodedParser, visit.getForm);
+router.post('/add-visit', urlencodedParser, visit.post);
+router.get('/leaderboard', leaderboard.get);
+router.get('/signup', (req, res) => {
+  res.render('signup');
 });
 
-router.get("/add-visit", urlencodedParser, visit.getForm);
+router.post('/signup', urlencodedParser, signup.post);
 
-router.post("/add-visit", urlencodedParser, visit.post);
-
-router.get("/leaderboard", leaderboard.get);
-
-router.get("/signup", function(req, res){
-    res.render("signup");
-});
-
-router.post("/signup", urlencodedParser, signup.post);
-
-//Review getting data from parameters.
-//Ensure it is secure.
-router.get("/find/:type", places.get);
-
-router.get("/find/:type/:id", places.getDetails);
+router.get('/find/:type', places.get);
+router.get('/find/:type/:id', places.getDetails);
 
 module.exports = router;
