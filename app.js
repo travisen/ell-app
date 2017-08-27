@@ -1,38 +1,37 @@
-"use strict";
-var express       = require("express"),
-    app           = express(),
-    favicon       = require('serve-favicon'),
-    path          = require('path'),
-    bodyParser    = require('body-parser');
+const express = require('express');
 
-var placeRoutes  = require("./routes/user_index"); 
-var adminRoutes = require("./routes/admin_index");
+const app = express();
+const favicon = require('serve-favicon');
+const path = require('path');
 
-app.set("view engine", "ejs");
+const placeRoutes = require('./routes/user_index');
+const adminRoutes = require('./routes/admin_index');
 
-//Declare static directory for custom stylesheets
-app.use(express.static(__dirname + "/public"));
+app.set('view engine', 'ejs');
 
-//Link to favicon
-//Setup error handling here. Don't want this to prevent server startup.
-app.use(favicon(path.join(__dirname, 'public', 'favicon-globe.ico')))
+// Declare static directory for custom stylesheets
+app.use(express.static(path.join(__dirname, '/public')));
+
+// Link to favicon
+if (favicon(path.join(__dirname, 'public', 'favicon-globe.ico'))) {
+  app.use(favicon(path.join(__dirname, 'public', 'favicon-globe.ico')));
+}
 
 app.use(placeRoutes);
 
-//Admin pages which require authentication.
+// Admin routes which require authentication
 app.use(adminRoutes);
 
 // Page does not exist
-app.get("/*", function(req, res){
-    // res.send("Index page!");
-    res.render("not-found");
+app.get('/*', (req, res) => {
+  // res.send('Index page!');
+  res.render('not-found');
 });
 
-app.listen(process.env.PORT || 3000 , function(){
-    if (process.env.PORT != null){
-        var port = process.env.PORT;
-    } else {
-        var port = 3000;
-    }
-    console.log("Server started on port: %d", port);
+app.listen(process.env.PORT || 3000, () => {
+  let port = 3000;
+  if (process.env.PORT != null) {
+    port = process.env.PORT;
+  }
+  console.log('Server started on port: %d', port);
 });
