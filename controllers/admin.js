@@ -42,7 +42,7 @@ admin.TotalVisitsAll = function(req, res) {
             res.send("ERROR" + err);
         } else {            
             let placeList = result.rows
-            //console.log(placeList);
+            console.log(placeList);
             res.send(placeList);            
         }
     }
@@ -357,6 +357,7 @@ admin.getVisits = function(req, res) {
         } else {
             
             let placeList = result.rows
+            console.log(placeList);
             res.send(placeList);            
         }
     }

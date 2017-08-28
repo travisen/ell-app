@@ -193,6 +193,12 @@ function generateTable(data) {
       if (property === "id") {
         cell.className = "id";
       }
+
+      // Remove time from date (Visited On column)
+      if (property === "visited_on") {
+        cellText.textContent = cellText.textContent.slice(0, 10);
+      }
+
       //Fix links later
       if (property === "name") {
         let placeLink = "/admin/places/";

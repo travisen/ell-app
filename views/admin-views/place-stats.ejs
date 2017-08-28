@@ -34,7 +34,7 @@
             <tr>
                 <td><%=placeStats[i].first_name %></td>
                 <td><%=placeStats[i].last_name %></td>
-                <td><%=placeStats[i].visited_on %></td>
+                <td><%=String(placeStats[i].visited_on).slice(4, 15) %></td>
             </tr>
         <% } %>
 	    </tbody>
