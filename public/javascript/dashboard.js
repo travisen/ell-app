@@ -171,7 +171,8 @@ function ajaxGetRequest(urlStr) {
 function generateTable(data) {
   // get the reference for the body
   var body = document.getElementsByTagName("body")[0];
-
+  let pageType = document.getElementById("req-type").textContent;
+  
   // creates a <table> element and a <tbody> element
   var tbl = document.getElementById("mainTable");
 
@@ -199,8 +200,11 @@ function generateTable(data) {
         cellText.textContent = cellText.textContent.slice(0, 10);
       }
 
-      //Fix links later
-      if (property === "name") {
+      if (property === "name" && pageType !== "places") {
+        cell.appendChild(cellText);
+      }
+
+      if (property === "name" && pageType === "places") {
         let placeLink = "/admin/places/";
         placeLink += currRow.id;
         placeLink += "/stats";
@@ -214,7 +218,7 @@ function generateTable(data) {
         cell.classList.add("btnLink");
         //cell.appendChild(cellText); Regular non clickable text
       }
-      if(property != "name") {
+      if(property !== "name" || pageType !== "places") {
         cell.appendChild(cellText);
       } else {
         cell.appendChild(link);
@@ -223,8 +227,6 @@ function generateTable(data) {
     }
 
     let currid = data[i]["id"];//Get person id and pass to action buttons
-
-    let pageType = document.getElementById("req-type").textContent;
 
     generateDeleteButton(row, currid, pageType);
     if(pageType === "places"){
