@@ -23,6 +23,8 @@ q.getById = `SELECT id, name, description, street_address, city, state, zipcode,
  FROM place
   WHERE id = ($1)`;
 
+q.getNameById = `SELECT name FROM place WHERE id = ($1);`;
+
 q.leaders = `SELECT person.id, person.first_name, COUNT(person_visit.person_id) AS visits
 	   FROM person LEFT JOIN person_visit ON person.id = person_visit.person_id
 	    AND EXTRACT(MONTH FROM person_visit.visited_on) = $1
@@ -103,6 +105,8 @@ q.placeVisitsMonth = `SELECT COUNT (*) from person_visit WHERE EXTRACT(MONTH FRO
  = EXTRACT(MONTH FROM current_date) AND place_id = ($1);`
 
 q.placeTotalVisits = `SELECT COUNT (*) from person_visit WHERE place_id = ($1);`
+
+q.doesPlaceExist = `SELECT EXISTS(SELECT 1 from place WHERE id = ($1));`;
 
 q.mostVisitedPlacesMonth = `SELECT place.id, place.name, COUNT(person_visit.place_id) AS visits
 	   FROM place LEFT JOIN person_visit ON place.id = person_visit.place_id

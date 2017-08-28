@@ -81,7 +81,6 @@ router.get('/admin/login', admin.login);
 
 // Place Routes
 router.get('/admin/places', checkAuth, admin.places);
-router.get('/admin/places/:id/stats', urlencodedParser, stats.placeSpecific);
 router.post('/admin/places/add', checkAuth, urlencodedParser, admin.addPlace);
 router.get('/admin/places/edit/:id', checkAuth, urlencodedParser, admin.getEditPlace);
 router.post('/admin/places/edit/:id/:edittype',
@@ -100,6 +99,8 @@ router.post('/admin/visits/:id/delete', checkAuth, admin.destroyVisit);
 router.get('/admin/visits/:type', checkAuth, admin.getVisits);
 router.get('/admin/visits', checkAuth, admin.visits);
 
+// Statistic Routes
+router.get('/admin/places/:id/stats', urlencodedParser, stats.placeSpecific);
 router.get('/admin/stats', admin.stats);
 
 module.exports = router;

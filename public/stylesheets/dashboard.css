@@ -81,6 +81,7 @@ body {
 }
 .main .page-header {
   margin-top: 0;
+  text-transform: capitalize;
 }
 
 #embedPass {
@@ -171,4 +172,8 @@ tr {
 
 .btnLink a{
   display:block;
+}
+
+.placeName {
+  text-transform: capitalize;
 }

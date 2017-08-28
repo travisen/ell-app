@@ -195,23 +195,23 @@ function generateTable(data) {
       }
       //Fix links later
       if (property === "name") {
-        // let placeLink = "/admin/places/";
-        // placeLink += currRow.id;
-        // placeLink += "/stats";
+        let placeLink = "/admin/places/";
+        placeLink += currRow.id;
+        placeLink += "/stats";
 
-        // var link = document.createElement("a");
-        // link.setAttribute("href", placeLink);
-        // var linkText = document.createTextNode(currRow["name"]);
-        // link.appendChild(linkText);
-        // //cell.appendChild(link);
+        var link = document.createElement("a");
+        link.setAttribute("href", placeLink);
+        var linkText = document.createTextNode(currRow["name"]);
+        link.appendChild(linkText);
+        //cell.appendChild(link);
 
-        // cell.classList.add("btnLink");
-        cell.appendChild(cellText);
+        cell.classList.add("btnLink");
+        //cell.appendChild(cellText); Regular non clickable text
       }
       if(property != "name") {
         cell.appendChild(cellText);
       } else {
-        //cell.appendChild(link);
+        cell.appendChild(link);
       }
       row.appendChild(cell);
     }
