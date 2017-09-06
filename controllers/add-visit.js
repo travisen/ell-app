@@ -1,139 +1,134 @@
+const pool = require('../psql/db_setup.js');
+const q = require('../psql/queries'); // import queries
+const capitalizeFirstLetter = require('../utils/strings');
 
-const bodyParser = require('body-parser');
+const visit = {};
 
-// create application/json parser
-var jsonParser = bodyParser.json()
-
-// create application/x-www-form-urlencoded parser
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
-
-const pool = require("../psql/db_setup.js");
-const q = require("../psql/queries"); //import queries
-const capitalizeFirstLetter = require("../utils/strings");
-
-var visit = {};
-
-function toTitleCase(str)
-{
-    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+function toTitleCase(str) {
+  return str.replace(/\w\S*/g, (txt) => {
+    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+  });
 }
 
-function _getCurrentDate(){
-  var today = new Date();
-  var dd = today.getDate();
-  var mm = today.getMonth()+1; //January is 0!
-  var yyyy = today.getFullYear();
+function getCurrentDate() {
+  let today = new Date();
+  let dd = today.getDate();
+  let mm = today.getMonth() + 1; // January is 0!
+  let yyyy = today.getFullYear();
 
-  if(dd<10) {
-      dd = '0'+dd
-  } 
+  if (dd < 10) {
+    dd = '0' + dd;
+  }
 
-  if(mm<10) {
-      mm = '0'+mm
-  } 
+  if (mm < 10) {
+    mm = '0' + mm;
+  }
 
   today = yyyy + '-' + mm + '-' + dd;
 
   return today;
 }
 
-visit.getForm = function(req, res){
-  let place = "";
-  
-  if(req.query.place != null){
+visit.getForm = function getForm(req, res) {
+  let place = '';
+
+  if (req.query.place != null) {
     console.log(req.query.place);
     place = req.query.place;
   }
-  if(req.query.date != null){
+
+  if (req.query.date != null) {
     console.log(req.query.date);
-    let date = req.query.date;
-  } 
-  //If name is sent through url 
-  if(place.length > 1){
-    var date = _getCurrentDate();
-    res.render("add-visit-non-datalist", {place: place, currentDate: date});
+    const date = req.query.date;
+  }
+
+  // If name is sent through url 
+  if (place.length > 1) {
+    let date = getCurrentDate();
+    res.render('add-visit-non-datalist', { place: place, currentDate: date });
     return;
   }
 
-  function _render(err, result){
-    if(err) {
+  function render(err, result) {
+    if (err) {
       console.error(err);
-      res.send("ERROR" + err);
+      res.send('ERROR' + err);
     } else {
-      let currentDate = _getCurrentDate();
-      let placeList = result.rows;
-      let isVis = "not-visible";
-      let errMsg = "";
+      const currentDate = getCurrentDate();
+      const placeList = result.rows;
+      const isVis = 'not-visible';
+      const errMsg = '';
 
       console.log(currentDate);
       console.log(placeList);
       res.render("add-visit", {
-       placeList: placeList,
-       place:place,
-       currentDate:currentDate,
-       isVis:isVis,
-       errMsg:errMsg
-     });
+        placeList: placeList,
+        place: place,
+        currentDate: currentDate,
+        isVis: isVis,
+        errMsg: errMsg
+      });
     }
   }
-
   console.log(q.getNames);
-  pool.query(q.getNames, _render);
-}
+  pool.query(q.getNames, render);
+};
 
 // This function works but is not robust.
 // Need to figure out how to handle username
-visit.post = function(req, res) {
-
-  console.log("body: ", req.body);
+visit.post = function post(req, res) {
+  console.log('body: ', req.body);
 
   let first = req.body.firstName.toLowerCase();
   let last = req.body.lastName.toLowerCase();
   let place = req.body.place.toLowerCase();
-  let date = req.body.date;
-  //let first_name = req.body.first_name.toLowerCase();
+  const date = req.body.date;
+
   const query = {
     text: q.insertVisit,
     values: [first, last, place, date]
-  }
+  };
 
   first = capitalizeFirstLetter(first);
   last = capitalizeFirstLetter(last);
+
   pool.query(query)
-    .then(req => {
+    .then(() => {
       place = toTitleCase(place);
-      let successMsg = first + ", thanks for adding your visit to " + place +
-      " on " + date + "!";
+      const successMsg = `${first} thanks for adding your visit to ${place} on ${date}!`;
       console.log(successMsg);
-      res.status(200).send({msg: successMsg});
+      res.status(200).send({ msg: successMsg });
     })
-    .catch(error =>  {
-      let isVis = "visible";
+    .catch((error) => {
+      const isVis = 'visible';
+
       console.error(error);
-      console.error(error.code)
-      let errMsg = "Something went wrong, sorry. Try refreshing the page.";
-      //Duplicate Visit
-      if(error.code === "23505") {
+      console.error(error.code);
+
+      let errMsg = 'Something went wrong, sorry. Try refreshing the page.';
+
+      // Duplicate Visit
+      if (error.code === '23505') {
         place = toTitleCase(place);
-        errMsg = "Sorry, " + first + ". But you've already visited "
-        + place + " on " + date + ".";
+        errMsg = `Sorry, ${first}. But you've already visited ${place} on ${date}.`;
 
-        console.log("Duplicate Error");
-        res.status(400).send({msg: errMsg});
+        console.log('Duplicate Error');
+        res.status(400).send({ msg: errMsg });
       }
-      //Name or place does not exist
-      else if (error.code === "23502") {
-        errMsg = "Sorry, but " + first + " " + last + " is not a current user.";
 
-        console.log("Name Error");
-        res.status(400).send({msg: errMsg});
-      } 
-      //All other errors
+      // Name or place does not exist
+      else if (error.code === '23502') {
+        errMsg = `Sorry, but ${first} ${last} is not a current user.`;
+
+        console.log('Name Error');
+        res.status(400).send({ msg: errMsg });
+      }
+      // All other errors
       else {
-        res.status(400).send({msg: errMsg});
+        res.status(400).send({ msg: errMsg });
       }
-    })
-}
+    });
+};
 
 module.exports = visit;
 
