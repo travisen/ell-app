@@ -37,7 +37,7 @@ q.top3Leaders = `SELECT person.id, person.first_name, COUNT(person_visit.person_
 	     GROUP BY person.id HAVING COUNT(person_visit.person_id) > 0
 	      ORDER BY visits DESC LIMIT 3;`;
 
-q.getNames = `SELECT id, name FROM place;`;
+q.getNames = `SELECT id, name FROM place ORDER BY name ASC;`;
 
 q.insertVisit = `INSERT INTO person_visit(
     person_id, place_id, visited_on)
